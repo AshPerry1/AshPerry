@@ -325,7 +325,7 @@ main.home-v2 > section.shell {
   flex-direction: column;
   min-height: calc(100svh - var(--nav-height));
   padding-top: clamp(0.2rem, 0.9vw, 0.65rem);
-  padding-bottom: max(clamp(1.75rem, 3.25vw, 2.75rem), env(safe-area-inset-bottom, 0px));
+  padding-bottom: max(clamp(1.15rem, 2.5vw, 2rem), env(safe-area-inset-bottom, 0px));
 }
 
 .shell-hero.shell-surface-white:first-of-type .shell-inner.container {
@@ -805,7 +805,7 @@ footer {
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
   grid-template-rows: minmax(0, 1fr);
-  gap: clamp(1rem, 2.5vw, 2rem);
+  gap: clamp(0.75rem, 2vw, 1.65rem);
   align-items: stretch;
 }
 
@@ -823,7 +823,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-end;
+  /* Flush to the gutter beside the copy — vertical crop reads as part of the column edge */
+  align-items: flex-start;
   width: 100%;
   min-height: 0;
   height: 100%;
@@ -841,7 +842,7 @@ footer {
   max-height: 100%;
   margin: 0;
   object-fit: contain;
-  object-position: right bottom;
+  object-position: left bottom;
   border-radius: 0;
   box-shadow: none;
   filter: none;
@@ -1641,15 +1642,15 @@ footer {
 
   .hero-photo-wrap {
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: flex-start;
     height: auto;
     min-height: min(46svh, 380px);
   }
 
   .hero-v2 .hero-photo-wrap .hero-photo {
     width: 100%;
-    max-height: min(50svh, 500px);
-    object-position: right bottom;
+    max-height: min(52svh, 520px);
+    object-position: left bottom;
   }
 
   .band {
