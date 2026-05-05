@@ -320,7 +320,7 @@ main.home-v2 > section.shell {
 }
 
 .shell-hero.shell-surface-white:first-of-type {
-  padding-top: clamp(1.2rem, 2.8vw, 2rem);
+  padding-top: clamp(0.65rem, 1.8vw, 1.35rem);
   padding-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
 }
 
@@ -817,10 +817,11 @@ footer {
   height: auto;
   margin: 0;
   object-fit: contain;
-  object-position: center top;
+  object-position: center 8%;
   border-radius: 0;
   box-shadow: none;
   filter: none;
+  transform: translateY(clamp(-2.25rem, -4.5vw, -0.85rem));
 }
 
 .hero-v2-copy .kicker {
@@ -1604,6 +1605,7 @@ footer {
 
   .hero-v2 .hero-photo-wrap .hero-photo {
     max-height: min(520px, 78svh);
+    transform: translateY(clamp(-1.15rem, -2.8vw, -0.25rem));
   }
 
   .band {
