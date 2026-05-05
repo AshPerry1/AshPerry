@@ -321,7 +321,7 @@ main.home-v2 > section.shell {
 
 .shell-hero.shell-surface-white:first-of-type {
   padding-top: clamp(1.2rem, 2.8vw, 2rem);
-  padding-bottom: clamp(2rem, 4.8vw, 3.25rem);
+  padding-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
 }
 
 .shell-inner {
@@ -787,8 +787,8 @@ footer {
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
   gap: clamp(2rem, 4.5vw, 3.5rem);
-  /* Center shorter photo column vs tall copy → less “pinned to viewport bottom” */
-  align-items: center;
+  /* Top-align both columns — avoids a “floating” portrait with dead space under it */
+  align-items: start;
 }
 
 .hero-v2-copy,
@@ -812,11 +812,11 @@ footer {
   width: auto;
   max-width: 100%;
   /* Cap height so portrait + chrome fit in viewport; less “floating” whitespace */
-  max-height: clamp(380px, calc(100svh - 9.75rem), 700px);
+  max-height: clamp(400px, min(calc(100svh - 7.75rem), 82svh), 800px);
   height: auto;
   margin: 0;
   object-fit: contain;
-  object-position: center 22%;
+  object-position: center top;
   border-radius: 0;
   box-shadow: none;
   filter: none;
@@ -947,24 +947,33 @@ footer {
 
 .shell-hero.shell-surface-white .hero-v2-copy .btn-row {
   gap: 0.8rem;
-  margin-top: clamp(2.15rem, 3.8vw, 2.7rem);
+  margin-top: clamp(2.35rem, 4.1vw, 3rem);
 }
 
 .shell-hero.shell-surface-white .hero-intro-line {
-  margin-bottom: clamp(1.2rem, 2.5vw, 1.6rem);
+  margin-bottom: clamp(1.25rem, 2.6vw, 1.7rem);
+  line-height: 1.56;
 }
 
 .shell-hero.shell-surface-white .hero-v2-copy .hero-headline {
-  margin-bottom: clamp(1.15rem, 2.2vw, 1.55rem);
-  line-height: 1.07;
+  margin-bottom: clamp(1.35rem, 2.65vw, 1.85rem);
+  line-height: 1.12;
 }
 
 .shell-hero.shell-surface-white .hero-v2-copy .hero-lead {
-  margin-top: clamp(0.5rem, 1.2vw, 0.9rem);
+  margin-top: clamp(0.65rem, 1.4vw, 1.05rem);
+  line-height: 1.8;
 }
 
 .shell-hero.shell-surface-white .hero-points {
-  margin-top: clamp(2.05rem, 3.75vw, 2.75rem);
+  margin-top: clamp(2.45rem, 4.25vw, 3.15rem);
+}
+
+.shell-hero.shell-surface-white .hero-v2-copy .btn-hero-primary {
+  box-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.2) inset,
+    0 10px 24px rgba(13, 148, 136, 0.16),
+    0 4px 14px rgba(37, 99, 235, 0.08);
 }
 
 .shell-hero {
@@ -1593,7 +1602,7 @@ footer {
   }
 
   .hero-v2 .hero-photo-wrap .hero-photo {
-    max-height: min(470px, 68svh);
+    max-height: min(520px, 78svh);
   }
 
   .band {
