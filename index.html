@@ -13,18 +13,21 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="navbar">
+    <header class="navbar nav-home">
       <div class="container nav-inner">
-        <a class="brand" href="index.html">ASH <span>PERRY</span></a>
-        <nav class="nav-links">
+        <a class="brand-lockup" href="index.html">
+          <span class="brand-lockup-name">ASH PERRY</span>
+          <span class="brand-lockup-line">WEBSITES THAT REPRESENT YOU</span>
+        </a>
+        <nav class="nav-links nav-links-center">
           <a class="active" href="index.html">Home</a>
           <a href="business.html">Business</a>
           <a href="personal.html">Personal</a>
           <a href="hobby.html">Hobby</a>
           <a href="portfolio.html">Portfolio</a>
           <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
         </nav>
+        <a class="btn btn-nav-cta" href="contact.html">Let's Talk</a>
       </div>
     </header>
 
@@ -34,20 +37,29 @@
           <span class="kicker">Hi, I'm Ash</span>
           <h1>
             I Build Custom Websites That Bring Your Brand
-            <span>to Life.</span>
+            <span class="gradient-accent">to Life.</span>
           </h1>
           <p class="lead">
             Your website should do more than look good. It should represent who
             you are, build trust, and bring in the right opportunities.
           </p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="contact.html">Let's Build Yours</a>
-            <a class="btn btn-secondary" href="portfolio.html">View My Work</a>
+            <a class="btn btn-hero-primary" href="contact.html">Let's Build Yours</a>
+            <a class="btn btn-hero-outline" href="portfolio.html">View My Work</a>
           </div>
           <div class="trust-row">
-            <span>Custom Designs</span>
-            <span>Built for You</span>
-            <span>Results Driven</span>
+            <span class="trust-chip"
+              ><svg class="check-ico" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m7.76 13.68-3.54-3.52L2.82 11.6 7.76 16.53 17.35 7l-1.41-1.41-8.18 8.09z"/></svg>
+              Custom Designs</span
+            >
+            <span class="trust-chip"
+              ><svg class="check-ico" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m7.76 13.68-3.54-3.52L2.82 11.6 7.76 16.53 17.35 7l-1.41-1.41-8.18 8.09z"/></svg>
+              Built for You</span
+            >
+            <span class="trust-chip"
+              ><svg class="check-ico" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m7.76 13.68-3.54-3.52L2.82 11.6 7.76 16.53 17.35 7l-1.41-1.41-8.18 8.09z"/></svg>
+              Results Driven</span
+            >
           </div>
         </div>
         <div class="hero-photo-wrap">
@@ -61,11 +73,14 @@
       </section>
 
       <section class="about-v2">
-        <img
-          class="about-photo"
-          src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1000&q=80"
-          alt="Ash working at desk"
-        />
+        <div class="about-photo-frame">
+          <img
+            class="about-photo"
+            src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1000&q=80"
+            alt="Ash working at desk"
+          />
+          <p class="about-neon-caption">CREATE · BUILD · ELEVATE</p>
+        </div>
         <div>
           <span class="meta">About Me</span>
           <h2>Designer. Developer. Problem Solver.</h2>
@@ -75,30 +90,53 @@
             strategy, clean design, and impact.
           </p>
           <div class="mini-grid">
-            <div class="mini-card"><strong>Custom Built</strong>for your goals</div>
-            <div class="mini-card"><strong>Fast & Reliable</strong>clean code</div>
-            <div class="mini-card"><strong>Your Success</strong>is the focus</div>
+            <div class="mini-card">
+              <span class="mini-dot" aria-hidden="true"></span>
+              <div><strong>Custom Built</strong>for your goals</div>
+            </div>
+            <div class="mini-card">
+              <span class="mini-dot" aria-hidden="true"></span>
+              <div><strong>Fast & Reliable</strong>clean code</div>
+            </div>
+            <div class="mini-card">
+              <span class="mini-dot" aria-hidden="true"></span>
+              <div><strong>Your Success</strong>is the focus</div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="why-v2">
-        <div>
+        <div class="why-v2-intro">
           <span class="meta">Why Your Brand Matters</span>
           <h2>
-            Your Brand is More Than a Logo.
-            <span>It's Your First Impression.</span>
+            Your Brand is More Than a Logo.<br /><span class="gradient-accent-soft"
+              >It's Your First Impression.</span
+            >
           </h2>
           <p class="lead">
             In a world full of options, your brand is what makes you memorable.
             A strong, professional website builds trust and positions you as the
             obvious choice.
           </p>
+          <a class="btn btn-ghost" href="portfolio.html">See the Difference</a>
         </div>
         <div class="why-cards">
-          <article class="card"><h3>Adds Trust</h3><p>A polished site shows you are serious and ready.</p></article>
-          <article class="card"><h3>Attracts Opportunities</h3><p>The right visitors become real inquiries.</p></article>
-          <article class="card"><h3>Grows With You</h3><p>Your website should scale as your goals evolve.</p></article>
+          <article class="card why-card">
+            <span class="why-ico trust" aria-hidden="true"></span>
+            <h3>Builds Trust</h3>
+            <p>A polished presence shows visitors you mean business.</p>
+          </article>
+          <article class="card why-card">
+            <span class="why-ico spark" aria-hidden="true"></span>
+            <h3>Attracts Opportunities</h3>
+            <p>The right people find you and reach out faster.</p>
+          </article>
+          <article class="card why-card">
+            <span class="why-ico grow" aria-hidden="true"></span>
+            <h3>Grows With You</h3>
+            <p>Layouts that evolve as offers and priorities change.</p>
+          </article>
         </div>
       </section>
 
@@ -106,16 +144,22 @@
         <h2 class="section-title center">Choose Your Path</h2>
         <div class="path-grid">
           <a class="path-card business" href="business.html">
+            <span class="path-emoji" aria-hidden="true">💼</span>
             <h3>Business Websites</h3>
-            <p>Professional websites built to grow your business and bring leads.</p>
+            <p>Professional sites built to grow your business and bring leads.</p>
+            <span class="path-explore">Explore Business Sites →</span>
           </a>
           <a class="path-card personal" href="personal.html">
+            <span class="path-emoji" aria-hidden="true">👤</span>
             <h3>Personal / LinkedIn Pages</h3>
-            <p>Stand out online with a personal website that shows who you are.</p>
+            <p>Show who you are with a standout personal brand homepage.</p>
+            <span class="path-explore">Explore Personal Sites →</span>
           </a>
           <a class="path-card hobby" href="hobby.html">
+            <span class="path-emoji" aria-hidden="true">🎮</span>
             <h3>Hobby Websites</h3>
-            <p>Passion projects deserve a place to shine and attract your people.</p>
+            <p>Give communities and passions a polished place to rally.</p>
+            <span class="path-explore">Explore Hobby Sites →</span>
           </a>
         </div>
       </section>
@@ -136,14 +180,20 @@
       <section class="band help">
         <div>
           <h2>No Problem. I'm Here to Help.</h2>
-          <p>Every project starts simple. If you're unsure what direction fits you best, we'll map your goals and create a clear next step.</p>
+          <p>
+            Every project starts simple. If you're unsure what direction fits you
+            best, we'll map your goals and spell out clear next steps.
+          </p>
         </div>
-        <a class="btn btn-secondary" href="contact.html">Start Here</a>
+        <a class="btn btn-on-gradient" href="contact.html">Start Here</a>
       </section>
 
       <section class="band cta">
-        <h2>Let's Build Something Amazing Together.</h2>
-        <a class="btn btn-primary" href="contact.html">Let's Build Your Brand</a>
+        <div class="cta-inner">
+          <span class="paper-plane" aria-hidden="true">✈️</span>
+          <h2>Let's Build Something Amazing Together.</h2>
+          <a class="btn btn-gradient-xl" href="contact.html">Let's Build Your Brand</a>
+        </div>
       </section>
     </main>
 
@@ -152,6 +202,12 @@
         <div>
           <h3>ASH PERRY</h3>
           <p>Custom Websites That Represent You.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Instagram (add your link)">IG</a>
+            <a href="#" aria-label="LinkedIn (add your link)">in</a>
+            <a href="#" aria-label="X (add your link)">X</a>
+            <a href="mailto:hello@ashperry.dev" aria-label="Email">@</a>
+          </div>
         </div>
         <div>
           <h3>Navigation</h3>
