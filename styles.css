@@ -787,7 +787,8 @@ footer {
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
   gap: clamp(2rem, 4.5vw, 3.5rem);
-  align-items: start;
+  /* Center shorter photo column vs tall copy → less “pinned to viewport bottom” */
+  align-items: center;
 }
 
 .hero-v2-copy,
@@ -811,11 +812,11 @@ footer {
   width: auto;
   max-width: 100%;
   /* Cap height so portrait + chrome fit in viewport; less “floating” whitespace */
-  max-height: clamp(360px, calc(100svh - 11rem), 640px);
+  max-height: clamp(380px, calc(100svh - 9.75rem), 700px);
   height: auto;
   margin: 0;
   object-fit: contain;
-  object-position: center top;
+  object-position: center 22%;
   border-radius: 0;
   box-shadow: none;
   filter: none;
@@ -946,7 +947,24 @@ footer {
 
 .shell-hero.shell-surface-white .hero-v2-copy .btn-row {
   gap: 0.8rem;
-  margin-top: 1.92rem;
+  margin-top: clamp(2.15rem, 3.8vw, 2.7rem);
+}
+
+.shell-hero.shell-surface-white .hero-intro-line {
+  margin-bottom: clamp(1.2rem, 2.5vw, 1.6rem);
+}
+
+.shell-hero.shell-surface-white .hero-v2-copy .hero-headline {
+  margin-bottom: clamp(1.15rem, 2.2vw, 1.55rem);
+  line-height: 1.07;
+}
+
+.shell-hero.shell-surface-white .hero-v2-copy .hero-lead {
+  margin-top: clamp(0.5rem, 1.2vw, 0.9rem);
+}
+
+.shell-hero.shell-surface-white .hero-points {
+  margin-top: clamp(2.05rem, 3.75vw, 2.75rem);
 }
 
 .shell-hero {
