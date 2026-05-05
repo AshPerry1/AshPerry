@@ -827,7 +827,7 @@ footer {
   width: 100%;
   min-height: 0;
   height: 100%;
-  padding-bottom: clamp(2rem, 5.5vw, 4rem);
+  padding-bottom: clamp(3.5rem, 9vw, 7.5rem);
   box-sizing: border-box;
   background: var(--canvas-white);
 }
@@ -839,7 +839,7 @@ footer {
   display: block;
   width: auto;
   max-width: 100%;
-  max-height: calc(100% - 0.5rem);
+  max-height: 100%;
   height: auto;
   margin: 0;
   object-fit: contain;
@@ -847,7 +847,7 @@ footer {
   border-radius: 0;
   box-shadow: none;
   filter: none;
-  transform: translateY(clamp(-1rem, -2.5vw, -0.35rem));
+  transform: translateY(clamp(-2.5rem, -5.5vw, -1rem));
 }
 
 .hero-v2-copy .kicker {
@@ -1631,10 +1631,12 @@ footer {
 
   .hero-photo-wrap {
     justify-content: flex-end;
+    padding-bottom: clamp(2.5rem, 8vw, 5rem);
   }
 
   .hero-v2 .hero-photo-wrap .hero-photo {
     max-height: min(72svh, 100%);
+    transform: translateY(clamp(-1.35rem, -3.5vw, -0.35rem));
   }
 
   .band {
