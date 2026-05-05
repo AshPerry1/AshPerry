@@ -93,22 +93,42 @@ a {
 }
 
 .nav-home .nav-links a {
+  position: relative;
   font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.01em;
-  padding: 0.42rem 0.65rem;
+  letter-spacing: 0.02em;
+  padding: 0.48rem 0.72rem;
   color: #64748b;
+  border-radius: 0;
+  background: transparent;
+  transition:
+    color 160ms ease,
+    opacity 160ms ease;
 }
 
 .nav-home .nav-links a.active {
-  background: rgba(241, 245, 249, 0.95);
+  background: transparent;
   color: #0f172a;
-  box-shadow: inset 0 0 0 1px rgba(226, 232, 240, 0.85);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.nav-home .nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0.72rem;
+  right: 0.72rem;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #22c55e);
+  opacity: 0.95;
 }
 
 .nav-home .nav-links a:hover:not(.active) {
-  background: rgba(248, 250, 252, 0.9);
-  color: #334155;
+  background: transparent;
+  color: #0f172a;
+  opacity: 1;
 }
 
 /* Homepage header (reference layout) */
@@ -148,8 +168,20 @@ a {
   min-width: 0;
 }
 
+.nav-home .nav-links {
+  gap: 0.15rem 0.2rem;
+}
+
+.nav-home .nav-links a.active:hover {
+  background: transparent;
+}
+
 .btn-nav-cta {
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7.5rem;
   background: linear-gradient(115deg, #14b8a6 0%, #2dd4bf 45%, #22c55e 100%);
   color: #fff !important;
   border-radius: 999px;
@@ -161,6 +193,42 @@ a {
   box-shadow:
     0 10px 24px rgba(20, 184, 166, 0.3),
     0 2px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.nav-cta-type {
+  display: inline-block;
+  min-height: 1.15em;
+  white-space: nowrap;
+}
+
+.nav-cta-type.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.88em;
+  margin-left: 1px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 1px;
+  vertical-align: -0.12em;
+  animation: nav-cta-caret 0.52s steps(1, end) infinite;
+}
+
+@keyframes nav-cta-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-cta-type.is-typing::after {
+    animation: none;
+    opacity: 0.85;
+  }
 }
 
 .btn-nav-cta:hover {
