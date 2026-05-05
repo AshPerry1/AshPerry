@@ -1559,6 +1559,228 @@ footer {
   border: none;
 }
 
+/* Landing page (home-v2): extend hero palette, type, and UI — scoped so other pages unchanged */
+main.home-v2 .section-eyebrow {
+  color: #0d9488;
+  letter-spacing: 0.2em;
+}
+
+main.home-v2 .about-copy .meta,
+main.home-v2 .why-v2-intro .meta {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0d9488;
+}
+
+main.home-v2 .shell-paths .section-title.center,
+main.home-v2 .shell-work .section-title {
+  font-size: clamp(1.55rem, 2.8vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #0c1222;
+}
+
+main.home-v2 .why-v2-intro h2 {
+  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #0c1222;
+  line-height: 1.18;
+}
+
+main.home-v2 .about-copy h2 {
+  font-size: clamp(1.55rem, 2.7vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #0c1222;
+  line-height: 1.2;
+}
+
+main.home-v2 .about-neon-caption {
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(13, 148, 136, 0.28);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+main.home-v2 .mini-dot {
+  position: relative;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.2rem;
+  border: none;
+  background: var(--grad-brand);
+  flex-shrink: 0;
+}
+
+main.home-v2 .mini-dot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.38rem;
+  height: 0.22rem;
+  margin: -0.02rem 0 0;
+  transform: translate(-50%, -65%) rotate(-45deg);
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-radius: 1px;
+  box-sizing: border-box;
+}
+
+main.home-v2 .mini-card {
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: box-shadow 180ms ease, border-color 180ms ease;
+}
+
+main.home-v2 .mini-card:hover {
+  box-shadow:
+    0 10px 26px rgba(13, 148, 136, 0.08),
+    0 2px 8px rgba(15, 23, 42, 0.04);
+  border-color: rgba(13, 148, 136, 0.22);
+}
+
+main.home-v2 .why-v2-intro .btn-ghost {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--canvas-white), var(--canvas-white)) padding-box,
+    var(--grad-brand) border-box;
+  color: var(--ink);
+  padding: 0.72rem 1.28rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+main.home-v2 .why-v2-intro .btn-ghost:hover {
+  background:
+    linear-gradient(#f8fafc, #f8fafc) padding-box,
+    var(--grad-brand) border-box;
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+main.home-v2 .why-ico {
+  background: rgba(13, 148, 136, 0.08);
+  border: 1px solid rgba(13, 148, 136, 0.22);
+}
+
+main.home-v2 .why-ico.trust::after {
+  border-left-color: #0d9488;
+  border-bottom-color: #2563eb;
+}
+
+main.home-v2 .why-ico.spark {
+  background: rgba(14, 165, 233, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+main.home-v2 .why-ico.spark::after {
+  background: linear-gradient(135deg, #0d9488, #2563eb);
+  box-shadow: 6px -3px 0 -2px rgba(14, 165, 233, 0.6);
+}
+
+main.home-v2 .why-ico.grow {
+  background: rgba(5, 150, 105, 0.07);
+  border-color: rgba(5, 150, 105, 0.22);
+}
+
+main.home-v2 .why-ico.grow::after {
+  background: #0d9488;
+  box-shadow: -6px 4px 0 #14b8a6, 6px 2px 0 #2563eb;
+}
+
+main.home-v2 .why-card {
+  border-radius: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+}
+
+main.home-v2 .path-card.business {
+  border-top: 5px solid #0d9488;
+  background: linear-gradient(180deg, rgba(13, 148, 136, 0.09) 0%, #fff 46%);
+}
+
+main.home-v2 .path-card.business .path-explore {
+  color: #0f766e;
+}
+
+main.home-v2 .path-card.personal {
+  border-top: 5px solid #2563eb;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, #fff 46%);
+}
+
+main.home-v2 .path-card.personal .path-explore {
+  color: #1d4ed8;
+}
+
+main.home-v2 .path-card.hobby {
+  border-top: 5px solid #0891b2;
+  background: linear-gradient(180deg, rgba(8, 145, 178, 0.1) 0%, #fff 46%);
+}
+
+main.home-v2 .path-card.hobby .path-explore {
+  color: #0e7490;
+}
+
+main.home-v2 .shell-work .btn-secondary {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--canvas-white), var(--canvas-white)) padding-box,
+    var(--grad-brand) border-box;
+  color: var(--ink);
+  padding: 0.72rem 1.28rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+main.home-v2 .shell-work .btn-secondary:hover {
+  background:
+    linear-gradient(#f8fafc, #f8fafc) padding-box,
+    var(--grad-brand) border-box;
+}
+
+main.home-v2 .project-item {
+  border-radius: 16px;
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+main.home-v2 .project-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 40px rgba(13, 148, 136, 0.1),
+    0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+main.home-v2 .band.help {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 22px 48px rgba(13, 148, 136, 0.2);
+}
+
+main.home-v2 .band.cta {
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.06),
+    0 0 0 1px rgba(13, 148, 136, 0.06);
+}
+
+main.home-v2 .btn-on-gradient {
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+}
+
 .site-footer {
   background: #0f172a;
   color: #dce4f6;
