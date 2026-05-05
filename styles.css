@@ -320,13 +320,18 @@ main.home-v2 > section.shell {
 }
 
 .shell-hero.shell-surface-white:first-of-type {
-  padding-top: clamp(0.65rem, 1.8vw, 1.35rem);
+  padding-top: clamp(0.45rem, 1.45vw, 1.1rem);
   padding-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
 }
 
 .shell-inner {
   max-width: min(1160px, 92%);
   margin-inline: auto;
+}
+
+.shell-hero.shell-surface-white .shell-inner.container {
+  width: min(1200px, 96%);
+  max-width: min(1200px, 96%);
 }
 
 .shell-inner-tight {
@@ -786,7 +791,7 @@ footer {
   z-index: 0;
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
-  gap: clamp(2rem, 4.5vw, 3.5rem);
+  gap: clamp(1.5rem, 3.5vw, 2.75rem);
   /* Top-align both columns — avoids a “floating” portrait with dead space under it */
   align-items: start;
 }
@@ -817,11 +822,11 @@ footer {
   height: auto;
   margin: 0;
   object-fit: contain;
-  object-position: center 8%;
+  object-position: center 4%;
   border-radius: 0;
   box-shadow: none;
   filter: none;
-  transform: translateY(clamp(-2.25rem, -4.5vw, -0.85rem));
+  transform: translateY(clamp(-2.85rem, -5.25vw, -1rem));
 }
 
 .hero-v2-copy .kicker {
@@ -1605,7 +1610,7 @@ footer {
 
   .hero-v2 .hero-photo-wrap .hero-photo {
     max-height: min(520px, 78svh);
-    transform: translateY(clamp(-1.15rem, -2.8vw, -0.25rem));
+    transform: translateY(clamp(-1.5rem, -3.2vw, -0.35rem));
   }
 
   .band {
