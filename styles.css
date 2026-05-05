@@ -23,6 +23,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Reserve scrollbar width so centered content doesn’t shift; evens L/R balance */
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -137,13 +142,29 @@ a {
   opacity: 1;
 }
 
-/* Homepage header (reference layout) */
+/* Homepage header — 3-col grid so logo and CTA sit equally inside the same margins */
 .nav-home .nav-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  align-content: center;
+  gap: 0.65rem 1rem;
+  padding: 0.85rem 0;
+}
+
+.nav-home .brand-lockup {
+  justify-self: start;
+  min-width: 0;
+}
+
+.nav-home nav.nav-links.nav-links-center {
+  flex: none;
+  justify-self: center;
+  justify-content: center;
+}
+
+.nav-home .btn-nav-cta {
+  justify-self: end;
 }
 
 .brand-lockup {
@@ -251,17 +272,24 @@ a {
 
 @media (max-width: 920px) {
   .nav-home .nav-inner {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
   }
 
-  .nav-links-center {
+  .nav-home .brand-lockup {
+    align-self: flex-start;
+  }
+
+  .nav-home nav.nav-links.nav-links-center {
+    justify-self: stretch;
     justify-content: flex-start;
     order: 3;
     width: 100%;
   }
 
-  .btn-nav-cta {
+  .nav-home .btn-nav-cta {
+    justify-self: end;
     align-self: flex-end;
     order: 2;
   }
@@ -804,7 +832,7 @@ footer {
   flex: 1 1 auto;
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr);
   gap: clamp(0.75rem, 2vw, 1.65rem);
   align-items: stretch;
@@ -819,7 +847,7 @@ footer {
 .hero-v2-copy {
   align-self: start;
   /* Drop the copy block so it lines up with the portrait (head ~ level with intro) */
-  padding-top: clamp(2.5rem, 7.5vw, 5.25rem);
+  padding-top: clamp(3rem, 8.5vw, 6rem);
 }
 
 /* Portrait column: stretch with the grid row; photo pinned bottom-left of column (no flex guessing) */
