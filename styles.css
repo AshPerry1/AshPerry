@@ -858,24 +858,6 @@ footer {
   background: var(--canvas-white);
 }
 
-/* Soft grey “ground” behind the lower half so the cutout feels anchored */
-.hero-photo-wrap::after {
-  content: "";
-  position: absolute;
-  left: -6%;
-  right: -4%;
-  bottom: 0;
-  height: min(48%, 380px);
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse 88% 78% at 42% 100%,
-    rgba(236, 241, 248, 0.95) 0%,
-    rgba(241, 245, 249, 0.55) 45%,
-    rgba(255, 255, 255, 0) 72%
-  );
-}
-
 .hero-v2 .hero-photo-wrap .hero-photo {
   position: absolute;
   left: 0;
@@ -1708,12 +1690,6 @@ footer {
     margin-bottom: clamp(0.65rem, 2vw, 1.35rem);
     object-position: left bottom;
     z-index: 1;
-  }
-
-  .hero-photo-wrap::after {
-    left: 0;
-    right: 0;
-    height: min(38svh, 300px);
   }
 
   .band {
