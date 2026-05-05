@@ -362,6 +362,135 @@ footer {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
+.home section {
+  margin: 3.2rem 0;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.home-hero-copy h1 {
+  max-width: 14ch;
+}
+
+.home-hero-media {
+  background: #eef2f9;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 1.1rem;
+}
+
+.home-hero-media .project-thumb {
+  border-radius: 14px;
+  margin: 0;
+}
+
+.home-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.4rem;
+}
+
+.home-metrics strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.home-metrics span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.home-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.home-intro h2 {
+  margin-bottom: 0.5rem;
+}
+
+.home-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.home-service {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem;
+  transition: all 180ms ease;
+}
+
+.home-service:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.home-service h3 {
+  margin: 0.4rem 0 0.5rem;
+}
+
+.home-service p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.home-showcase {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.1rem;
+  align-items: stretch;
+}
+
+.home-showcase-copy {
+  background: #111827;
+  color: #eef2ff;
+  border-radius: 22px;
+  padding: 2rem;
+}
+
+.home-showcase-copy .lead {
+  color: #cfd7e9;
+}
+
+.home-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.home-showcase-grid .project-thumb {
+  margin: 0;
+  height: 100%;
+}
+
+.home-cta {
+  text-align: center;
+  background: #f1f4fa;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem 1.5rem;
+}
+
+.home-cta .lead {
+  margin: 0 auto 1.1rem;
+}
+
 @media (max-width: 950px) {
   .hero,
   .grid-3,
@@ -377,5 +506,17 @@ footer {
 
   .panel {
     padding: 1.45rem;
+  }
+
+  .home-hero,
+  .home-showcase,
+  .home-services,
+  .home-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
