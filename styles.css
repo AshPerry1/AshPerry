@@ -1,9 +1,9 @@
 :root {
   /* Match hero portrait backdrop; #fff for clipped studio white */
   --canvas-white: #ffffff;
-  --bg: #f6f7fb;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --surface-soft: #fbfcfe;
+  --surface-soft: #ffffff;
   --text: #0d1321;
   --muted: #4f5d75;
   --border: #e7ebf2;
@@ -45,16 +45,16 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
-  background: rgba(248, 249, 252, 0.92);
+  backdrop-filter: none;
+  background: var(--canvas-white);
   border-bottom: 1px solid var(--border);
 }
 
 .navbar.nav-home {
-  backdrop-filter: blur(20px) saturate(1.08);
-  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: none;
+  background: var(--canvas-white);
   border-bottom: 1px solid rgba(15, 23, 42, 0.055);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  box-shadow: none;
 }
 
 .nav-inner {
@@ -304,7 +304,7 @@ section {
 }
 
 .shell-surface-soft {
-  background: #f4f6fb;
+  background: var(--canvas-white);
 }
 
 .shell-surface-white {
@@ -846,9 +846,9 @@ footer {
   font-weight: 600;
   letter-spacing: 0.16em;
   color: #475569;
-  background: rgba(248, 250, 252, 0.95);
+  background: var(--canvas-white);
   border: 1px solid rgba(226, 232, 240, 0.95);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  box-shadow: none;
 }
 
 .hero-headline {
@@ -1434,7 +1434,7 @@ footer {
 }
 
 .band.cta {
-  background: linear-gradient(180deg, #fbfcfe 0%, #ffffff 100%);
+  background: var(--canvas-white);
   border: 1px solid var(--border);
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.05);
 }
