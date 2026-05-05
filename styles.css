@@ -833,7 +833,7 @@ footer {
 .hero-v2 .hero-photo-wrap .hero-photo {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: clamp(1.15rem, 3.2vw, 2.85rem);
   z-index: 1;
   display: block;
   width: 100%;
@@ -1659,6 +1659,7 @@ footer {
     bottom: auto;
     width: 100%;
     max-height: min(54svh, 560px);
+    margin-bottom: clamp(0.65rem, 2vw, 1.35rem);
     object-position: left bottom;
   }
 
