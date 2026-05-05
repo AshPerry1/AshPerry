@@ -1,0 +1,226 @@
+:root {
+  --bg: #f8f5ef;
+  --text: #1e293b;
+  --muted: #475569;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  --radius: 18px;
+  --brand-blue: #2563eb;
+  --brand-green: #16a34a;
+  --brand-red: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(248, 245, 239, 0.92);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand span {
+  color: var(--brand-blue);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.nav-links a {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: #e9eefc;
+  color: var(--brand-blue);
+}
+
+main {
+  padding: 2.5rem 0 4rem;
+}
+
+section {
+  margin: 2.6rem 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.6rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.72rem 1.25rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--brand-blue), var(--brand-green));
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.section-title {
+  margin-bottom: 0.75rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+}
+
+.service-business {
+  border-top: 6px solid var(--brand-red);
+}
+
+.service-personal {
+  border-top: 6px solid var(--brand-blue);
+}
+
+.service-hobby {
+  border-top: 6px solid var(--brand-green);
+}
+
+.theme-banner {
+  border-radius: var(--radius);
+  padding: 2rem;
+  color: white;
+}
+
+.theme-business {
+  background: linear-gradient(120deg, #991b1b, #dc2626);
+}
+
+.theme-personal {
+  background: linear-gradient(120deg, #1d4ed8, #2563eb);
+}
+
+.theme-hobby {
+  background: linear-gradient(120deg, #15803d, #16a34a);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.faq-item + .faq-item {
+  margin-top: 0.8rem;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.8rem 0;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
