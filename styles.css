@@ -16,6 +16,7 @@
   --ink: #0f172a;
   --grad-brand: linear-gradient(118deg, #047857 0%, #0d9488 38%, #0891b2 68%, #2563eb 100%);
   --grad-brand-text: linear-gradient(92deg, #047857 0%, #0d9488 36%, #0ea5e9 72%, #2563eb 100%);
+  --nav-height: 4.35rem;
 }
 
 * {
@@ -320,8 +321,18 @@ main.home-v2 > section.shell {
 }
 
 .shell-hero.shell-surface-white:first-of-type {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - var(--nav-height));
   padding-top: clamp(0.45rem, 1.45vw, 1.1rem);
-  padding-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
+  padding-bottom: max(0.35rem, env(safe-area-inset-bottom, 0px));
+}
+
+.shell-hero.shell-surface-white:first-of-type .shell-inner.container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .shell-inner {
@@ -789,11 +800,13 @@ footer {
 .hero-v2 {
   position: relative;
   z-index: 0;
+  flex: 1 1 auto;
+  min-height: 0;
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  grid-template-rows: minmax(0, 1fr);
   gap: clamp(1.5rem, 3.5vw, 2.75rem);
-  /* Top-align both columns — avoids a “floating” portrait with dead space under it */
-  align-items: start;
+  align-items: stretch;
 }
 
 .hero-v2-copy,
@@ -802,11 +815,18 @@ footer {
   z-index: 1;
 }
 
+.hero-v2-copy {
+  align-self: start;
+}
+
 .hero-photo-wrap {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   width: 100%;
+  min-height: 0;
+  height: 100%;
   background: var(--canvas-white);
 }
 
@@ -817,16 +837,14 @@ footer {
   display: block;
   width: auto;
   max-width: 100%;
-  /* Cap height so portrait + chrome fit in viewport; less “floating” whitespace */
-  max-height: clamp(400px, min(calc(100svh - 7.75rem), 82svh), 800px);
+  max-height: 100%;
   height: auto;
   margin: 0;
   object-fit: contain;
-  object-position: center 4%;
+  object-position: center bottom;
   border-radius: 0;
   box-shadow: none;
   filter: none;
-  transform: translateY(clamp(-2.85rem, -5.25vw, -1rem));
 }
 
 .hero-v2-copy .kicker {
@@ -1604,13 +1622,16 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .hero-v2 {
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
   .hero-photo-wrap {
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .hero-v2 .hero-photo-wrap .hero-photo {
-    max-height: min(520px, 78svh);
-    transform: translateY(clamp(-1.5rem, -3.2vw, -0.35rem));
+    max-height: min(72svh, 100%);
   }
 
   .band {
