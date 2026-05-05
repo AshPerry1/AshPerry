@@ -819,12 +819,9 @@ footer {
   align-self: start;
 }
 
+/* Portrait column: stretch with the grid row; photo pinned bottom-left of column (no flex guessing) */
 .hero-photo-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  /* Flush to the gutter beside the copy — vertical crop reads as part of the column edge */
-  align-items: flex-start;
+  position: relative;
   width: 100%;
   min-height: 0;
   height: 100%;
@@ -832,8 +829,9 @@ footer {
 }
 
 .hero-v2 .hero-photo-wrap .hero-photo {
-  position: relative;
-  inset: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   z-index: 1;
   display: block;
   width: 100%;
@@ -1641,15 +1639,20 @@ footer {
   }
 
   .hero-photo-wrap {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: stretch;
     height: auto;
-    min-height: min(46svh, 380px);
+    min-height: min(48svh, 400px);
   }
 
   .hero-v2 .hero-photo-wrap .hero-photo {
+    position: relative;
+    left: auto;
+    bottom: auto;
     width: 100%;
-    max-height: min(52svh, 520px);
+    max-height: min(54svh, 560px);
     object-position: left bottom;
   }
 
