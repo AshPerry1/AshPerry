@@ -323,7 +323,8 @@ main.home-v2 > section.shell {
 .shell-hero.shell-surface-white:first-of-type {
   display: flex;
   flex-direction: column;
-  min-height: calc(100svh - var(--nav-height));
+  /* Cap height on large screens so the portrait column isn’t mostly empty below the image */
+  min-height: min(calc(100svh - var(--nav-height)), 880px);
   padding-top: clamp(0.45rem, 1.45vw, 1.1rem);
   padding-bottom: max(0.35rem, env(safe-area-inset-bottom, 0px));
 }
@@ -827,7 +828,7 @@ footer {
   width: 100%;
   min-height: 0;
   height: 100%;
-  padding-bottom: clamp(4.25rem, 11vw, 9rem);
+  padding-bottom: clamp(5.5rem, 14vw, 12rem);
   box-sizing: border-box;
   background: var(--canvas-white);
 }
@@ -847,7 +848,7 @@ footer {
   border-radius: 0;
   box-shadow: none;
   filter: none;
-  transform: translateY(clamp(-3.25rem, -6.5vw, -1.35rem));
+  transform: translateY(clamp(-4.25rem, -8.5vw, -2rem));
 }
 
 .hero-v2-copy .kicker {
@@ -1631,12 +1632,12 @@ footer {
 
   .hero-photo-wrap {
     justify-content: flex-end;
-    padding-bottom: clamp(3rem, 9vw, 6rem);
+    padding-bottom: clamp(3.75rem, 10vw, 7rem);
   }
 
   .hero-v2 .hero-photo-wrap .hero-photo {
     max-height: min(72svh, 100%);
-    transform: translateY(clamp(-1.85rem, -4.25vw, -0.45rem));
+    transform: translateY(clamp(-2.35rem, -5.25vw, -0.55rem));
   }
 
   .band {
