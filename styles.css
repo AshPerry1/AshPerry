@@ -817,6 +817,8 @@ footer {
 
 .hero-v2-copy {
   align-self: start;
+  /* Drop the copy block so it lines up with the portrait (head ~ level with intro) */
+  padding-top: clamp(2.5rem, 7.5vw, 5.25rem);
 }
 
 /* Portrait column: stretch with the grid row; photo pinned bottom-left of column (no flex guessing) */
@@ -1636,6 +1638,10 @@ footer {
     flex: none;
     grid-template-rows: auto auto;
     align-items: start;
+  }
+
+  .hero-v2-copy {
+    padding-top: 0;
   }
 
   .hero-photo-wrap {
