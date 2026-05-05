@@ -773,55 +773,6 @@ footer {
   align-items: center;
 }
 
-.hero-v2::before {
-  content: "";
-  position: absolute;
-  top: clamp(-1.5rem, -3vw, -0.5rem);
-  bottom: clamp(-1.5rem, -3vw, -0.5rem);
-  left: clamp(18%, 12vw, 36%);
-  right: max(-1.25rem, -2vw);
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 0;
-  background-color: #d8f5ef;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    repeating-linear-gradient(
-      -28deg,
-      transparent,
-      transparent 5px,
-      rgba(255, 255, 255, 0.05) 5px,
-      rgba(255, 255, 255, 0.05) 6px
-    ),
-    radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.035) 1px, transparent 0),
-    radial-gradient(ellipse 90% 88% at 92% 18%, rgba(13, 148, 136, 0.38), transparent 58%),
-    radial-gradient(ellipse 85% 72% at 8% 82%, rgba(37, 99, 235, 0.34), transparent 55%),
-    linear-gradient(118deg, rgba(255, 255, 255, 0) 0%, #ccfbf1 18%, #99f6e4 35%, #a5b4fc 62%, #bfdbfe 100%);
-  background-size:
-    180px 180px,
-    100% 100%,
-    11px 11px,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-  background-blend-mode: soft-light, normal, normal, normal, normal, normal;
-  opacity: 0.92;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.35) 18%,
-    rgba(0, 0, 0, 0.85) 45%,
-    #000 100%
-  );
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.35) 18%,
-    rgba(0, 0, 0, 0.85) 45%,
-    #000 100%
-  );
-}
-
 .hero-v2-copy,
 .hero-photo-wrap {
   position: relative;
@@ -846,9 +797,9 @@ footer {
   margin: 0;
   object-fit: contain;
   object-position: center bottom;
-  border-radius: 14px;
-  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.14);
-  filter: saturate(1.02);
+  border-radius: 18px;
+  box-shadow: 0 28px 56px rgba(15, 23, 42, 0.1);
+  filter: saturate(1.03);
 }
 
 .hero-v2-copy .kicker {
@@ -950,8 +901,73 @@ footer {
   overflow: visible;
 }
 
+.shell-hero.shell-surface-white {
+  isolation: isolate;
+}
+
 .shell-hero .shell-inner {
   overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+/* Full-width right wash — teal → cyan → sky blue only (no purple); bleeds to viewport edge */
+.shell-hero.shell-surface-white::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: clamp(52px, 9vw, 88px);
+  left: clamp(26%, 30vw, 46%);
+  right: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: #ecfdf5;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(
+      -26deg,
+      transparent,
+      transparent 6px,
+      rgba(255, 255, 255, 0.035) 6px,
+      rgba(255, 255, 255, 0.035) 7px
+    ),
+    radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.028) 1px, transparent 0),
+    radial-gradient(ellipse 100% 92% at 96% 12%, rgba(13, 148, 136, 0.32), transparent 56%),
+    radial-gradient(ellipse 88% 76% at 4% 88%, rgba(14, 116, 144, 0.2), transparent 54%),
+    linear-gradient(
+      108deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(236, 253, 245, 0.75) 10%,
+      #d1faf0 24%,
+      #99f6e4 44%,
+      #5eead4 56%,
+      #67e8f9 70%,
+      #7dd3fc 82%,
+      #bae6fd 100%
+    );
+  background-size:
+    200px 200px,
+    100% 100%,
+    12px 12px,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-blend-mode: normal, normal, normal, normal, normal, normal;
+  opacity: 0.94;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.28) 16%,
+    rgba(0, 0, 0, 0.82) 40%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.28) 16%,
+    rgba(0, 0, 0, 0.82) 40%,
+    #000 100%
+  );
 }
 
 .shell-hero::after {
@@ -1563,23 +1579,23 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .hero-v2::before {
+  .shell-hero.shell-surface-white::before {
     top: auto;
-    bottom: -1rem;
-    left: -4%;
-    right: -4%;
-    height: min(52vh, 420px);
-    opacity: 0.88;
+    bottom: clamp(40px, 11vw, 76px);
+    left: 0;
+    right: 0;
+    height: min(48vh, 400px);
+    opacity: 0.86;
     -webkit-mask-image: linear-gradient(
       to top,
       #000 0%,
-      rgba(0, 0, 0, 0.75) 45%,
+      rgba(0, 0, 0, 0.78) 50%,
       transparent 100%
     );
     mask-image: linear-gradient(
       to top,
       #000 0%,
-      rgba(0, 0, 0, 0.75) 45%,
+      rgba(0, 0, 0, 0.78) 50%,
       transparent 100%
     );
   }
