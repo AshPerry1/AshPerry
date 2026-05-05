@@ -938,17 +938,6 @@ footer {
   margin-top: 1.92rem;
 }
 
-.shell-hero.shell-surface-white .hero-v2-copy .trust-chip {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  color: #4a556a;
-  font-weight: 500;
-  letter-spacing: 0.015em;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
-}
-
 .shell-hero {
   position: relative;
   overflow: visible;
@@ -1061,32 +1050,42 @@ footer {
   transform: translateX(4px);
 }
 
-.trust-row {
-  margin-top: 1.85rem;
+.hero-points {
+  margin: 1.85rem 0 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem 1.2rem;
-  font-size: 0.88rem;
+  align-items: center;
+  gap: 1rem 1.85rem;
 }
 
-.trust-chip {
+.hero-point {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.89375rem;
+  font-weight: 500;
+  color: #4b556b;
+  letter-spacing: -0.012em;
+}
+
+.hero-point-icon {
+  flex-shrink: 0;
+  width: 1.3125rem;
+  height: 1.3125rem;
+  border-radius: 50%;
+  background: linear-gradient(155deg, #22c55e 0%, #16a34a 96%);
+  color: #ffffff;
   display: inline-flex;
   align-items: center;
-  gap: 0.42rem;
-  padding: 0.38rem 0.72rem;
-  border-radius: 999px;
-  background: rgba(248, 250, 252, 0.95);
-  border: 1px solid rgba(226, 232, 240, 0.85);
-  color: #536072;
-  font-weight: 500;
-  font-size: 0.8125rem;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(22, 101, 52, 0.2);
 }
 
-.check-ico {
-  width: 1rem;
-  height: 1rem;
-  color: #0d9488;
-  flex-shrink: 0;
+.hero-point-icon svg {
+  width: 0.6875rem;
+  height: 0.6875rem;
 }
 
 .blob {
