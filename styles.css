@@ -798,7 +798,7 @@ footer {
   display: block;
   width: auto;
   max-width: 100%;
-  max-height: clamp(300px, 46vw, 460px);
+  max-height: clamp(320px, 58vw, 540px);
   height: auto;
   margin: 0;
   object-fit: contain;
