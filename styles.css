@@ -795,6 +795,7 @@ footer {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  background: var(--canvas-white);
 }
 
 .hero-v2 .hero-photo-wrap .hero-photo {
@@ -811,6 +812,7 @@ footer {
   object-position: center bottom;
   border-radius: 0;
   box-shadow: none;
+  filter: none;
 }
 
 .hero-v2-copy .kicker {
@@ -1106,7 +1108,7 @@ footer {
   box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
 }
 
-.hero-photo {
+.hero-visual-frame .hero-photo {
   position: absolute;
   z-index: 2;
   inset: 0;
@@ -1118,7 +1120,7 @@ footer {
   filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.08));
 }
 
-.hero-cutout .hero-photo {
+.hero-visual-frame.hero-cutout .hero-photo {
   object-fit: contain;
   object-position: bottom center;
   border-radius: 0;
