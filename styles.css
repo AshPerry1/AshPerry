@@ -731,17 +731,8 @@ footer {
   color: #0f172a;
 }
 
-.hero-headline .headline-line2 {
-  display: inline;
-  white-space: normal;
-}
-
-.headline-accent-to {
-  color: #2563eb;
-}
-
-.headline-accent-life {
-  color: #16a34a;
+.hero-headline .gradient-accent {
+  padding-bottom: 0.02em;
 }
 
 .hero-v2-copy .hero-lead {
