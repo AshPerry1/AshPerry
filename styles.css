@@ -321,8 +321,18 @@ main.home-v2 > section.shell {
 }
 
 .shell-hero.shell-surface-white:first-of-type {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - var(--nav-height));
   padding-top: clamp(0.2rem, 0.9vw, 0.65rem);
-  padding-bottom: clamp(2.25rem, 4.5vw, 3.5rem);
+  padding-bottom: max(clamp(1.75rem, 3.25vw, 2.75rem), env(safe-area-inset-bottom, 0px));
+}
+
+.shell-hero.shell-surface-white:first-of-type .shell-inner.container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .shell-inner {
@@ -790,11 +800,13 @@ footer {
 .hero-v2 {
   position: relative;
   z-index: 0;
+  flex: 1 1 auto;
+  min-height: 0;
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
-  grid-template-rows: auto;
+  grid-template-rows: minmax(0, 1fr);
   gap: clamp(1rem, 2.5vw, 2rem);
-  align-items: start;
+  align-items: stretch;
 }
 
 .hero-v2-copy,
@@ -810,9 +822,11 @@ footer {
 .hero-photo-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   width: 100%;
+  min-height: 0;
+  height: 100%;
   background: var(--canvas-white);
 }
 
@@ -821,13 +835,13 @@ footer {
   inset: auto;
   z-index: 1;
   display: block;
-  width: auto;
+  width: 100%;
   max-width: 100%;
-  max-height: min(740px, calc(100svh - var(--nav-height) - 3.25rem));
   height: auto;
+  max-height: 100%;
   margin: 0;
   object-fit: contain;
-  object-position: center 20%;
+  object-position: right bottom;
   border-radius: 0;
   box-shadow: none;
   filter: none;
@@ -1608,17 +1622,34 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .shell-hero.shell-surface-white:first-of-type {
+    min-height: auto;
+    display: block;
+    padding-bottom: clamp(2rem, 4.5vw, 3.5rem);
+  }
+
+  .shell-hero.shell-surface-white:first-of-type .shell-inner.container {
+    display: block;
+    flex: none;
+  }
+
   .hero-v2 {
-    grid-template-rows: auto;
+    flex: none;
+    grid-template-rows: auto auto;
+    align-items: start;
   }
 
   .hero-photo-wrap {
-    justify-content: flex-start;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: auto;
+    min-height: min(46svh, 380px);
   }
 
   .hero-v2 .hero-photo-wrap .hero-photo {
-    max-height: min(520px, calc(100svh - var(--nav-height) - 2.75rem));
-    object-position: center 18%;
+    width: 100%;
+    max-height: min(50svh, 500px);
+    object-position: right bottom;
   }
 
   .band {
