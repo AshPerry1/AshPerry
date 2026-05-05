@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -36,10 +36,13 @@
         <div class="container shell-inner">
           <div class="hero-v2">
             <div class="hero-v2-copy">
-              <span class="kicker">Hi, I'm Ash</span>
-              <h1>
+              <span class="kicker kicker-tech">Hi, I'm Ash</span>
+              <h1 class="hero-headline">
                 I Build Custom Websites That Bring Your Brand
-                <span class="gradient-accent">to Life.</span>
+                <span class="headline-line2"
+                  ><span class="headline-accent-to">to </span
+                  ><span class="headline-accent-life">Life.</span></span
+                >
               </h1>
               <p class="lead hero-lead">
                 Your website should do more than look good. It should represent who
@@ -64,13 +67,15 @@
                 >
               </div>
             </div>
-            <div class="hero-photo-wrap">
-              <div class="blob"></div>
+            <div class="hero-photo-wrap hero-visual-frame">
+              <div class="blob" aria-hidden="true"></div>
               <img
                 class="hero-photo"
                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
                 alt="Portrait of Ash Perry"
               />
+              <span class="hero-corner hero-corner-tl" aria-hidden="true"></span>
+              <span class="hero-corner hero-corner-br" aria-hidden="true"></span>
             </div>
           </div>
         </div>

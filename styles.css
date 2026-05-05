@@ -46,6 +46,12 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
+.navbar.nav-home {
+  backdrop-filter: blur(14px) saturate(1.05);
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.95);
+}
+
 .nav-inner {
   display: flex;
   align-items: center;
@@ -84,6 +90,25 @@ a {
 .nav-links a.active {
   background: #edf1f8;
   color: #18273f;
+}
+
+.nav-home .nav-links a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0.42rem 0.65rem;
+  color: #64748b;
+}
+
+.nav-home .nav-links a.active {
+  background: rgba(241, 245, 249, 0.95);
+  color: #0f172a;
+  box-shadow: inset 0 0 0 1px rgba(226, 232, 240, 0.85);
+}
+
+.nav-home .nav-links a:hover:not(.active) {
+  background: rgba(248, 250, 252, 0.9);
+  color: #334155;
 }
 
 /* Homepage header (reference layout) */
@@ -125,19 +150,22 @@ a {
 
 .btn-nav-cta {
   flex-shrink: 0;
-  background: #14b8a6;
+  background: linear-gradient(115deg, #14b8a6 0%, #2dd4bf 45%, #22c55e 100%);
   color: #fff !important;
   border-radius: 999px;
-  padding: 0.52rem 1.15rem;
+  padding: 0.52rem 1.25rem;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
   border: none;
-  box-shadow: 0 6px 16px rgba(20, 184, 166, 0.28);
+  box-shadow:
+    0 10px 24px rgba(20, 184, 166, 0.3),
+    0 2px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
 .btn-nav-cta:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.06);
+  transform: translateY(-2px);
+  filter: saturate(1.05) brightness(1.03);
 }
 
 @media (max-width: 920px) {
@@ -686,6 +714,102 @@ footer {
   margin-top: 1.75rem;
 }
 
+.hero-v2-copy .kicker-tech {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #475569;
+  background: rgba(248, 250, 252, 0.95);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.hero-headline {
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #0f172a;
+}
+
+.hero-headline .headline-line2 {
+  display: inline;
+  white-space: normal;
+}
+
+.headline-accent-to {
+  color: #2563eb;
+}
+
+.headline-accent-life {
+  color: #16a34a;
+}
+
+.hero-v2-copy .hero-lead {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.hero-v2-copy .btn-hero-primary {
+  letter-spacing: 0.01em;
+  box-shadow:
+    0 12px 28px rgba(37, 99, 235, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.hero-v2-copy .btn-hero-outline {
+  border-color: #e2e8f0;
+  background: #fff;
+}
+
+.hero-v2-copy .btn-hero-outline:hover {
+  border-color: #cbd5e1;
+  background: rgba(248, 250, 252, 0.95);
+}
+
+.hero-visual-frame {
+  min-height: 400px;
+  padding: clamp(1rem, 3vw, 1.35rem);
+  border-radius: 22px;
+  border: 1px solid rgba(203, 213, 225, 0.45);
+  background: linear-gradient(
+    148deg,
+    rgba(252, 252, 253, 1) 0%,
+    rgba(248, 250, 252, 0.94) 50%,
+    rgba(241, 245, 249, 0.88) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.75) inset,
+    0 28px 56px rgba(15, 23, 42, 0.07),
+    0 4px 12px rgba(15, 23, 42, 0.03);
+  isolation: isolate;
+}
+
+.hero-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hero-corner-tl {
+  top: 12px;
+  left: 12px;
+  border-top: 2px solid #2563eb;
+  border-left: 2px solid #2563eb;
+  border-radius: 2px 0 0 0;
+  opacity: 0.7;
+}
+
+.hero-corner-br {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 2px solid #22c55e;
+  border-right: 2px solid #22c55e;
+  border-radius: 0 0 2px 0;
+  opacity: 0.7;
+}
+
 .about-copy .lead {
   max-width: var(--max-read);
   font-size: 1.03rem;
@@ -730,9 +854,14 @@ footer {
 .trust-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  color: #475569;
+  gap: 0.42rem;
+  padding: 0.38rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.95);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  color: #536072;
   font-weight: 500;
+  font-size: 0.8125rem;
 }
 
 .check-ico {
@@ -744,24 +873,31 @@ footer {
 
 .hero-photo-wrap {
   position: relative;
-  min-height: 380px;
 }
 
 .blob {
   position: absolute;
-  inset: 28px 12px 12px 12px;
-  background: linear-gradient(125deg, rgba(37, 99, 235, 0.85), rgba(34, 197, 94, 0.75));
+  z-index: 0;
+  inset: 18% 8% 10% 8%;
+  background: linear-gradient(
+    105deg,
+    rgba(37, 99, 235, 0.88) 0%,
+    rgba(56, 189, 248, 0.35) 48%,
+    rgba(34, 197, 94, 0.82) 100%
+  );
   border-radius: 999px;
-  filter: blur(0);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
 }
 
 .hero-photo {
   position: absolute;
+  z-index: 2;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: bottom center;
+  filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.08));
 }
 
 .about-v2 {
