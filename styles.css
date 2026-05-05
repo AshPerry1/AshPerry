@@ -315,6 +315,15 @@ section {
   background: transparent;
 }
 
+main.home-v2 > section.shell {
+  margin-block: 0;
+}
+
+.shell-hero.shell-surface-white:first-of-type {
+  padding-top: clamp(1.2rem, 2.8vw, 2rem);
+  padding-bottom: clamp(2rem, 4.8vw, 3.25rem);
+}
+
 .shell-inner {
   max-width: min(1160px, 92%);
   margin-inline: auto;
@@ -801,11 +810,12 @@ footer {
   display: block;
   width: auto;
   max-width: 100%;
-  max-height: clamp(420px, calc(100svh - 6.25rem), 860px);
+  /* Cap height so portrait + chrome fit in viewport; less “floating” whitespace */
+  max-height: clamp(360px, calc(100svh - 11rem), 640px);
   height: auto;
   margin: 0;
   object-fit: contain;
-  object-position: center center;
+  object-position: center top;
   border-radius: 0;
   box-shadow: none;
   filter: none;
@@ -1565,7 +1575,7 @@ footer {
   }
 
   .hero-v2 .hero-photo-wrap .hero-photo {
-    max-height: min(480px, 82vw);
+    max-height: min(470px, 68svh);
   }
 
   .band {
