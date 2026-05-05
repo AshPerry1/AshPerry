@@ -12,6 +12,8 @@
   --brand-green: #0b8f5f;
   --brand-red: #dc2626;
   --ink: #0f172a;
+  --grad-brand: linear-gradient(120deg, #047857 0%, #0d9488 42%, #2563eb 92%);
+  --grad-brand-text: linear-gradient(90deg, #059669, #0d9488 45%, #2563eb);
 }
 
 * {
@@ -121,7 +123,7 @@ a {
   bottom: 4px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #2563eb, #22c55e);
+  background: var(--grad-brand-text);
   opacity: 0.95;
 }
 
@@ -182,7 +184,7 @@ a {
   align-items: center;
   justify-content: center;
   min-width: 7.5rem;
-  background: linear-gradient(115deg, #14b8a6 0%, #2dd4bf 45%, #22c55e 100%);
+  background: var(--grad-brand);
   color: #fff !important;
   border-radius: 999px;
   padding: 0.52rem 1.25rem;
@@ -811,36 +813,82 @@ footer {
 .hero-v2-copy .btn-hero-primary {
   letter-spacing: 0.01em;
   box-shadow:
-    0 12px 28px rgba(37, 99, 235, 0.28),
+    0 14px 32px rgba(13, 148, 136, 0.26),
+    0 8px 20px rgba(37, 99, 235, 0.1),
     0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
 .hero-v2-copy .btn-hero-outline {
-  border-color: #e2e8f0;
-  background: #fff;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    var(--grad-brand) border-box;
 }
 
 .hero-v2-copy .btn-hero-outline:hover {
-  border-color: #cbd5e1;
-  background: rgba(248, 250, 252, 0.95);
+  background:
+    linear-gradient(rgba(248, 250, 252, 0.98), rgba(248, 250, 252, 0.98)) padding-box,
+    var(--grad-brand) border-box;
+}
+
+.hero-intro-line {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.hero-intro-accent {
+  font-weight: 600;
+  background: var(--grad-brand-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-intro-rest {
+  font-weight: 500;
+  color: #64748b;
+}
+
+.shell-hero {
+  position: relative;
+}
+
+.shell-hero::after {
+  content: "";
+  display: block;
+  height: clamp(40px, 6vw, 52px);
+  margin-top: clamp(1.5rem, 4vw, 2.75rem);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='%23f4f6fb' d='M0 32c180-24 360 24 540 0s360-32 540 0 360 24 540 0V48H0z'/%3E%3C/svg%3E")
+    no-repeat center top;
+  background-size: 100% 100%;
 }
 
 .hero-visual-frame {
   min-height: 400px;
-  padding: clamp(1rem, 3vw, 1.35rem);
-  border-radius: 22px;
-  border: 1px solid rgba(203, 213, 225, 0.45);
-  background: linear-gradient(
-    148deg,
-    rgba(252, 252, 253, 1) 0%,
-    rgba(248, 250, 252, 0.94) 50%,
-    rgba(241, 245, 249, 0.88) 100%
-  );
+  padding: clamp(0.5rem, 2vw, 1rem);
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.65);
+  background: #fff;
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.75) inset,
-    0 28px 56px rgba(15, 23, 42, 0.07),
-    0 4px 12px rgba(15, 23, 42, 0.03);
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+    0 20px 50px rgba(15, 23, 42, 0.06);
   isolation: isolate;
+}
+
+.hero-visual-frame.hero-cutout {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.hero-cutout .blob {
+  opacity: 0.35;
+}
+
+.hero-cutout .hero-corner {
+  display: none;
 }
 
 .hero-corner {
@@ -880,26 +928,42 @@ footer {
 }
 
 .gradient-accent {
-  background: linear-gradient(90deg, #2563eb, #22c55e);
+  background: var(--grad-brand-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .gradient-accent-soft {
-  color: #2563eb;
+  background: var(--grad-brand-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .btn-hero-primary {
-  background: #2563eb;
+  background: var(--grad-brand);
   color: #fff;
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+  box-shadow:
+    0 14px 32px rgba(13, 148, 136, 0.28),
+    0 8px 20px rgba(37, 99, 235, 0.12);
 }
 
 .btn-hero-outline {
-  background: #fff;
-  border: 1px solid #cbd5e1;
+  background: linear-gradient(#fff, #fff) padding-box,
+    var(--grad-brand) border-box;
+  border: 2px solid transparent;
   color: var(--ink);
+}
+
+.btn-arrow {
+  display: inline-block;
+  margin-left: 0.35em;
+  transition: transform 180ms ease;
+}
+
+.btn-hero-primary:hover .btn-arrow {
+  transform: translateX(4px);
 }
 
 .trust-row {
@@ -926,7 +990,7 @@ footer {
 .check-ico {
   width: 1rem;
   height: 1rem;
-  color: #22c55e;
+  color: #0d9488;
   flex-shrink: 0;
 }
 
@@ -958,6 +1022,13 @@ footer {
   object-position: 78% center;
   border-radius: 14px;
   filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.08));
+}
+
+.hero-cutout .hero-photo {
+  object-fit: contain;
+  object-position: bottom center;
+  border-radius: 0;
+  filter: drop-shadow(0 22px 40px rgba(15, 23, 42, 0.14));
 }
 
 .about-v2 {
@@ -1023,7 +1094,7 @@ footer {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2563eb, #22c55e);
+  background: var(--grad-brand-text);
   margin-top: 0.35rem;
 }
 
@@ -1242,7 +1313,7 @@ footer {
 }
 
 .band.help {
-  background: linear-gradient(120deg, #1f61d4, #2fcf7f);
+  background: var(--grad-brand);
   color: #fff;
 }
 
@@ -1300,8 +1371,8 @@ footer {
   font-weight: 700;
   font-size: 0.93rem;
   color: #fff !important;
-  background: linear-gradient(90deg, #2563eb, #22c55e);
-  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.25);
+  background: var(--grad-brand);
+  box-shadow: 0 18px 38px rgba(13, 148, 136, 0.22);
   border: none;
 }
 
