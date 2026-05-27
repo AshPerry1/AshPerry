@@ -1,0 +1,239 @@
+/* Per-visitor atmosphere — variables set by js/visitor-theme.js */
+
+html[data-visitor] body {
+  background-color: var(--canvas-white);
+  background-image:
+    radial-gradient(ellipse 80% 55% at 8% 12%, var(--visitor-mesh-a), transparent 58%),
+    radial-gradient(ellipse 65% 50% at 92% 8%, var(--visitor-mesh-b), transparent 55%),
+    radial-gradient(ellipse 70% 60% at 50% 100%, var(--visitor-mesh-c), transparent 52%);
+  background-attachment: fixed;
+}
+
+html[data-visitor-mesh="prism"] body {
+  background-image:
+    linear-gradient(
+      125deg,
+      color-mix(in srgb, var(--visitor-mesh-a) 55%, transparent) 0%,
+      transparent 42%
+    ),
+    radial-gradient(ellipse 70% 55% at 100% 30%, var(--visitor-mesh-b), transparent 50%),
+    radial-gradient(ellipse 60% 45% at 0% 80%, var(--visitor-mesh-c), transparent 48%);
+}
+
+html[data-visitor-mesh="orbit"] body {
+  background-image:
+    radial-gradient(circle at 20% 30%, var(--visitor-mesh-a) 0%, transparent 22%),
+    radial-gradient(circle at 78% 22%, var(--visitor-mesh-b) 0%, transparent 20%),
+    radial-gradient(circle at 55% 88%, var(--visitor-mesh-c) 0%, transparent 24%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, var(--canvas-white), var(--canvas-white));
+}
+
+html[data-visitor-mesh="pulse"] body {
+  background-image:
+    repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 48px,
+      color-mix(in srgb, var(--visitor-mesh-a) 35%, transparent) 48px,
+      color-mix(in srgb, var(--visitor-mesh-a) 35%, transparent) 49px
+    ),
+    radial-gradient(ellipse 75% 55% at 88% 92%, var(--visitor-mesh-b), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 12% 75%, var(--visitor-mesh-c), transparent 48%);
+}
+
+html[data-visitor] {
+  --shadow: 0 18px 40px var(--visitor-shadow);
+  --shadow-soft: 0 8px 22px color-mix(in srgb, var(--visitor-shadow) 65%, transparent);
+}
+
+html[data-visitor] body,
+html[data-visitor] .navbar,
+html[data-visitor] main.home-v2,
+html[data-visitor] .shell-surface-white,
+html[data-visitor] .shell-surface-soft {
+  transition:
+    background-color 400ms ease,
+    background-image 600ms ease;
+}
+
+html[data-visitor] h1,
+html[data-visitor] h2,
+html[data-visitor] h3,
+html[data-visitor] .hero-headline,
+html[data-visitor] .section-title {
+  font-family: var(--font-display);
+}
+
+html[data-visitor] .card,
+html[data-visitor] .path-card,
+html[data-visitor] .mini-card,
+html[data-visitor] .project-item,
+html[data-visitor] .btn:not(.btn-nav-cta) {
+  border-radius: var(--radius);
+}
+
+html[data-visitor] .btn-nav-cta {
+  background: var(--brand-accent);
+  box-shadow:
+    0 10px 22px color-mix(in srgb, var(--brand-accent) 40%, transparent),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+html[data-visitor] .btn-nav-cta:hover {
+  background: var(--brand-accent-hover);
+  box-shadow:
+    0 14px 28px color-mix(in srgb, var(--brand-accent) 48%, transparent),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+html[data-visitor] .hero-point-icon,
+html[data-visitor] .mini-dot,
+html[data-visitor] .why-ico {
+  color: var(--brand-accent);
+}
+
+html[data-visitor] .hero-intro-accent,
+html[data-visitor] .meta,
+html[data-visitor] .section-eyebrow {
+  color: var(--brand-muted);
+}
+
+/* Floating “your view” control */
+.visitor-flair {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right, 0px));
+  bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  z-index: 200;
+  font-size: 0.78rem;
+}
+
+.visitor-flair-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.72rem 0.42rem 0.42rem;
+  border: 1px solid color-mix(in srgb, var(--brand-accent) 35%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--canvas-white) 88%, transparent);
+  backdrop-filter: blur(12px);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.visitor-flair-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.visitor-flair-swatch {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--grad-brand);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.visitor-flair-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.55rem);
+  width: min(17rem, calc(100vw - 2rem));
+  padding: 0.9rem 1rem;
+  border-radius: calc(var(--radius) + 2px);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--canvas-white) 94%, transparent);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+.visitor-flair-title {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  background: var(--grad-brand-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.visitor-flair-copy {
+  margin: 0 0 0.5rem;
+  line-height: 1.45;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.visitor-flair-meta {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--muted) 85%, var(--brand-accent));
+}
+
+.visitor-flair-shuffle {
+  width: 100%;
+  padding: 0.45rem 0.65rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--grad-brand);
+  color: #fff;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.visitor-flair-shuffle:hover {
+  filter: brightness(1.06);
+}
+
+.visitor-hero-note {
+  margin: 0.35rem 0 0.85rem;
+  padding: 0.35rem 0.65rem;
+  width: fit-content;
+  max-width: 100%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--visitor-mesh-a) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand-accent) 22%, transparent);
+  animation: visitor-note-in 0.7s ease both;
+}
+
+@keyframes visitor-note-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visitor-hero-note {
+    animation: none;
+  }
+
+  html[data-visitor] body {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 640px) {
+  .visitor-flair-label {
+    display: none;
+  }
+
+  .visitor-flair-toggle {
+    padding: 0.42rem;
+  }
+}
