@@ -12,11 +12,7 @@
   --radius: 18px;
   --brand-blue: #2b59f8;
   --brand-green: #0b8f5f;
-  --brand-accent: #2563eb;
-  --brand-accent-hover: #1d4ed8;
   --brand-red: #dc2626;
-  --font-body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-display: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --ink: #0f172a;
   --grad-brand: linear-gradient(118deg, #047857 0%, #0d9488 38%, #0891b2 68%, #2563eb 100%);
   --grad-brand-text: linear-gradient(92deg, #047857 0%, #0d9488 36%, #0ea5e9 72%, #2563eb 100%);
@@ -32,7 +28,7 @@ body {
   /* Symmetric gutters: same min on each side + safe-area (fixes “pushed right” / uneven %) */
   padding-left: max(clamp(1rem, 4vw, 2rem), env(safe-area-inset-left, 0px));
   padding-right: max(clamp(1rem, 4vw, 2rem), env(safe-area-inset-right, 0px));
-  font-family: var(--font-body);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
   background: var(--canvas-white);
   line-height: 1.6;
@@ -212,7 +208,7 @@ a {
   align-items: center;
   justify-content: center;
   min-width: 7.5rem;
-  background: var(--brand-accent);
+  background: #2563eb;
   color: #fff !important;
   border-radius: 999px;
   padding: 0.52rem 1.25rem;
@@ -225,7 +221,7 @@ a {
     transform 160ms ease,
     box-shadow 160ms ease;
   box-shadow:
-    0 10px 22px color-mix(in srgb, var(--brand-accent) 40%, transparent),
+    0 10px 22px rgba(37, 99, 235, 0.26),
     0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
@@ -267,9 +263,9 @@ a {
 
 .btn-nav-cta:hover {
   transform: translateY(-2px);
-  background: var(--brand-accent-hover);
+  background: #1d4ed8;
   box-shadow:
-    0 14px 28px color-mix(in srgb, var(--brand-accent) 48%, transparent),
+    0 14px 28px rgba(37, 99, 235, 0.32),
     0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
