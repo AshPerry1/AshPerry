@@ -36,7 +36,11 @@ a {
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  padding: clamp(3rem, 8vh, 5rem) clamp(1.25rem, 5vw, 4rem) clamp(3rem, 8vh, 5rem);
+  padding:
+    clamp(3rem, 8vh, 5rem)
+    max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-right))
+    max(clamp(3rem, 8vh, 5rem), env(safe-area-inset-bottom))
+    max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-left));
 }
 
 .ride-inner-center {
@@ -55,9 +59,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.1rem clamp(1.25rem, 5vw, 4rem);
-  padding-top: max(1.1rem, env(safe-area-inset-top));
+  gap: 0.65rem;
+  padding:
+    max(1.1rem, env(safe-area-inset-top))
+    max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-right))
+    1.1rem
+    max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-left));
   flex-shrink: 0;
 }
 
@@ -79,6 +86,11 @@ a {
   font-weight: 700;
   font-size: 0.82rem;
   white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity 160ms ease;
 }
 
@@ -630,7 +642,11 @@ a {
 
 .ride-start .ash-brand {
   z-index: 2;
-  padding: max(1.25rem, env(safe-area-inset-top)) clamp(1.25rem, 5vw, 4rem) 0;
+  padding:
+    max(1.25rem, env(safe-area-inset-top))
+    max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-right))
+    0
+    max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-left));
 }
 
 .site-bar .ash-brand {
@@ -744,8 +760,11 @@ a {
   align-self: stretch;
   min-height: 0;
   width: 100%;
-  padding: clamp(0.25rem, 1.5vh, 1rem) clamp(1.25rem, 5vw, 4rem)
-    clamp(1rem, 2.5vh, 1.75rem);
+  padding:
+    clamp(0.25rem, 1.5vh, 1rem)
+    max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-right))
+    max(clamp(1rem, 2.5vh, 1.75rem), env(safe-area-inset-bottom))
+    max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-left));
 }
 
 .hero-copy {
@@ -829,7 +848,10 @@ a {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
   padding: 0.85rem 1.75rem;
   border-radius: 999px;
   font-family: "Montserrat", sans-serif;
@@ -1080,7 +1102,10 @@ a {
 }
 
 .nature-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
   padding: 0.85rem 2rem;
   border-radius: 999px;
   background: #faf6f0;
@@ -1360,6 +1385,10 @@ a {
 }
 
 .deux-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
   padding: 0.78rem 1.65rem;
   border-radius: 4px;
   font-family: "Work Sans", sans-serif;
@@ -1607,8 +1636,10 @@ a {
 }
 
 .clean-btn {
-  display: block;
+  display: flex;
+  align-items: center;
   width: min(100%, 36rem);
+  min-height: 2.75rem;
   padding: 1.05rem 1.5rem;
   border-radius: 999px;
   background: #ff5ca8;
@@ -1714,7 +1745,10 @@ a {
 }
 
 .bw-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
   padding: 0.85rem 1.85rem;
   border: 2px solid #fff;
   color: #fff;
@@ -1816,6 +1850,7 @@ a {
 
 .arcade-pellets-bottom {
   bottom: 0;
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
 }
 
 .arcade-pellets span {
@@ -2091,8 +2126,11 @@ a {
 }
 
 .arcade-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 7.5rem;
+  min-height: 2.75rem;
   padding: 0.78rem 1.35rem;
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.28);
@@ -2199,6 +2237,12 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+}
+
 @media (max-height: 780px) {
   .ride-start {
     --hero-row: min(12vw, 10.2vh, 8.5rem);
@@ -2217,6 +2261,39 @@ a {
   }
 }
 
+@media (max-height: 520px) and (orientation: landscape) {
+  .ride-start {
+    --hero-row: min(9vw, 14vh, 4.5rem);
+    --hero-row-big: min(10vw, 15vh, 5rem);
+  }
+
+  .ride-start .hero-amp {
+    display: none;
+  }
+
+  .ride-start .lead {
+    margin-bottom: 0.5rem;
+  }
+
+  .ride-start .ride-inner.hero {
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .site .ride-inner {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .arcade-inner {
+    padding-top: 1rem;
+  }
+
+  .arcade-panel {
+    padding: 1rem 1.15rem;
+  }
+}
+
 @media (max-width: 820px) {
   .ride-start .hero-amp {
     right: -5%;
@@ -2224,40 +2301,230 @@ a {
     font-size: clamp(8rem, 50vw, 16rem);
   }
 
-  .title-row-mix {
+  .ride-start .title-row-mix {
     margin-left: 0;
+  }
+
+  .nature-watermark {
+    font-size: clamp(5rem, 30vw, 12rem);
+    right: -8%;
+  }
+
+  .clean-splash {
+    right: 8%;
+    top: 20%;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
   }
 }
 
 @media (max-width: 640px) {
+  .ride {
+    min-height: 100svh;
+  }
+
+  .ride-start {
+    height: auto;
+    max-height: none;
+    --hero-row: min(11vw, 9.5vh, 4.75rem);
+    --hero-row-big: min(12vw, 10.5vh, 5.25rem);
+  }
+
+  .ride-start .hero-amp {
+    display: none;
+  }
+
+  .ride-start .ride-inner.hero {
+    padding:
+      clamp(0.25rem, 1.5vh, 0.75rem)
+      max(clamp(1rem, 4vw, 1.25rem), env(safe-area-inset-right))
+      max(1rem, env(safe-area-inset-bottom))
+      max(clamp(1rem, 4vw, 1.25rem), env(safe-area-inset-left));
+  }
+
+  .ride-start .lead {
+    max-width: none;
+    font-size: clamp(0.82rem, 3.8vw, 0.95rem);
+  }
+
   .actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    width: 100%;
   }
 
   .btn {
     width: 100%;
+    min-height: 2.75rem;
     text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-bar .ash-brand {
+    max-width: min(100%, 11rem);
+  }
+
+  .site-bar .ash-name {
+    font-size: clamp(0.72rem, 3.2vw, 0.85rem);
+    letter-spacing: 0.1em;
+  }
+
+  .site-bar .ash-line {
+    font-size: clamp(0.48rem, 2.2vw, 0.58rem);
+  }
+
+  .site-bar .site-cta {
+    font-size: clamp(0.65rem, 2.8vw, 0.75rem);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .nature-row {
+    font-size: clamp(2.2rem, 10vw, 3.75rem);
+  }
+
+  .nature-row-small {
+    margin-left: 0.15rem;
+    font-size: clamp(1.35rem, 4vw, 1.85rem);
+  }
+
+  .nature-lead {
+    font-size: clamp(0.92rem, 3.8vw, 1.02rem);
+    max-width: none;
+  }
+
+  .nature-btn {
+    width: 100%;
+    min-height: 2.75rem;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nature-watermark {
+    opacity: 0.03;
+    right: -12%;
+  }
+
+  .ride-deux .ride-inner {
+    max-width: none;
+  }
+
+  .deux-title {
+    font-size: clamp(2.75rem, 14vw, 4.5rem);
+  }
+
+  .deux-lead {
+    max-width: none;
+    font-size: clamp(0.92rem, 3.8vw, 1rem);
+  }
+
+  .deux-btns {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .deux-btn {
+    width: 100%;
+    min-height: 2.75rem;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .deux-hand {
+    right: -4%;
+    top: 58%;
+    width: min(32vw, 120px);
+    height: min(48vw, 180px);
+    opacity: 0.45;
+  }
+
+  .clean-title-big {
+    font-size: clamp(2.35rem, 12vw, 3.75rem);
+  }
+
+  .clean-lead {
+    max-width: none;
+    font-size: clamp(0.92rem, 3.8vw, 1.02rem);
+  }
+
+  .clean-btn {
+    width: 100%;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .clean-splash {
+    display: none;
+  }
+
+  .clean-art .c-e {
+    right: -18%;
+    opacity: 0.35;
+  }
+
+  .ride-bw {
+    min-height: 280dvh;
+    overflow-x: clip;
+  }
+
+  .ride-bw .bw-title span {
+    font-size: clamp(2.75rem, 13vw, 4.5rem);
   }
 
   .ride-bw .bw-title .bw-outline-wrap {
     margin-left: 0;
   }
 
-  .deux-btns {
-    flex-direction: column;
-    align-items: flex-start;
+  .ride-bw .bw-title .bw-invert {
+    margin-left: 0;
   }
 
-  .deux-hand {
-    right: 4%;
-    width: min(36vw, 140px);
-    height: min(54vw, 210px);
-    opacity: 0.9;
+  .ride-bw .bw-lead {
+    max-width: none;
+    font-size: clamp(0.92rem, 3.8vw, 1.05rem);
+  }
+
+  .bw-btn {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ride-arcade .ride-inner {
+    padding-top: clamp(1.25rem, 4vh, 2rem);
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
   }
 
   .arcade-panel {
-    padding: 1.5rem 1.25rem;
+    padding: clamp(1.25rem, 3.5vw, 1.75rem) clamp(1rem, 3vw, 1.35rem);
+    border-radius: 16px;
+  }
+
+  .arcade-title-main {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+    -webkit-text-stroke: 2px rgba(8, 24, 52, 0.85);
+    text-stroke: 2px rgba(8, 24, 52, 0.85);
+    text-shadow: 2px 3px 0 rgba(8, 24, 52, 0.55);
+  }
+
+  .arcade-title-sub {
+    font-size: clamp(1.45rem, 6.5vw, 2rem);
+    letter-spacing: 0.03em;
+  }
+
+  .arcade-lead {
+    max-width: none;
+    font-size: clamp(0.88rem, 3.6vw, 0.98rem);
   }
 
   .arcade-btns {
@@ -2267,16 +2534,85 @@ a {
 
   .arcade-btn {
     width: 100%;
+    min-height: 2.75rem;
     text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arcade-email {
+    max-width: 100%;
+    font-size: clamp(0.62rem, 2.8vw, 0.72rem);
+    word-break: break-word;
+    text-align: center;
+    justify-content: center;
   }
 
   .arcade-ghost {
-    width: min(12vw, 44px);
-    opacity: 0.65;
+    width: min(11vw, 40px);
+    opacity: 0.55;
+  }
+
+  .arcade-ghost-blinky {
+    left: 2%;
+    top: 14%;
+  }
+
+  .arcade-ghost-pinky {
+    right: 3%;
+    top: 10%;
+  }
+
+  .arcade-ghost-inky {
+    left: 4%;
+    bottom: 18%;
+  }
+
+  .arcade-ghost-clyde {
+    right: 5%;
+    bottom: 22%;
   }
 
   .arcade-trail {
+    width: min(85vw, 320px);
     opacity: 0.22;
+    bottom: 20%;
+  }
+
+  .arcade-fruit-cherry,
+  .arcade-fruit-strawberry {
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 400px) {
+  .ash-line,
+  .site-bar .ash-line {
+    display: none;
+  }
+
+  .site-bar .ash-brand {
+    max-width: min(100%, 9rem);
+  }
+
+  .ride-start {
+    --hero-row: min(10vw, 8.5vh, 3.85rem);
+    --hero-row-big: min(10.5vw, 9vh, 4.25rem);
+  }
+
+  .ride-start .title-row-outline .letter {
+    -webkit-text-stroke-width: 2px;
+    text-stroke-width: 2px;
+  }
+
+  .nature-row {
+    font-size: clamp(1.85rem, 9.5vw, 2.75rem);
+  }
+
+  .deux-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
   }
 }
 
