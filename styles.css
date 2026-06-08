@@ -128,29 +128,44 @@ a {
 }
 
 .site-bar-deux {
-  background: #0a0a0a;
-  border-bottom: 4px solid transparent;
-  border-image: conic-gradient(
-      var(--deux-red, #e8192b) 0deg,
-      var(--deux-blue, #0070d8) 90deg,
-      var(--deux-green, #00a651) 180deg,
-      var(--deux-yellow, #ffd100) 270deg,
-      var(--deux-red, #e8192b) 360deg
-    )
-    1;
+  background: #111;
   color: #fff;
+  border-bottom: none;
+}
+
+.site-bar-deux::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--deux-red, #c62828),
+    var(--deux-blue, #1565c0),
+    var(--deux-green, #2e7d32),
+    var(--deux-yellow, #f9a825)
+  );
 }
 
 .site-bar-deux .site-cta {
-  background: #fff;
-  color: #0a0a0a;
+  background: transparent;
+  color: #fff;
   padding: 0.42rem 1rem;
-  border-radius: 6px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.site-bar-deux .site-cta:hover {
+  opacity: 1;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .site-bar-clean {
@@ -1086,14 +1101,14 @@ a {
 }
 
 /* ══════════════════════════════════════
-   03 · DEUX (wild card chaos)
+   03 · DEUX (card game product site)
    ══════════════════════════════════════ */
 .ride-deux {
-  --deux-red: #e8192b;
-  --deux-blue: #0070d8;
-  --deux-green: #00a651;
-  --deux-yellow: #ffd100;
-  background: #0a0a0a;
+  --deux-red: #c62828;
+  --deux-blue: #1565c0;
+  --deux-green: #2e7d32;
+  --deux-yellow: #f9a825;
+  background: #111;
   color: #fff;
   font-family: "Work Sans", system-ui, sans-serif;
 }
@@ -1105,59 +1120,94 @@ a {
   overflow: hidden;
 }
 
-.deux-burst {
+.deux-ambient {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 55% 45% at 85% 45%, rgba(232, 25, 43, 0.35), transparent),
-    radial-gradient(ellipse 50% 40% at 70% 70%, rgba(0, 112, 216, 0.28), transparent),
-    radial-gradient(ellipse 45% 38% at 92% 20%, rgba(0, 166, 81, 0.22), transparent),
-    radial-gradient(ellipse 40% 35% at 60% 15%, rgba(255, 209, 0, 0.18), transparent),
-    #0a0a0a;
+    radial-gradient(ellipse 50% 40% at 78% 50%, rgba(21, 101, 192, 0.12), transparent),
+    radial-gradient(ellipse 35% 30% at 65% 35%, rgba(198, 40, 40, 0.08), transparent),
+    #111;
 }
 
-.deux-glow {
+.deux-hand {
   position: absolute;
-  right: 8%;
-  top: 42%;
-  width: min(55vw, 380px);
-  height: min(55vw, 380px);
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    var(--deux-red),
-    var(--deux-blue),
-    var(--deux-green),
-    var(--deux-yellow),
-    var(--deux-red)
-  );
-  filter: blur(80px);
-  opacity: 0.45;
-  animation: deux-glow-spin 12s linear infinite;
-}
-
-.deux-wild-card {
-  position: absolute;
-  right: clamp(-2%, 4vw, 6%);
+  right: clamp(6%, 12vw, 14%);
   top: 50%;
-  width: min(46vw, 280px);
-  height: min(68vw, 410px);
-  transform: translateY(-48%) rotate(14deg);
-  border-radius: 22px;
-  border: 5px solid #fff;
-  background: #111;
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.55),
-    0 0 60px rgba(255, 255, 255, 0.06);
+  width: min(30vw, 190px);
+  height: min(44vw, 280px);
+  transform: translateY(-46%);
+}
+
+.deux-card {
+  --i: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  transform: rotate(calc(-14deg + var(--i) * 7deg))
+    translate(calc(var(--i) * 12px), calc(var(--i) * -5px));
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: deux-wild-float 6s ease-in-out infinite;
+  z-index: calc(var(--i) + 1);
+}
+
+.deux-card.is-red { background: var(--deux-red); color: var(--deux-red); }
+.deux-card.is-blue { background: var(--deux-blue); color: var(--deux-blue); }
+.deux-card.is-green { background: var(--deux-green); color: var(--deux-green); }
+.deux-card.is-yellow { background: var(--deux-yellow); color: #1a1a1a; }
+.deux-card.is-wild {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #fff;
+}
+
+.deux-card-n {
+  position: absolute;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1;
+  color: #fff;
+}
+
+.deux-card.is-yellow .deux-card-n {
+  color: #1a1a1a;
+}
+
+.deux-card-n.top {
+  top: 10px;
+  left: 12px;
+}
+
+.deux-card-n.bottom {
+  bottom: 10px;
+  right: 12px;
+  transform: rotate(180deg);
+}
+
+.deux-card-face {
+  width: 72%;
+  height: 48%;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1;
+  color: currentColor;
 }
 
 .deux-wild-wheel {
-  width: 72%;
-  height: 72%;
+  width: 68%;
+  height: 68%;
   border-radius: 50%;
   background: conic-gradient(
     from -45deg,
@@ -1166,60 +1216,16 @@ a {
     var(--deux-green) 180deg 270deg,
     var(--deux-yellow) 270deg 360deg
   );
-  border: 4px solid #fff;
-  animation: deux-wheel-spin 8s linear infinite;
+  border: 3px solid #fff;
 }
 
 .deux-wild-label {
   position: absolute;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(0.7rem, 1.6vw, 0.95rem);
-  font-weight: 900;
-  letter-spacing: 0.28em;
+  font-size: clamp(0.65rem, 1.4vw, 0.82rem);
+  font-weight: 800;
+  letter-spacing: 0.22em;
   color: #fff;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
-}
-
-.deux-scatter {
-  --r: 0deg;
-  --x: 50%;
-  --y: 50%;
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  width: min(14vw, 72px);
-  height: min(21vw, 108px);
-  border-radius: 10px;
-  border: 3px solid #fff;
-  transform: translate(-50%, -50%) rotate(var(--r));
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-  animation: deux-scatter-drift 9s ease-in-out infinite;
-}
-
-.deux-scatter.sm {
-  width: min(9vw, 48px);
-  height: min(14vw, 72px);
-  opacity: 0.75;
-}
-
-.deux-scatter.is-red { background: var(--deux-red); animation-delay: -1s; }
-.deux-scatter.is-blue { background: var(--deux-blue); animation-delay: -3s; }
-.deux-scatter.is-green { background: var(--deux-green); animation-delay: -5s; }
-.deux-scatter.is-yellow { background: var(--deux-yellow); animation-delay: -2s; }
-
-.deux-scatter::after {
-  content: "2";
-  position: absolute;
-  top: 7px;
-  left: 9px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 0.85rem;
-  color: #fff;
-}
-
-.deux-scatter.is-yellow::after {
-  color: #111;
 }
 
 .deux-stripes {
@@ -1227,7 +1233,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 12px;
+  height: 6px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   z-index: 2;
@@ -1238,53 +1244,29 @@ a {
 .deux-stripes span:nth-child(3) { background: var(--deux-green); }
 .deux-stripes span:nth-child(4) { background: var(--deux-yellow); }
 
-@keyframes deux-glow-spin {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes deux-wheel-spin {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes deux-wild-float {
-  0%, 100% { transform: translateY(-48%) rotate(14deg); }
-  50% { transform: translateY(calc(-48% - 14px)) rotate(18deg); }
-}
-
-@keyframes deux-scatter-drift {
-  0%, 100% { transform: translate(-50%, -50%) rotate(var(--r)); }
-  50% { transform: translate(-50%, calc(-50% - 10px)) rotate(calc(var(--r) + 6deg)); }
-}
-
 .ride-deux .ride-inner {
   position: relative;
   z-index: 2;
+  max-width: 36rem;
 }
 
-.deux-wild-tag {
-  margin: 0 0 0.75rem;
+.deux-eyebrow {
+  margin: 0 0 1rem;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  animation: deux-tag-pulse 3s ease-in-out infinite;
-}
-
-@keyframes deux-tag-pulse {
-  0%, 100% { color: rgba(255, 255, 255, 0.45); }
-  50% { color: var(--deux-yellow); }
+  color: rgba(255, 255, 255, 0.42);
 }
 
 .deux-title {
-  margin: 0 0 1rem;
+  margin: 0 0 1.25rem;
   font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: clamp(4rem, 16vw, 9.5rem);
-  line-height: 0.88;
-  letter-spacing: -0.02em;
-  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+  font-weight: 800;
+  font-size: clamp(3.5rem, 12vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
 }
 
 .deux-title-track {
@@ -1357,105 +1339,55 @@ a {
   }
 }
 
-.deux-letter.is-red {
-  color: var(--deux-red);
-  text-shadow: 0 0 28px rgba(232, 25, 43, 0.55);
-}
-
-.deux-letter.is-blue {
-  color: var(--deux-blue);
-  text-shadow: 0 0 28px rgba(0, 112, 216, 0.55);
-}
-
-.deux-letter.is-green {
-  color: var(--deux-green);
-  text-shadow: 0 0 28px rgba(0, 166, 81, 0.55);
-}
-
-.deux-letter.is-wild {
-  background: linear-gradient(
-    135deg,
-    var(--deux-red),
-    var(--deux-blue),
-    var(--deux-green),
-    var(--deux-yellow)
-  );
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: deux-wild-text 4s ease infinite;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.35));
-}
-
-@keyframes deux-wild-text {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
+.deux-letter.is-red { color: var(--deux-red); }
+.deux-letter.is-blue { color: var(--deux-blue); }
+.deux-letter.is-green { color: var(--deux-green); }
+.deux-letter.is-yellow { color: var(--deux-yellow); }
 
 .deux-lead {
-  margin: 0 0 1.75rem;
-  max-width: 24rem;
-  font-size: 1.02rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 2rem;
+  max-width: 22rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .deux-btns {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .deux-btn {
-  padding: 0.85rem 1.85rem;
-  border-radius: 8px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  padding: 0.78rem 1.65rem;
+  border-radius: 4px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
-.deux-btn:hover {
-  transform: translateY(-3px) scale(1.02);
+.deux-btn.is-primary {
+  background: #fff;
+  color: #111;
 }
 
-.deux-btn.is-wild {
-  position: relative;
-  color: #fff;
-  background: #111;
-  border: 3px solid transparent;
-  background-clip: padding-box;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+.deux-btn.is-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
 }
 
-.deux-btn.is-wild::before {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 10px;
-  background: conic-gradient(
-    var(--deux-red),
-    var(--deux-blue),
-    var(--deux-green),
-    var(--deux-yellow),
-    var(--deux-red)
-  );
-  z-index: -1;
-  animation: deux-glow-spin 3s linear infinite;
-}
-
-.deux-btn.is-ghost {
+.deux-btn.is-secondary {
   background: transparent;
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.deux-btn.is-ghost:hover {
-  border-color: #fff;
-  box-shadow: 0 0 24px rgba(255, 255, 255, 0.15);
+.deux-btn.is-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* ══════════════════════════════════════
@@ -2226,16 +2158,11 @@ a {
     align-items: flex-start;
   }
 
-  .deux-wild-card {
-    right: -8%;
-    width: min(52vw, 200px);
-    height: min(78vw, 300px);
-    opacity: 0.85;
-  }
-
-  .deux-glow {
-    right: -5%;
-    opacity: 0.3;
+  .deux-hand {
+    right: 4%;
+    width: min(36vw, 140px);
+    height: min(54vw, 210px);
+    opacity: 0.9;
   }
 
   .arcade-btns {
