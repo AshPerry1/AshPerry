@@ -284,6 +284,67 @@ a {
   transition: opacity 1.5s ease;
 }
 
+.space-moon {
+  position: absolute;
+  top: 14%;
+  right: 10%;
+  z-index: 3;
+  width: min(32vw, 200px);
+  height: min(32vw, 200px);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle at 38% 32%,
+    #fffef8 0%,
+    #f4f0e6 22%,
+    #d8d4c8 45%,
+    #a8a49a 68%,
+    #6a665e 100%
+  );
+  box-shadow:
+    0 0 50px rgba(255, 255, 245, 0.45),
+    0 0 100px rgba(200, 220, 255, 0.2),
+    inset -12px -8px 24px rgba(80, 75, 70, 0.35);
+  transition: opacity 1.5s ease, transform 1.8s ease;
+}
+
+.space-moon::after {
+  content: "";
+  position: absolute;
+  width: 22%;
+  height: 22%;
+  top: 58%;
+  left: 52%;
+  border-radius: 50%;
+  background: rgba(120, 115, 108, 0.22);
+  box-shadow:
+    -28px -18px 0 -4px rgba(120, 115, 108, 0.15),
+    14px -32px 0 -6px rgba(120, 115, 108, 0.12);
+}
+
+.space-tagline {
+  position: absolute;
+  right: clamp(1.5rem, 9vw, 7rem);
+  top: 52%;
+  z-index: 4;
+  margin: 0;
+  max-width: 12rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.15rem, 3.2vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 0 28px rgba(0, 240, 255, 0.45);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: opacity 1.2s ease 0.6s, transform 1.2s ease 0.6s;
+}
+
 /* ── Lightning strike → power out ── */
 .lightning-layer {
   position: absolute;
@@ -580,9 +641,35 @@ a {
 }
 
 .ride-start.is-space .hero-amp {
-  color: #e0b0ff;
-  opacity: 0.35;
-  text-shadow: 0 0 60px rgba(224, 176, 255, 0.5);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ride-start.is-space .space-moon {
+  opacity: 1;
+  transform: scale(1);
+  animation: moon-glow 6s ease-in-out infinite;
+}
+
+.ride-start.is-space .space-tagline {
+  opacity: 1;
+  transform: translateY(-18%);
+}
+
+@keyframes moon-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 50px rgba(255, 255, 245, 0.45),
+      0 0 100px rgba(200, 220, 255, 0.2),
+      inset -12px -8px 24px rgba(80, 75, 70, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 0 65px rgba(255, 255, 245, 0.55),
+      0 0 130px rgba(200, 220, 255, 0.28),
+      inset -12px -8px 24px rgba(80, 75, 70, 0.35);
+  }
 }
 
 .ride-start.is-space .btn-hot {
@@ -1458,7 +1545,8 @@ a {
   .nature-art .leaf-2,
   .ride-start.is-lightning .lightning-flash,
   .ride-start.is-lightning .lightning-bolt,
-  .ride-start.is-power-out {
+  .ride-start.is-power-out,
+  .ride-start.is-space .space-moon {
     animation: none;
   }
 
