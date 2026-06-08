@@ -1928,6 +1928,7 @@ a {
   left: -2%;
   bottom: 28%;
   width: min(70vw, 420px);
+  max-width: calc(100% + 2%);
   height: auto;
   opacity: 0.32;
 }
@@ -2187,9 +2188,11 @@ a {
 .arcade-email {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.55rem;
   margin: 0;
-  padding: 0.45rem 0.85rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1rem;
   border-radius: 999px;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.76rem;
@@ -2231,15 +2234,31 @@ a {
 }
 
 /* ── Responsive ── */
-@media (min-width: 720px) {
-  .site-links {
-    display: flex;
+@media (max-width: 1024px), (pointer: coarse) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  .ride {
+    scroll-snap-stop: normal;
   }
 }
 
-@media (max-width: 768px) {
-  html {
-    scroll-snap-type: y proximity;
+@media (min-width: 481px) and (max-width: 1024px) {
+  .deux-hand {
+    right: 8%;
+    width: min(26vw, 170px);
+    height: min(38vw, 250px);
+  }
+
+  .nature-watermark {
+    font-size: clamp(6rem, 28vw, 14rem);
+  }
+}
+
+@media (min-width: 720px) {
+  .site-links {
+    display: flex;
   }
 }
 
@@ -2587,11 +2606,6 @@ a {
 }
 
 @media (max-width: 400px) {
-  .ash-line,
-  .site-bar .ash-line {
-    display: none;
-  }
-
   .site-bar .ash-brand {
     max-width: min(100%, 9rem);
   }
@@ -2622,6 +2636,14 @@ a {
     scroll-snap-type: none;
   }
 
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
   .ride-bw {
     min-height: 100dvh;
   }
@@ -2643,7 +2665,10 @@ a {
   .ride-start .blob,
   .nature-orb,
   .ride-start.is-lightning .lightning-flash,
-  .ride-start.is-power-out {
+  .ride-start.is-lightning .power-vignette,
+  .ride-start.is-power-out,
+  .ride-start.is-power-out .scene,
+  .ride-start.is-power-out .power-vignette {
     animation: none;
   }
 
@@ -2651,6 +2676,7 @@ a {
   .nature-btn:hover,
   .deux-btn:hover,
   .clean-btn:hover,
+  .bw-btn:hover,
   .arcade-ghost,
   .arcade-btn:hover {
     transform: none;
