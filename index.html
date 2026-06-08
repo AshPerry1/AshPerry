@@ -13,58 +13,89 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav class="scroll-nav" aria-label="Showcase sections">
-      <a class="scroll-nav-logo" href="#electric">ash perry</a>
-      <div class="scroll-nav-meta">
-        <span class="scroll-nav-label">scroll to explore styles</span>
-        <span class="scroll-nav-count"
-          ><span id="current-section">01</span> / 06</span
-        >
+    <nav class="ride-nav" aria-label="Ash Perry">
+      <a class="ride-nav-logo" href="#start">ash perry</a>
+      <div class="ride-nav-meta">
+        <span class="ride-nav-hint">keep scrolling</span>
+        <a class="ride-nav-cta" href="#contact">contact</a>
       </div>
-      <div class="scroll-dots" id="scroll-dots" aria-hidden="true"></div>
+      <div class="ride-dots" id="scroll-dots" aria-hidden="true"></div>
     </nav>
 
-    <!-- 01 · ELECTRIC BOLD -->
-    <section
-      class="showcase showcase-electric"
-      id="electric"
-      data-section="01"
-      data-name="Electric Bold"
-    >
-      <div class="electric-scene" aria-hidden="true">
-        <svg class="blob b1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <path fill="url(#eg1)" d="M280 40c60 30 110 90 90 160-20 70-100 120-170 100S40 250 50 160 120 10 200 20s120 0 80 20z" />
+    <!-- 01 · ASH PERRY -->
+    <section class="ride ride-start" id="start" data-section="01" data-name="Ash Perry">
+      <div class="scene" aria-hidden="true">
+        <svg class="blob blob-1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <path fill="url(#g1)" d="M280 40c60 30 110 90 90 160-20 70-100 120-170 100S40 250 50 160 120 10 200 20s120 0 80 20z" />
           <defs>
-            <linearGradient id="eg1" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#ff2d6a" />
               <stop offset="100%" stop-color="#ff8a00" />
             </linearGradient>
           </defs>
         </svg>
-        <svg class="blob b2" viewBox="0 0 300 300"><circle cx="150" cy="150" r="130" fill="#00e5ff" opacity="0.85" /></svg>
-        <svg class="blob b3" viewBox="0 0 260 260"><circle cx="130" cy="130" r="110" fill="#ccff00" opacity="0.9" /></svg>
-        <span class="grid-lines"></span>
+        <svg class="blob blob-2" viewBox="0 0 300 300"><circle cx="150" cy="150" r="130" fill="#00e5ff" opacity="0.85" /></svg>
+        <svg class="blob blob-3" viewBox="0 0 260 260"><circle cx="130" cy="130" r="110" fill="#ccff00" opacity="0.9" /></svg>
+        <svg class="blob blob-4" viewBox="0 0 320 320"><path fill="#7c3aed" d="M40 200 Q80 40 200 60 T300 180 Q260 300 120 280 T40 200z" /></svg>
+        <svg class="blob blob-5" viewBox="0 0 200 200"><rect x="20" y="20" width="160" height="160" rx="40" fill="#2563eb" /></svg>
+        <span class="grid" aria-hidden="true"></span>
       </div>
-      <div class="showcase-inner">
-        <p class="style-tag">Style 01 — Electric Bold</p>
-        <h1 class="electric-title" aria-label="Websites that work">
-          <span class="row"><span class="l c-lime">W</span><span class="l c-cyan">E</span><span class="l c-pink">B</span></span>
-          <span class="row row-outline"><span class="l">S</span><span class="l">I</span><span class="l">T</span><span class="l">E</span><span class="l">S</span></span>
-          <span class="row row-big"><span class="l c-lime">W</span><span class="l c-orange">O</span><span class="l c-cyan">R</span><span class="l c-pink">K</span><span class="l">.</span></span>
-        </h1>
-        <p class="electric-lead">Loud color. Massive type. Zero templates.</p>
-        <span class="hero-amp" aria-hidden="true">&amp;</span>
+
+      <div class="ride-inner hero">
+        <div class="hero-copy">
+          <p class="kicker">custom websites</p>
+          <h1 class="title" aria-label="Websites that work">
+            <span class="title-row">
+              <span class="letter c1">W</span><span class="letter c2">E</span
+              ><span class="letter c3">B</span>
+            </span>
+            <span class="title-row title-row-outline">
+              <span class="letter">S</span><span class="letter">I</span
+              ><span class="letter">T</span><span class="letter">E</span
+              ><span class="letter">S</span>
+            </span>
+            <span class="title-row title-row-mix">
+              <span class="letter c4">T</span><span class="letter c5">H</span
+              ><span class="letter c6">A</span><span class="letter c7">T</span>
+            </span>
+            <span class="title-row title-row-big">
+              <span class="letter c8">W</span><span class="letter c1">O</span
+              ><span class="letter c2">R</span><span class="letter c3">K</span
+              ><span class="letter c4">.</span>
+            </span>
+          </h1>
+          <p class="lead">
+            I build custom sites that look nothing like each other — because your
+            brand shouldn't share a template with anyone.
+          </p>
+          <div class="actions">
+            <a class="btn btn-hot" href="#contact">see what's possible</a>
+            <a class="btn btn-cool" href="mailto:hello@ashperry.dev"
+              >hello@ashperry.dev</a
+            >
+          </div>
+        </div>
+        <div class="hero-amp" aria-hidden="true">&amp;</div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>SCROLL DOWN — YOU'RE ABOUT TO VISIT A FEW SITES —&nbsp;</span
+          ><span>SCROLL DOWN — YOU'RE ABOUT TO VISIT A FEW SITES —&nbsp;</span>
+        </div>
       </div>
       <p class="scroll-hint">scroll ↓</p>
     </section>
 
-    <!-- 02 · DARK NATURE -->
-    <section
-      class="showcase showcase-nature"
-      id="nature"
-      data-section="02"
-      data-name="Dark Nature"
-    >
+    <!-- 02 · VERDANT (feels like a wellness brand site) -->
+    <section class="ride ride-nature site" id="nature" data-section="02" data-name="Verdant">
+      <header class="site-bar site-bar-nature">
+        <span class="site-logo">verdant</span>
+        <nav class="site-links" aria-hidden="true">
+          <span>rituals</span><span>journal</span><span>shop</span>
+        </nav>
+        <a class="site-cta" href="#contact">book</a>
+      </header>
       <div class="nature-art" aria-hidden="true">
         <svg viewBox="0 0 400 500" class="leaf leaf-1">
           <path fill="url(#leafGrad)" d="M200 20 C120 80 60 200 80 320 C100 420 180 480 200 480 C220 480 300 420 320 320 C340 200 280 80 200 20Z" />
@@ -79,54 +110,55 @@
         <svg viewBox="0 0 200 300" class="leaf leaf-2">
           <path fill="#00e5ff" opacity="0.6" d="M100 10 C40 80 20 180 60 280 C80 320 120 290 100 10Z" />
         </svg>
-        <svg viewBox="0 0 180 180" class="leaf leaf-3">
-          <circle cx="90" cy="90" r="70" fill="#ff2d6a" opacity="0.35" />
-        </svg>
       </div>
-      <div class="showcase-inner">
-        <p class="style-tag">Style 02 — Dark Nature</p>
-        <h2 class="nature-title">Grow your<br /><em>presence</em> online.</h2>
+      <div class="ride-inner">
+        <p class="site-url" aria-hidden="true">verdant.studio</p>
+        <h2 class="nature-title">Rooted in ritual.<br /><em>Built to bloom.</em></h2>
         <p class="nature-lead">
-          Moody backgrounds, gradient botanicals, editorial serif headlines —
-          perfect for brands that feel alive.
+          Organic skincare for people who slow down on purpose. Small batches.
+          Big intention.
         </p>
-        <a class="nature-btn" href="mailto:hello@ashperry.dev">see demo</a>
+        <a class="nature-btn" href="#contact">shop the collection</a>
       </div>
     </section>
 
-    <!-- 03 · PLAYFUL -->
-    <section
-      class="showcase showcase-playful"
-      id="playful"
-      data-section="03"
-      data-name="Playful"
-    >
+    <!-- 03 · SIDEQUEST (feels like a hobby community site) -->
+    <section class="ride ride-playful site" id="playful" data-section="03" data-name="sidequest">
+      <header class="site-bar site-bar-playful">
+        <span class="site-logo">sidequest</span>
+        <nav class="site-links" aria-hidden="true">
+          <span>games</span><span>community</span><span>events</span>
+        </nav>
+        <a class="site-cta" href="#contact">join</a>
+      </header>
       <div class="playful-blobs" aria-hidden="true">
         <span class="pblob pblob-1"></span>
         <span class="pblob pblob-2"></span>
         <span class="pblob pblob-3"></span>
       </div>
-      <div class="showcase-inner">
-        <p class="style-tag">Style 03 — Playful</p>
-        <h2 class="playful-title">make it<br />fun.</h2>
+      <div class="ride-inner">
+        <p class="site-url" aria-hidden="true">playsidequest.co</p>
+        <h2 class="playful-title">your table.<br />your rules.</h2>
         <p class="playful-lead">
-          Rounded type, warm yellows, organic shapes — hobby sites and
-          communities that people actually want to visit.
+          A home for board game nights, TTRPG campaigns, and the friends who
+          never leave before midnight.
         </p>
         <div class="playful-btns">
-          <a class="pbtn pbtn-hot" href="mailto:hello@ashperry.dev">sign up</a>
-          <a class="pbtn pbtn-cool" href="mailto:hello@ashperry.dev">see lessons</a>
+          <a class="pbtn pbtn-hot" href="#contact">find a group</a>
+          <a class="pbtn pbtn-cool" href="#contact">host a night</a>
         </div>
       </div>
     </section>
 
-    <!-- 04 · CLEAN CREATIVE -->
-    <section
-      class="showcase showcase-clean"
-      id="clean"
-      data-section="04"
-      data-name="Clean Creative"
-    >
+    <!-- 04 · NORTHLINE (feels like a startup agency site) -->
+    <section class="ride ride-clean site" id="clean" data-section="04" data-name="Northline">
+      <header class="site-bar site-bar-clean">
+        <span class="site-logo">Northline</span>
+        <nav class="site-links" aria-hidden="true">
+          <span>Work</span><span>Services</span><span>Team</span>
+        </nav>
+        <a class="site-cta" href="#contact">Start a project</a>
+      </header>
       <div class="clean-art" aria-hidden="true">
         <span class="circle c-a"></span>
         <span class="circle c-b"></span>
@@ -134,62 +166,70 @@
         <span class="circle c-d"></span>
         <span class="circle c-e"></span>
       </div>
-      <div class="showcase-inner">
-        <p class="style-tag">Style 04 — Clean Creative</p>
+      <div class="ride-inner">
+        <p class="site-url" aria-hidden="true">northline.co</p>
         <h2 class="clean-title">
-          We <span class="accent">build.</span> We <span class="accent2">create.</span><br />We
-          <span class="accent3">inspire.</span>
+          Strategy that <span class="accent">ships.</span><br />Design that
+          <span class="accent2">converts.</span>
         </h2>
         <p class="clean-lead">
-          Light layouts, geometric accents, confident sans-serif — agency-grade
-          polish for businesses that want to look sharp.
+          We help ambitious teams launch products people actually remember — from
+          first pitch deck to live product.
         </p>
-        <a class="clean-btn" href="mailto:hello@ashperry.dev">join us</a>
+        <a class="clean-btn" href="#contact">Work with us</a>
       </div>
     </section>
 
-    <!-- 05 · BLACK & WHITE -->
-    <section
-      class="showcase showcase-bw"
-      id="bw"
-      data-section="05"
-      data-name="Black & White"
-    >
+    <!-- 05 · ATELIER (feels like a minimalist portfolio site) -->
+    <section class="ride ride-bw site" id="bw" data-section="05" data-name="Atelier">
+      <header class="site-bar site-bar-bw">
+        <span class="site-logo">ATELIER</span>
+        <nav class="site-links" aria-hidden="true">
+          <span>WORK</span><span>INFO</span>
+        </nav>
+        <a class="site-cta" href="#contact">ENQUIRE</a>
+      </header>
       <div class="bw-pattern" aria-hidden="true"></div>
-      <div class="showcase-inner">
-        <p class="style-tag">Style 05 — Black &amp; White</p>
+      <div class="ride-inner">
+        <p class="site-url" aria-hidden="true">atelier-noir.com</p>
         <h2 class="bw-title">
-          <span class="bw-solid">LESS</span>
-          <span class="bw-outline">NOISE.</span>
-          <span class="bw-invert">MORE YOU.</span>
+          <span class="bw-solid">FORM</span>
+          <span class="bw-outline">FOLLOWS</span>
+          <span class="bw-invert">INTENT.</span>
         </h2>
         <p class="bw-lead">
-          No color needed. Pure contrast, sharp type, and space that lets your
-          message hit — timeless and impossible to ignore.
+          Independent architecture studio. Selected residential and commercial
+          work. By appointment only.
         </p>
-        <a class="bw-btn" href="mailto:hello@ashperry.dev">get in touch</a>
+        <a class="bw-btn" href="#contact">view work</a>
       </div>
       <div class="bw-bar" aria-hidden="true"></div>
     </section>
 
-    <!-- 06 · CONTACT -->
-    <section
-      class="showcase showcase-contact"
-      id="contact"
-      data-section="06"
-      data-name="Your Turn"
-    >
+    <!-- 06 · THE REVEAL → CONTACT -->
+    <section class="ride ride-contact" id="contact" data-section="06" data-name="Contact">
       <div class="contact-rings" aria-hidden="true">
         <span></span><span></span><span></span>
       </div>
-      <div class="showcase-inner showcase-inner-center">
-        <p class="style-tag">Style 06 — Your Turn</p>
-        <h2 class="contact-title">Pick a vibe.<br />I'll build it.</h2>
+      <div class="ride-inner ride-inner-center">
+        <p class="reveal-eyebrow">plot twist</p>
+        <h2 class="contact-title">
+          That was all<br /><span class="contact-highlight">one website.</span>
+        </h2>
         <p class="contact-lead">
-          Every section you just scrolled through? I design and code all of it —
-          custom, from scratch, for your brand.
+          Four completely different brands. Four totally different vibes. Same
+          developer — me, <strong>Ash Perry</strong>. I design and build custom
+          sites from scratch so yours never looks like anyone else's.
         </p>
-        <a class="contact-btn" href="mailto:hello@ashperry.dev">hello@ashperry.dev</a>
+        <p class="contact-pitch">
+          Ready for a site that feels like its own world? Let's talk.
+        </p>
+        <a class="contact-btn" href="mailto:hello@ashperry.dev"
+          >hello@ashperry.dev</a
+        >
+        <a class="contact-btn-secondary" href="mailto:hello@ashperry.dev"
+          >Start your project →</a
+        >
         <footer class="contact-foot">
           <span>© ash perry</span>
           <span>·</span>
