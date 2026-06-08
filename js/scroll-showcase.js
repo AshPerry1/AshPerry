@@ -6,7 +6,6 @@
     "DEUX — Pick a Color. Flip the Table.",
     "Northline — Strategy That Ships",
     "ATELIER — Form Follows Intent",
-    "Chick-fil-A — Concept Redesign by Ash Perry",
   ];
 
   if (!sections.length) return;
