@@ -490,8 +490,8 @@ a {
   text-stroke: 2.5px #fff;
 }
 
-.ride-start.is-bw .start-name,
-.ride-start.is-bw .start-line,
+.ride-start.is-bw .ash-name,
+.ride-start.is-bw .ash-line,
 .ride-start.is-bw .lead {
   color: rgba(255, 255, 255, 0.78);
 }
@@ -605,12 +605,12 @@ a {
   filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.4));
 }
 
-.ride-start.is-space .start-name {
+.ride-start.is-space .ash-name {
   color: #00f0ff;
   text-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
 }
 
-.ride-start.is-space .start-line,
+.ride-start.is-space .ash-line,
 .ride-start.is-space .lead {
   color: rgba(200, 220, 255, 0.75);
 }
@@ -636,17 +636,24 @@ a {
   pointer-events: none;
 }
 
-.start-brand {
+.ash-brand {
   position: relative;
-  z-index: 2;
-  padding: max(1.25rem, env(safe-area-inset-top)) clamp(1.25rem, 5vw, 4rem) 0;
+  z-index: 12;
+  padding: max(0.85rem, env(safe-area-inset-top)) clamp(1.25rem, 5vw, 4rem) 0.35rem;
   display: flex;
   flex-direction: column;
   gap: 0.14rem;
   line-height: 1.05;
+  flex-shrink: 0;
 }
 
-.start-name {
+.ride-start .ash-brand {
+  z-index: 2;
+  padding-bottom: 0;
+  padding-top: max(1.25rem, env(safe-area-inset-top));
+}
+
+.ash-name {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.08rem);
   font-weight: 800;
@@ -654,13 +661,47 @@ a {
   color: #fff;
 }
 
-.start-line {
+.ash-line {
   font-family: "Work Sans", sans-serif;
   font-size: clamp(0.55rem, 1.2vw, 0.6rem);
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.62);
+}
+
+.ride-deux .ash-name,
+.ride-clean .ash-name {
+  color: #1a1a1a;
+}
+
+.ride-deux .ash-line,
+.ride-clean .ash-line {
+  color: rgba(26, 26, 26, 0.5);
+}
+
+.ride-nature .ash-name {
+  color: #faf6f0;
+}
+
+.ride-nature .ash-line {
+  color: rgba(250, 246, 240, 0.55);
+}
+
+.ride-bw .ash-name {
+  color: #fff;
+}
+
+.ride-bw .ash-line {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.ride-food .ash-name {
+  color: #fff;
+}
+
+.ride-food .ash-line {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .ride-start .scene {
@@ -1050,12 +1091,39 @@ a {
 .n-letter.n5 { color: #ff6b4a; }
 .n-letter.n6 { color: #52b788; }
 
+.nature-badge {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(6, 42, 48, 0.55);
+  border: 1px solid rgba(250, 246, 240, 0.12);
+  color: rgba(250, 246, 240, 0.88);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .nature-lead {
-  margin: 0 0 2rem;
-  max-width: 24rem;
+  margin: 0 0 1.15rem;
+  max-width: 26rem;
   font-size: 1.02rem;
   line-height: 1.65;
-  color: rgba(250, 246, 240, 0.72);
+  color: rgba(250, 246, 240, 0.78);
+}
+
+.nature-reveal {
+  margin: 0 0 2rem;
+  max-width: 24rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(250, 246, 240, 0.62);
+}
+
+.nature-reveal strong {
+  color: rgba(250, 246, 240, 0.92);
+  font-weight: 700;
 }
 
 .nature-btn {

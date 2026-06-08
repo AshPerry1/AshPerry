@@ -2,7 +2,7 @@
   const sections = document.querySelectorAll(".ride");
   const titles = [
     "Ash Perry | Custom Websites",
-    "Isola — Arrive at Paradise",
+    "Isola — Luxury Hospitality by Ash Perry",
     "DEUX — The Card Game. Rebooted.",
     "Northline — Strategy That Ships",
     "ATELIER — Form Follows Intent",
