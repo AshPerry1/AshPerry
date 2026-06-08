@@ -104,22 +104,23 @@ a {
 }
 
 .site-bar-nature {
-  background: rgba(45, 16, 69, 0.88);
-  border-bottom: 2px solid rgba(255, 179, 198, 0.35);
-  color: #fff;
+  background: rgba(6, 42, 48, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #faf6f0;
 }
 
 .site-bar-nature .site-logo {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #ffb3c6;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #faf6f0;
 }
 
 .site-bar-nature .site-cta {
-  color: #ffe566;
+  color: #ffc857;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-family: "Montserrat", sans-serif;
@@ -835,11 +836,11 @@ a {
 }
 
 /* ══════════════════════════════════════
-   02 · TROPICAL RESORT (poster inspo)
+   02 · ISLAND RESORT
    ══════════════════════════════════════ */
 .ride-nature {
-  background: #ff5e3a;
-  color: #fff;
+  background: #062a30;
+  color: #faf6f0;
   font-family: "Work Sans", system-ui, sans-serif;
 }
 
@@ -850,205 +851,209 @@ a {
   overflow: hidden;
 }
 
-.nature-bg {
+.nature-base {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     168deg,
-    #ff4d6d 0%,
-    #ff5e3a 32%,
-    #ffb347 62%,
-    #2ec4b6 100%
+    #1a3a42 0%,
+    #0a3238 38%,
+    #062a30 68%,
+    #041e24 100%
   );
 }
 
-.nature-sun-disc {
+.nature-orb {
   position: absolute;
-  top: -18%;
-  left: 50%;
-  width: min(72vw, 520px);
-  height: min(72vw, 520px);
-  margin-left: calc(min(72vw, 520px) / -2);
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    #ffe566 0%,
-    #ffb347 42%,
-    rgba(255, 179, 71, 0.35) 68%,
-    transparent 72%
+  filter: blur(72px);
+  opacity: 0.85;
+  animation: nature-drift 18s ease-in-out infinite;
+}
+
+.nature-orb-sunset {
+  width: min(58vw, 480px);
+  height: min(58vw, 480px);
+  top: -12%;
+  right: -8%;
+  background: radial-gradient(circle, #ff6b4a 0%, #ff8f6b 42%, transparent 70%);
+}
+
+.nature-orb-blush {
+  width: min(42vw, 340px);
+  height: min(42vw, 340px);
+  top: 8%;
+  right: 22%;
+  background: radial-gradient(circle, #ff8fab 0%, rgba(255, 143, 171, 0.4) 55%, transparent 72%);
+  animation-delay: -4s;
+}
+
+.nature-orb-gold {
+  width: min(36vw, 300px);
+  height: min(36vw, 300px);
+  top: 28%;
+  right: 6%;
+  background: radial-gradient(circle, #ffc857 0%, rgba(255, 200, 87, 0.35) 50%, transparent 70%);
+  animation-delay: -8s;
+}
+
+.nature-orb-teal {
+  width: min(50vw, 420px);
+  height: min(50vw, 420px);
+  bottom: 8%;
+  right: -10%;
+  background: radial-gradient(circle, #2ec4b6 0%, rgba(46, 196, 182, 0.35) 48%, transparent 72%);
+  animation-delay: -2s;
+}
+
+.nature-orb-jade {
+  width: min(38vw, 320px);
+  height: min(38vw, 320px);
+  bottom: 18%;
+  left: -6%;
+  background: radial-gradient(circle, #52b788 0%, rgba(82, 183, 136, 0.3) 52%, transparent 72%);
+  animation-delay: -11s;
+}
+
+.nature-horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28%;
+  height: 38%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(46, 196, 182, 0.12) 28%,
+    rgba(32, 164, 178, 0.38) 58%,
+    rgba(18, 120, 140, 0.72) 100%
   );
 }
 
-.nature-grain {
+.nature-shoreline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(245, 230, 200, 0.08) 18%,
+    rgba(230, 210, 175, 0.22) 55%,
+    rgba(210, 190, 160, 0.35) 100%
+  );
+}
+
+.nature-grid {
   position: absolute;
   inset: 0;
-  opacity: 0.22;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(#fff 1px, transparent 1px),
+    linear-gradient(90deg, #fff 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
-.nature-bg-type {
+.nature-watermark {
   position: absolute;
+  right: clamp(-1rem, 2vw, 3rem);
   top: 50%;
-  left: 50%;
-  z-index: 1;
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(5rem, 22vw, 14rem);
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.14);
-  transform: translate(-50%, -54%);
-  white-space: nowrap;
+  transform: translateY(-40%);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(8rem, 32vw, 22rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
   user-select: none;
 }
 
-.nature-monstera {
-  position: absolute;
-  z-index: 2;
-  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.2));
-}
-
-.nature-monstera-left {
-  width: min(42vw, 300px);
-  left: -8%;
-  bottom: 8%;
-  animation: nature-sway 13s ease-in-out infinite;
-}
-
-.nature-monstera-right {
-  width: min(36vw, 260px);
-  right: -6%;
-  top: 14%;
-  animation: nature-sway 15s ease-in-out infinite reverse;
-}
-
-.nature-leaf-orange {
-  position: absolute;
-  z-index: 3;
-  width: min(28vw, 190px);
-  left: 6%;
-  top: 22%;
-  animation: nature-sway 12s ease-in-out infinite 0.4s;
-}
-
-.nature-palm-tr {
-  position: absolute;
-  z-index: 2;
-  width: min(32vw, 220px);
-  right: 10%;
-  bottom: 10%;
-  animation: nature-sway 14s ease-in-out infinite 0.8s reverse;
-}
-
-.nature-line {
-  position: absolute;
-  z-index: 4;
-  opacity: 0.9;
-}
-
-.nature-line-1 {
-  width: min(22vw, 150px);
-  right: 28%;
-  top: 18%;
-}
-
-.nature-line-2 {
-  width: min(18vw, 120px);
-  left: 32%;
-  bottom: 28%;
-}
-
-.nature-hibiscus {
-  position: absolute;
-  z-index: 5;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.15));
-}
-
-.nature-hibiscus-white {
-  width: min(16vw, 96px);
-  right: 20%;
-  bottom: 32%;
-  animation: nature-sway 11s ease-in-out infinite;
-}
-
-.nature-hibiscus-coral {
-  width: min(13vw, 80px);
-  left: 42%;
-  bottom: 38%;
-  animation: nature-sway 10s ease-in-out infinite 0.6s reverse;
-}
-
-@keyframes nature-sway {
+@keyframes nature-drift {
   0%,
   100% {
-    transform: rotate(0deg) translateY(0);
+    transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: rotate(1.5deg) translateY(-5px);
+    transform: translate(-12px, 10px) scale(1.04);
   }
 }
 
 .ride-nature .site-url {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(250, 246, 240, 0.42);
 }
 
 .ride-nature .ride-inner {
   position: relative;
-  z-index: 6;
+  z-index: 2;
 }
 
 .nature-title {
   margin: 0 0 1.25rem;
-  line-height: 0.88;
-}
-
-.nature-title-line {
-  display: block;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(3.2rem, 13vw, 8.5rem);
   font-weight: 900;
-  letter-spacing: -0.03em;
-  text-transform: lowercase;
-  color: #fff;
-  text-shadow: 4px 5px 0 rgba(0, 0, 0, 0.12);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
-.nature-title-accent {
-  color: #fff;
-  text-shadow:
-    4px 5px 0 #ffd166,
-    5px 6px 0 rgba(0, 0, 0, 0.1);
+.nature-row {
+  display: block;
+  font-size: clamp(2.8rem, 11vw, 6.5rem);
 }
+
+.nature-row-small {
+  margin: 0.08em 0 0.02em clamp(0.25rem, 2vw, 1.5rem);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+  font-weight: 600;
+  font-style: italic;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  color: rgba(250, 246, 240, 0.82);
+}
+
+.nature-row-outline .n-letter {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(250, 246, 240, 0.88);
+  text-stroke: 2px rgba(250, 246, 240, 0.88);
+}
+
+.n-letter.n1 { color: #ffc857; }
+.n-letter.n2 { color: #ff8fab; }
+.n-letter.n3 { color: #2ec4b6; }
+.n-letter.n4 { color: #faf6f0; }
+.n-letter.n5 { color: #ff6b4a; }
+.n-letter.n6 { color: #52b788; }
 
 .nature-lead {
   margin: 0 0 2rem;
-  max-width: 22rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.92);
+  max-width: 24rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: rgba(250, 246, 240, 0.72);
 }
 
 .nature-btn {
   display: inline-block;
-  padding: 0.9rem 2.2rem;
+  padding: 0.85rem 2rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #ffe566 0%, #ffb347 55%, #e8a830 100%);
-  color: #2d1045;
+  background: #faf6f0;
+  color: #062a30;
   font-family: "Montserrat", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .nature-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
+  background: #fff;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.26);
 }
 
 /* ══════════════════════════════════════
@@ -1632,12 +1637,7 @@ a {
   }
 
   .ride-start .blob,
-  .nature-monstera-left,
-  .nature-monstera-right,
-  .nature-leaf-orange,
-  .nature-palm-tr,
-  .nature-hibiscus-white,
-  .nature-hibiscus-coral,
+  .nature-orb,
   .ride-start.is-lightning .lightning-flash,
   .ride-start.is-power-out {
     animation: none;
