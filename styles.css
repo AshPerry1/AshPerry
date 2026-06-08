@@ -493,7 +493,7 @@ a {
 
 .ride-start.is-bw .scene {
   filter: grayscale(1) contrast(1.25);
-  transition: filter 0.6s ease;
+  transition: filter 0.45s ease;
 }
 
 .ride-start.is-bw .grid {

@@ -31,7 +31,7 @@
 
       hero.classList.remove("is-lightning");
       hero.classList.add("is-bw");
-      await wait(2400);
+      await wait(650);
 
       hero.classList.add("is-space");
       hero.classList.remove("is-bw");
