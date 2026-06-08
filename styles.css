@@ -275,8 +275,8 @@ a {
   transition: color 1.2s ease, -webkit-text-stroke-color 1.2s ease;
 }
 
-.ride-start.is-journey .start-name,
-.ride-start.is-journey .start-line,
+.ride-start.is-journey .ash-name,
+.ride-start.is-journey .ash-line,
 .ride-start.is-journey .lead,
 .ride-start.is-journey .hero-amp,
 .ride-start.is-journey .btn {
@@ -1924,7 +1924,7 @@ a {
     --hero-row-big: min(11.5vw, 9.8vh, 7.5rem);
   }
 
-  .start-brand {
+  .ash-brand {
     padding-top: max(0.85rem, env(safe-area-inset-top));
   }
 }
