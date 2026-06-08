@@ -38,7 +38,7 @@
       await wait(10000);
 
       hero.classList.remove("is-space");
-      await wait(900);
+      await wait(1200);
 
       hero.classList.remove("is-journey");
       btn.removeAttribute("aria-busy");
