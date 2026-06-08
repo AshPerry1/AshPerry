@@ -128,27 +128,28 @@ a {
 }
 
 .site-bar-deux {
-  background: #0a0a0a;
-  border-bottom: 3px solid #f9d900;
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   color: #fff;
 }
 
 .site-bar-deux .site-logo {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.15rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  color: #f9d900;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #fff;
 }
 
 .site-bar-deux .site-cta {
-  background: #e41b17;
-  padding: 0.42rem 1rem;
-  border-radius: 6px;
-  font-family: "Montserrat", sans-serif;
+  background: #1a1a1a;
+  border: 2px solid #fff;
+  padding: 0.38rem 0.95rem;
+  border-radius: 4px;
+  font-family: "Nunito", sans-serif;
   font-weight: 800;
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -1064,11 +1065,15 @@ a {
 }
 
 /* ══════════════════════════════════════
-   03 · DEUX (card game)
+   03 · DEUX (retro card game)
    ══════════════════════════════════════ */
 .ride-deux {
-  background: #121212;
-  color: #fff;
+  --deux-red: #d6001c;
+  --deux-blue: #006cb7;
+  --deux-green: #009b5c;
+  --deux-yellow: #ffd100;
+  background: #e8e3d6;
+  color: #1a1a1a;
   font-family: "Work Sans", system-ui, sans-serif;
 }
 
@@ -1079,76 +1084,62 @@ a {
   overflow: hidden;
 }
 
-.deux-felt {
+.deux-hand {
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 78% 58%, rgba(228, 27, 23, 0.08), transparent),
-    radial-gradient(ellipse 70% 55% at 72% 62%, rgba(0, 87, 184, 0.07), transparent),
-    radial-gradient(ellipse 60% 50% at 85% 48%, rgba(0, 166, 81, 0.06), transparent),
-    linear-gradient(160deg, #1a1a1a 0%, #121212 55%, #0a0a0a 100%);
+  right: clamp(8%, 14vw, 16%);
+  top: 50%;
+  width: min(28vw, 168px);
+  height: min(42vw, 252px);
+  transform: translateY(-46%);
 }
 
 .deux-card {
-  --rot: 0deg;
-  --tx: 0px;
-  --ty: 0px;
+  --i: 0;
   position: absolute;
-  right: clamp(6%, 12vw, 14%);
-  bottom: clamp(14%, 18vh, 22%);
-  width: min(24vw, 148px);
-  height: min(36vw, 218px);
-  border-radius: 16px;
-  border: 4px solid rgba(255, 255, 255, 0.92);
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.45),
-    0 4px 0 rgba(0, 0, 0, 0.2);
-  transform: rotate(var(--rot)) translate(var(--tx), var(--ty));
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+  border: 3px solid #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transform: rotate(calc(-16deg + var(--i) * 8deg))
+    translate(calc(var(--i) * 14px), calc(var(--i) * -6px));
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: deux-float 7s ease-in-out infinite;
+  z-index: calc(var(--i) + 1);
 }
 
 .deux-card.is-red {
-  color: #e41b17;
-  background: #e41b17;
-  z-index: 1;
+  color: var(--deux-red);
+  background: var(--deux-red);
 }
 
 .deux-card.is-blue {
-  color: #0057b8;
-  background: #0057b8;
-  z-index: 2;
-  animation-delay: -1.2s;
+  color: var(--deux-blue);
+  background: var(--deux-blue);
 }
 
 .deux-card.is-green {
-  color: #00a651;
-  background: #00a651;
-  z-index: 3;
-  animation-delay: -2.4s;
+  color: var(--deux-green);
+  background: var(--deux-green);
 }
 
 .deux-card.is-yellow {
   color: #1a1a1a;
-  background: #f9d900;
-  z-index: 4;
-  animation-delay: -3.6s;
+  background: var(--deux-yellow);
 }
 
 .deux-card.is-wild {
   color: #fff;
   background: #1a1a1a;
-  z-index: 5;
-  animation-delay: -4.8s;
 }
 
 .deux-card-n {
   position: absolute;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
   line-height: 1;
   color: #fff;
 }
@@ -1158,52 +1149,70 @@ a {
 }
 
 .deux-card-n.top {
-  top: 10px;
-  left: 12px;
+  top: 9px;
+  left: 11px;
 }
 
 .deux-card-n.bottom {
-  bottom: 10px;
-  right: 12px;
+  bottom: 9px;
+  right: 11px;
   transform: rotate(180deg);
 }
 
 .deux-card-face {
-  width: 70%;
-  height: 46%;
+  width: 74%;
+  height: 50%;
   border-radius: 50%;
   background: #fff;
-  border: 4px solid currentColor;
+  border: 3px solid currentColor;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.85rem);
   line-height: 1;
   color: currentColor;
 }
 
 .deux-card-face.wild {
-  font-size: clamp(0.85rem, 2vw, 1.05rem);
-  letter-spacing: 0.06em;
+  width: 78%;
+  height: 52%;
+  font-size: clamp(0.72rem, 1.8vw, 0.92rem);
+  letter-spacing: 0.14em;
   background: #1a1a1a;
   color: #fff;
   border-color: #fff;
 }
 
-@keyframes deux-float {
-  0%,
-  100% {
-    transform: rotate(var(--rot)) translate(var(--tx), var(--ty));
-  }
-  50% {
-    transform: rotate(calc(var(--rot) + 2deg)) translate(var(--tx), calc(var(--ty) - 8px));
-  }
+.deux-stripes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.deux-stripes span:nth-child(1) {
+  background: var(--deux-red);
+}
+
+.deux-stripes span:nth-child(2) {
+  background: var(--deux-blue);
+}
+
+.deux-stripes span:nth-child(3) {
+  background: var(--deux-green);
+}
+
+.deux-stripes span:nth-child(4) {
+  background: var(--deux-yellow);
 }
 
 .ride-deux .site-url {
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(26, 26, 26, 0.38);
 }
 
 .ride-deux .ride-inner {
@@ -1211,67 +1220,77 @@ a {
   z-index: 2;
 }
 
-.deux-title {
-  margin: 0 0 1rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: clamp(4rem, 16vw, 9.5rem);
-  line-height: 0.88;
-  letter-spacing: -0.02em;
+.deux-eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.48);
 }
 
-.deux-letter.is-red { color: #e41b17; }
-.deux-letter.is-blue { color: #0057b8; }
-.deux-letter.is-green { color: #00a651; }
-.deux-letter.is-yellow { color: #f9d900; }
+.deux-title {
+  margin: 0 0 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.8rem, 14vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.deux-letter.is-red { color: var(--deux-red); }
+.deux-letter.is-blue { color: var(--deux-blue); }
+.deux-letter.is-green { color: var(--deux-green); }
+.deux-letter.is-yellow { color: var(--deux-yellow); }
 
 .deux-lead {
-  margin: 0 0 2rem;
-  max-width: 26rem;
-  font-size: 1.02rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.68);
+  margin: 0 0 1.75rem;
+  max-width: 22rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(26, 26, 26, 0.68);
 }
 
 .deux-btns {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .deux-btn {
-  padding: 0.85rem 1.85rem;
-  border-radius: 8px;
-  font-family: "Montserrat", sans-serif;
+  padding: 0.78rem 1.65rem;
+  border-radius: 4px;
+  font-family: "Nunito", sans-serif;
   font-weight: 800;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .deux-btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-.deux-btn.is-yellow {
-  background: #f9d900;
-  color: #1a1a1a;
-  box-shadow: 0 6px 0 #c9a800;
-}
-
-.deux-btn.is-yellow:hover {
-  box-shadow: 0 9px 0 #c9a800;
-}
-
-.deux-btn.is-outline {
-  background: transparent;
+.deux-btn.is-primary {
+  background: #1a1a1a;
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.deux-btn.is-outline:hover {
-  border-color: #fff;
+.deux-btn.is-primary:hover {
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.deux-btn.is-secondary {
+  background: transparent;
+  color: #1a1a1a;
+  border: 2px solid rgba(26, 26, 26, 0.28);
+}
+
+.deux-btn.is-secondary:hover {
+  border-color: #1a1a1a;
 }
 
 /* ══════════════════════════════════════
@@ -1726,11 +1745,10 @@ a {
     align-items: flex-start;
   }
 
-  .deux-card {
+  .deux-hand {
     right: 4%;
-    bottom: 10%;
-    width: min(28vw, 120px);
-    height: min(42vw, 176px);
+    width: min(36vw, 130px);
+    height: min(54vw, 195px);
   }
 
   .food-layout {
@@ -1775,7 +1793,8 @@ a {
 
   .btn:hover,
   .nature-btn:hover,
-  .pbtn:hover,
+  .deux-card,
+  .deux-btn:hover,
   .clean-btn:hover,
   .food-btn-primary:hover,
   .cow-svg {
