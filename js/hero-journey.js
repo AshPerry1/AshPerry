@@ -30,11 +30,11 @@
       await wait(750);
 
       hero.classList.remove("is-lightning");
-      hero.classList.add("is-bw", "is-power-out");
+      hero.classList.add("is-bw");
       await wait(2400);
 
-      hero.classList.remove("is-bw", "is-power-out");
       hero.classList.add("is-space");
+      hero.classList.remove("is-bw");
       await wait(10000);
 
       hero.classList.remove("is-space");

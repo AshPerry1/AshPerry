@@ -486,6 +486,11 @@ a {
   background: #0a0a0a;
 }
 
+.ride-start.is-bw .power-vignette {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
 .ride-start.is-bw .scene {
   filter: grayscale(1) contrast(1.25);
   transition: filter 0.6s ease;
@@ -535,6 +540,23 @@ a {
 /* ── Outer space mode ── */
 .ride-start.is-space {
   background: #020010;
+}
+
+/* B&W → space: no flash of normal blue in between */
+.ride-start.is-journey.is-space {
+  transition: background 0.6s ease, color 0.5s ease;
+}
+
+.ride-start.is-journey.is-space .space-field {
+  transition: opacity 0.7s ease;
+}
+
+.ride-start.is-journey.is-space .scene {
+  transition: filter 0.6s ease, opacity 0.6s ease;
+}
+
+.ride-start.is-space .power-vignette {
+  opacity: 0;
 }
 
 .ride-start.is-space .space-field {
