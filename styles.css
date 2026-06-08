@@ -361,17 +361,6 @@ a {
   background: #fff;
 }
 
-.lightning-bolt {
-  position: absolute;
-  top: -5%;
-  left: 18%;
-  width: min(22vw, 140px);
-  height: auto;
-  opacity: 0;
-  filter: drop-shadow(0 0 30px #38bdf8) drop-shadow(0 0 80px #2563eb);
-  transform: rotate(-6deg);
-}
-
 .power-vignette {
   position: absolute;
   inset: 0;
@@ -381,10 +370,6 @@ a {
 
 .ride-start.is-lightning .lightning-flash {
   animation: lightning-burst 0.72s ease-out forwards;
-}
-
-.ride-start.is-lightning .lightning-bolt {
-  animation: bolt-strike 0.72s ease-out forwards;
 }
 
 .ride-start.is-lightning .power-vignette {
