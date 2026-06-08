@@ -104,23 +104,22 @@ a {
 }
 
 .site-bar-nature {
-  background: rgba(255, 252, 247, 0.78);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(45, 106, 79, 0.1);
-  color: #1b4332;
+  background: rgba(45, 16, 69, 0.88);
+  border-bottom: 2px solid rgba(255, 179, 198, 0.35);
+  color: #fff;
 }
 
 .site-bar-nature .site-logo {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #1b4332;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffb3c6;
 }
 
 .site-bar-nature .site-cta {
-  color: #c45c26;
+  color: #ffe566;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-family: "Montserrat", sans-serif;
@@ -836,11 +835,11 @@ a {
 }
 
 /* ══════════════════════════════════════
-   02 · ISLAND RESORT
+   02 · TROPICAL RESORT (poster inspo)
    ══════════════════════════════════════ */
 .ride-nature {
-  background: #dff4ee;
-  color: #1b4332;
+  background: #ff5e3a;
+  color: #fff;
   font-family: "Work Sans", system-ui, sans-serif;
 }
 
@@ -851,107 +850,135 @@ a {
   overflow: hidden;
 }
 
-.nature-sky {
+.nature-bg {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    175deg,
-    #fff9f0 0%,
-    #fef3d8 28%,
-    #e8f6f2 58%,
-    #c8ebe4 100%
+    168deg,
+    #ff4d6d 0%,
+    #ff5e3a 32%,
+    #ffb347 62%,
+    #2ec4b6 100%
   );
 }
 
-.nature-sun {
+.nature-sun-disc {
   position: absolute;
-  top: -8%;
-  right: 12%;
-  width: min(42vw, 320px);
-  height: min(42vw, 320px);
+  top: -18%;
+  left: 50%;
+  width: min(72vw, 520px);
+  height: min(72vw, 520px);
+  margin-left: calc(min(72vw, 520px) / -2);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(255, 209, 102, 0.55) 0%,
-    rgba(255, 209, 102, 0.18) 38%,
-    transparent 68%
+    #ffe566 0%,
+    #ffb347 42%,
+    rgba(255, 179, 71, 0.35) 68%,
+    transparent 72%
   );
 }
 
-.nature-ocean {
+.nature-grain {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 42%;
-  background: linear-gradient(
-    180deg,
-    rgba(144, 224, 239, 0.35) 0%,
-    #6ec9c9 22%,
-    #48b8b8 48%,
-    #2d9a9a 72%,
-    #1f7a7a 100%
-  );
+  inset: 0;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
-.nature-shore {
+.nature-bg-type {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 38%;
-  height: 14%;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(245, 235, 210, 0.5) 35%,
-    #f5ebd2 65%,
-    #e8dcc0 100%
-  );
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(5rem, 22vw, 14rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.14);
+  transform: translate(-50%, -54%);
+  white-space: nowrap;
+  user-select: none;
 }
 
-.nature-palm {
+.nature-monstera {
   position: absolute;
-  filter: drop-shadow(0 12px 28px rgba(27, 67, 50, 0.18));
+  z-index: 2;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.2));
 }
 
-.nature-palm-left {
-  width: min(38vw, 280px);
-  left: -4%;
-  bottom: 22%;
-  animation: nature-sway 14s ease-in-out infinite;
+.nature-monstera-left {
+  width: min(42vw, 300px);
+  left: -8%;
+  bottom: 8%;
+  animation: nature-sway 13s ease-in-out infinite;
 }
 
-.nature-palm-right {
-  width: min(34vw, 240px);
-  right: -2%;
-  top: 8%;
-  animation: nature-sway 16s ease-in-out infinite reverse;
+.nature-monstera-right {
+  width: min(36vw, 260px);
+  right: -6%;
+  top: 14%;
+  animation: nature-sway 15s ease-in-out infinite reverse;
 }
 
-.nature-branch {
+.nature-leaf-orange {
   position: absolute;
-  width: min(28vw, 200px);
+  z-index: 3;
+  width: min(28vw, 190px);
+  left: 6%;
+  top: 22%;
+  animation: nature-sway 12s ease-in-out infinite 0.4s;
+}
+
+.nature-palm-tr {
+  position: absolute;
+  z-index: 2;
+  width: min(32vw, 220px);
+  right: 10%;
+  bottom: 10%;
+  animation: nature-sway 14s ease-in-out infinite 0.8s reverse;
+}
+
+.nature-line {
+  position: absolute;
+  z-index: 4;
+  opacity: 0.9;
+}
+
+.nature-line-1 {
+  width: min(22vw, 150px);
+  right: 28%;
   top: 18%;
+}
+
+.nature-line-2 {
+  width: min(18vw, 120px);
+  left: 32%;
+  bottom: 28%;
+}
+
+.nature-hibiscus {
+  position: absolute;
+  z-index: 5;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.15));
+}
+
+.nature-hibiscus-white {
+  width: min(16vw, 96px);
+  right: 20%;
+  bottom: 32%;
+  animation: nature-sway 11s ease-in-out infinite;
+}
+
+.nature-hibiscus-coral {
+  width: min(13vw, 80px);
   left: 42%;
-  opacity: 0.85;
-}
-
-.nature-flower {
-  filter: drop-shadow(0 4px 12px rgba(27, 67, 50, 0.12));
-}
-
-.nature-flower-white {
-  width: min(18vw, 110px);
-  right: 22%;
-  bottom: 36%;
-  animation: nature-sway 11s ease-in-out infinite 0.5s;
-}
-
-.nature-flower-orange {
-  width: min(14vw, 88px);
-  left: 38%;
-  bottom: 44%;
-  animation: nature-sway 13s ease-in-out infinite 1s reverse;
+  bottom: 38%;
+  animation: nature-sway 10s ease-in-out infinite 0.6s reverse;
 }
 
 @keyframes nature-sway {
@@ -960,57 +987,68 @@ a {
     transform: rotate(0deg) translateY(0);
   }
   50% {
-    transform: rotate(1.2deg) translateY(-4px);
+    transform: rotate(1.5deg) translateY(-5px);
   }
 }
 
 .ride-nature .site-url {
-  color: rgba(27, 67, 50, 0.45);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.ride-nature .ride-inner {
+  position: relative;
+  z-index: 6;
 }
 
 .nature-title {
   margin: 0 0 1.25rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(3rem, 10vw, 6.5rem);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  color: #1b4332;
+  line-height: 0.88;
 }
 
-.nature-title em {
-  font-style: italic;
-  color: #c45c26;
+.nature-title-line {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(3.2rem, 13vw, 8.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+  color: #fff;
+  text-shadow: 4px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.nature-title-accent {
+  color: #fff;
+  text-shadow:
+    4px 5px 0 #ffd166,
+    5px 6px 0 rgba(0, 0, 0, 0.1);
 }
 
 .nature-lead {
   margin: 0 0 2rem;
-  max-width: 26rem;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: rgba(27, 67, 50, 0.72);
+  max-width: 22rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .nature-btn {
   display: inline-block;
-  padding: 0.85rem 2.1rem;
-  border-radius: 2px;
-  background: #fffef8;
-  border: 1px solid rgba(27, 67, 50, 0.22);
-  color: #1b4332;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffe566 0%, #ffb347 55%, #e8a830 100%);
+  color: #2d1045;
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.78rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  box-shadow: 0 4px 20px rgba(27, 67, 50, 0.08);
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .nature-btn:hover {
-  transform: translateY(-2px);
-  background: #fff;
-  box-shadow: 0 8px 28px rgba(27, 67, 50, 0.14);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
 }
 
 /* ══════════════════════════════════════
@@ -1594,10 +1632,12 @@ a {
   }
 
   .ride-start .blob,
-  .nature-palm-left,
-  .nature-palm-right,
-  .nature-flower-white,
-  .nature-flower-orange,
+  .nature-monstera-left,
+  .nature-monstera-right,
+  .nature-leaf-orange,
+  .nature-palm-tr,
+  .nature-hibiscus-white,
+  .nature-hibiscus-coral,
   .ride-start.is-lightning .lightning-flash,
   .ride-start.is-power-out {
     animation: none;
