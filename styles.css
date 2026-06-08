@@ -646,18 +646,24 @@ a {
 .ash-brand {
   position: relative;
   z-index: 12;
-  padding: max(0.85rem, env(safe-area-inset-top)) clamp(1.25rem, 5vw, 4rem) 0.35rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.14rem;
-  line-height: 1.05;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 0.65rem;
+  row-gap: 0.1rem;
+  line-height: 1.1;
   flex-shrink: 0;
 }
 
 .ride-start .ash-brand {
   z-index: 2;
-  padding-bottom: 0;
-  padding-top: max(1.25rem, env(safe-area-inset-top));
+  padding: max(1.25rem, env(safe-area-inset-top)) clamp(1.25rem, 5vw, 4rem) 0;
+}
+
+.site-bar .ash-brand {
+  padding: max(0.7rem, env(safe-area-inset-top)) clamp(1.25rem, 5vw, 4rem) 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ash-name {
@@ -666,49 +672,50 @@ a {
   font-weight: 800;
   letter-spacing: 0.14em;
   color: #fff;
+  white-space: nowrap;
 }
 
 .ash-line {
   font-family: "Work Sans", sans-serif;
-  font-size: clamp(0.55rem, 1.2vw, 0.6rem);
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: clamp(0.62rem, 1.25vw, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
   color: rgba(255, 255, 255, 0.62);
+  white-space: nowrap;
 }
 
-.ride-deux .ash-name,
-.ride-clean .ash-name {
-  color: #1a1a1a;
+.site-bar .ash-name,
+.site-bar .ash-line {
+  color: inherit;
 }
 
-.ride-deux .ash-line,
-.ride-clean .ash-line {
-  color: rgba(26, 26, 26, 0.5);
+.site-bar .ash-line {
+  opacity: 0.72;
 }
 
-.ride-nature .ash-name {
+.site-bar-nature .ash-brand {
   color: #faf6f0;
 }
 
-.ride-nature .ash-line {
-  color: rgba(250, 246, 240, 0.55);
-}
-
-.ride-bw .ash-name {
+.site-bar-deux .ash-brand {
   color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 
-.ride-bw .ash-line {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.ride-food .ash-name {
+.site-bar-clean .ash-brand {
   color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
 }
 
-.ride-food .ash-line {
-  color: rgba(255, 255, 255, 0.65);
+.site-bar-bw .ash-brand {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.site-bar-food .ash-brand {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.18);
 }
 
 .ride-start .scene {
@@ -1113,23 +1120,15 @@ a {
 }
 
 .nature-lead {
-  margin: 0 0 1.15rem;
+  margin: 0 0 2rem;
   max-width: 26rem;
   font-size: 1.02rem;
   line-height: 1.65;
-  color: rgba(250, 246, 240, 0.78);
+  color: rgba(250, 246, 240, 0.68);
 }
 
-.nature-reveal {
-  margin: 0 0 2rem;
-  max-width: 24rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(250, 246, 240, 0.62);
-}
-
-.nature-reveal strong {
-  color: rgba(250, 246, 240, 0.92);
+.nature-lead strong {
+  color: rgba(250, 246, 240, 0.95);
   font-weight: 700;
 }
 
