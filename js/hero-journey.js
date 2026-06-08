@@ -31,7 +31,7 @@
 
       hero.classList.remove("is-bw");
       hero.classList.add("is-space");
-      await wait(4200);
+      await wait(10000);
 
       hero.classList.remove("is-space");
       await wait(900);
