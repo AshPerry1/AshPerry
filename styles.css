@@ -411,31 +411,6 @@ a {
   }
 }
 
-@keyframes bolt-strike {
-  0% {
-    opacity: 0;
-    transform: rotate(-6deg) scale(0.6) translateY(-20%);
-  }
-  18% {
-    opacity: 1;
-    transform: rotate(-6deg) scale(1.15) translateY(0);
-  }
-  35% {
-    opacity: 0.15;
-  }
-  48% {
-    opacity: 1;
-    transform: rotate(-6deg) scale(1.05) translateY(2%);
-  }
-  70% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 0;
-    transform: rotate(-6deg) scale(1) translateY(5%);
-  }
-}
-
 @keyframes vignette-in {
   0% {
     opacity: 0;
@@ -1529,7 +1504,6 @@ a {
   .nature-art .leaf-1,
   .nature-art .leaf-2,
   .ride-start.is-lightning .lightning-flash,
-  .ride-start.is-lightning .lightning-bolt,
   .ride-start.is-power-out,
   .ride-start.is-space .space-moon {
     animation: none;
