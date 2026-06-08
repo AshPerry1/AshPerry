@@ -27,14 +27,14 @@
 
     (async function () {
       hero.classList.add("is-bw");
-      await wait(1500);
+      await wait(2200);
 
       hero.classList.remove("is-bw");
       hero.classList.add("is-space");
-      await wait(2000);
+      await wait(4200);
 
       hero.classList.remove("is-space");
-      await wait(700);
+      await wait(900);
 
       hero.classList.remove("is-journey");
       btn.removeAttribute("aria-busy");
