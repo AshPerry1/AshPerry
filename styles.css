@@ -215,15 +215,194 @@ a {
    01 · START (original hero)
    ══════════════════════════════════════ */
 .ride-start {
+  --hero-row: min(14vw, 11.8vh, 10.5rem);
+  --hero-row-big: min(16vw, 13.2vh, 11.5rem);
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: 100vh;
   min-height: 100dvh;
+  height: 100dvh;
   max-height: 100dvh;
   overflow: hidden;
   background: #1a00ff;
   color: #fff;
   font-family: "Work Sans", system-ui, sans-serif;
+  transition: background 0.7s ease, color 0.5s ease;
+}
+
+/* Starfield — hidden until space mode */
+.space-field {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 30% 65%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 55% 15%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 45%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1px 1px at 85% 75%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 15% 85%, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(1px 1px at 45% 40%, #fff, transparent),
+    radial-gradient(1px 1px at 92% 30%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(ellipse 55% 40% at 75% 60%, rgba(120, 80, 255, 0.35), transparent),
+    radial-gradient(ellipse 45% 35% at 20% 35%, rgba(0, 200, 255, 0.2), transparent),
+    #020010;
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  transition: opacity 0.8s ease;
+}
+
+/* ── Black & white mode ── */
+.ride-start.is-bw {
+  background: #0a0a0a;
+}
+
+.ride-start.is-bw .scene {
+  filter: grayscale(1) contrast(1.25);
+  transition: filter 0.6s ease;
+}
+
+.ride-start.is-bw .grid {
+  opacity: 0.12;
+  background-image:
+    linear-gradient(#fff 1px, transparent 1px),
+    linear-gradient(90deg, #fff 1px, transparent 1px);
+}
+
+.ride-start.is-bw .letter {
+  color: #fff !important;
+}
+
+.ride-start.is-bw .title-row-outline .letter {
+  color: transparent !important;
+  -webkit-text-stroke: 2.5px #fff;
+  text-stroke: 2.5px #fff;
+}
+
+.ride-start.is-bw .start-name,
+.ride-start.is-bw .start-line,
+.ride-start.is-bw .lead {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.ride-start.is-bw .hero-amp {
+  color: #fff;
+  opacity: 0.12;
+}
+
+.ride-start.is-bw .btn-hot {
+  background: #fff;
+  color: #0a0a0a;
+  box-shadow: 0 8px 0 #333;
+}
+
+.ride-start.is-bw .btn-cool {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: none;
+}
+
+/* ── Outer space mode ── */
+.ride-start.is-space {
+  background: #020010;
+}
+
+.ride-start.is-space .space-field {
+  opacity: 1;
+}
+
+.ride-start.is-space .scene {
+  filter: saturate(1.6) brightness(1.15);
+  opacity: 0.45;
+}
+
+.ride-start.is-space .grid {
+  opacity: 0;
+}
+
+.ride-start.is-space .letter.c1 {
+  color: #e0b0ff;
+  text-shadow: 0 0 24px rgba(224, 176, 255, 0.6);
+}
+.ride-start.is-space .letter.c2 {
+  color: #00f0ff;
+  text-shadow: 0 0 24px rgba(0, 240, 255, 0.55);
+}
+.ride-start.is-space .letter.c3 {
+  color: #ff6ec7;
+  text-shadow: 0 0 20px rgba(255, 110, 199, 0.5);
+}
+.ride-start.is-space .letter.c4 {
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.45);
+}
+.ride-start.is-space .letter.c5 {
+  color: #7df9ff;
+  text-shadow: 0 0 18px rgba(125, 249, 255, 0.5);
+}
+.ride-start.is-space .letter.c6 {
+  color: #c77dff;
+  text-shadow: 0 0 22px rgba(199, 125, 255, 0.55);
+}
+.ride-start.is-space .letter.c7 {
+  color: #39ff14;
+  text-shadow: 0 0 18px rgba(57, 255, 20, 0.4);
+}
+.ride-start.is-space .letter.c8 {
+  color: #fff;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+.ride-start.is-space .title-row-outline .letter {
+  color: transparent !important;
+  -webkit-text-stroke: 2.5px rgba(0, 240, 255, 0.85);
+  text-stroke: 2.5px rgba(0, 240, 255, 0.85);
+  filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.4));
+}
+
+.ride-start.is-space .start-name {
+  color: #00f0ff;
+  text-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
+}
+
+.ride-start.is-space .start-line,
+.ride-start.is-space .lead {
+  color: rgba(200, 220, 255, 0.75);
+}
+
+.ride-start.is-space .hero-amp {
+  color: #e0b0ff;
+  opacity: 0.35;
+  text-shadow: 0 0 60px rgba(224, 176, 255, 0.5);
+}
+
+.ride-start.is-space .btn-hot {
+  background: linear-gradient(135deg, #7c3aed, #00f0ff);
+  color: #fff;
+  box-shadow: 0 0 28px rgba(0, 240, 255, 0.45);
+}
+
+.ride-start.is-space .btn-cool {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.3);
+}
+
+.ride-start.is-journey .btn {
+  pointer-events: none;
 }
 
 .start-brand {
@@ -315,10 +494,11 @@ a {
 .ride-start .ride-inner.hero {
   display: grid;
   align-items: center;
-  align-self: center;
+  align-self: stretch;
+  min-height: 0;
   width: 100%;
-  padding: clamp(0.5rem, 2vh, 1.5rem) clamp(1.25rem, 5vw, 4rem)
-    clamp(1.25rem, 3vh, 2rem);
+  padding: clamp(0.25rem, 1.5vh, 1rem) clamp(1.25rem, 5vw, 4rem)
+    clamp(1rem, 2.5vh, 1.75rem);
 }
 
 .hero-copy {
@@ -326,17 +506,17 @@ a {
 }
 
 .ride-start .title {
-  margin: 0 0 clamp(0.75rem, 2vw, 1.25rem);
+  margin: 0 0 clamp(0.4rem, 1.2vh, 0.85rem);
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  line-height: 0.86;
+  line-height: 0.84;
   letter-spacing: -0.04em;
   text-transform: uppercase;
 }
 
 .ride-start .title-row {
   display: block;
-  font-size: clamp(2.35rem, 9.5vw, 6.75rem);
+  font-size: var(--hero-row);
 }
 
 .title-row-outline .letter {
@@ -346,12 +526,12 @@ a {
 }
 
 .ride-start .title-row-mix {
-  margin-left: clamp(0.35rem, 4vw, 3.5rem);
+  margin-left: clamp(0.5rem, 5vw, 4.5rem);
 }
 
 .ride-start .title-row-big {
-  font-size: clamp(2.6rem, 10.5vw, 7.25rem);
-  line-height: 0.82;
+  font-size: var(--hero-row-big);
+  line-height: 0.8;
 }
 
 .letter.c1 { color: #ccff00; }
@@ -379,11 +559,20 @@ a {
 }
 
 .ride-start .lead {
-  margin: 0 0 clamp(1rem, 2.5vh, 1.5rem);
+  margin: 0 0 clamp(0.75rem, 1.8vh, 1.15rem);
   max-width: 26rem;
-  font-size: clamp(0.88rem, 1.8vw, 1.05rem);
-  line-height: 1.45;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  line-height: 1.4;
   color: rgba(255, 255, 255, 0.72);
+}
+
+.ride-start .actions {
+  gap: 0.7rem;
+}
+
+.ride-start .btn {
+  padding: clamp(0.7rem, 1.5vh, 0.85rem) clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(0.82rem, 1.4vw, 0.95rem);
 }
 
 .actions {
@@ -990,21 +1179,20 @@ a {
 }
 
 @media (max-height: 780px) {
-  .ride-start .title-row {
-    font-size: clamp(2rem, 8vw, 5.25rem);
+  .ride-start {
+    --hero-row: min(12vw, 10.2vh, 8.5rem);
+    --hero-row-big: min(13.5vw, 11.2vh, 9.25rem);
+  }
+}
+
+@media (max-height: 680px) {
+  .ride-start {
+    --hero-row: min(10.5vw, 9vh, 7rem);
+    --hero-row-big: min(11.5vw, 9.8vh, 7.5rem);
   }
 
-  .ride-start .title-row-big {
-    font-size: clamp(2.15rem, 8.5vw, 5.75rem);
-  }
-
-  .ride-start .lead {
-    margin-bottom: 0.85rem;
-  }
-
-  .ride-start .btn {
-    padding: 0.7rem 1.4rem;
-    font-size: 0.88rem;
+  .start-brand {
+    padding-top: max(0.85rem, env(safe-area-inset-top));
   }
 }
 
