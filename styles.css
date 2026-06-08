@@ -105,14 +105,11 @@ a {
 body[data-chapter="nature"] .ride-nav,
 body[data-chapter="playful"] .ride-nav,
 body[data-chapter="clean"] .ride-nav,
-body[data-chapter="bw"] .ride-nav {
+body[data-chapter="bw"] .ride-nav,
+body[data-chapter="contact"] .ride-nav {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-100%);
-}
-
-body[data-chapter="contact"] .ride-nav {
-  background: rgba(8, 8, 8, 0.72);
 }
 
 /* ── Faux site chrome (each scroll = new "website") ── */
@@ -247,6 +244,40 @@ body[data-chapter="contact"] .ride-nav {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
   letter-spacing: 0.14em;
+}
+
+.site-bar-food {
+  background: #b81f24;
+  color: #fff;
+  border-bottom: 3px solid #8a1519;
+}
+
+.site-bar-food .site-logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+
+.site-bar-food .site-links {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.site-bar-food .site-cta {
+  background: #fff;
+  color: #b81f24;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .ride-dots {
@@ -905,138 +936,173 @@ body[data-chapter="contact"] .ride-nav {
 }
 
 /* ══════════════════════════════════════
-   06 · CONTACT
+   06 · FOOD BRAND (Chick-fil-A concept)
    ══════════════════════════════════════ */
-.ride-contact {
-  background: linear-gradient(145deg, #1a00ff 0%, #7c3aed 45%, #ff2d6a 100%);
+.ride-food {
+  background: #dd0031;
   color: #fff;
   font-family: "Montserrat", sans-serif;
 }
 
-.contact-rings {
+.food-spots {
   position: absolute;
   inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image: radial-gradient(#1a1a1a 18%, transparent 19%);
+  background-size: 42px 42px;
+  background-position: 12px 8px;
+}
+
+.food-layout {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 3rem);
+  width: 100%;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 4rem) clamp(2rem, 6vh, 4rem);
+}
+
+.food-cow {
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
+  padding: 1rem;
 }
 
-.contact-rings span {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.12);
+.cow-svg {
+  width: min(42vw, 300px);
+  height: auto;
+  filter: drop-shadow(8px 12px 0 rgba(0, 0, 0, 0.2));
+  animation: cow-bob 4s ease-in-out infinite;
 }
 
-.contact-rings span:nth-child(1) {
-  width: min(80vw, 500px);
-  height: min(80vw, 500px);
+@keyframes cow-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
 }
 
-.contact-rings span:nth-child(2) {
-  width: min(60vw, 360px);
-  height: min(60vw, 360px);
+.food-inner {
+  padding-top: clamp(1.5rem, 4vh, 2.5rem);
+  padding-bottom: 1rem;
+  text-align: left;
 }
 
-.contact-rings span:nth-child(3) {
-  width: min(40vw, 220px);
-  height: min(40vw, 220px);
-}
-
-.reveal-eyebrow {
-  margin: 0 0 1rem;
+.food-badge {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 0.35rem 0.75rem;
+  background: #1a1a1a;
+  color: #fff;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #ccff00;
 }
 
-.contact-title {
-  margin: 0 0 1rem;
-  font-size: clamp(2.5rem, 8vw, 5rem);
+.food-title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.2rem, 6.5vw, 4.25rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 0.95;
   letter-spacing: -0.03em;
+  text-transform: uppercase;
 }
 
-.contact-highlight {
-  background: linear-gradient(92deg, #ccff00, #00e5ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.food-title-accent {
+  display: block;
+  margin-top: 0.15em;
+  color: #fff;
+  -webkit-text-stroke: 0;
+  text-shadow: 4px 4px 0 #1a1a1a;
 }
 
-.contact-lead {
-  margin: 0 auto 1.25rem;
-  max-width: 30rem;
+.food-lead {
+  margin: 0 0 1.25rem;
+  max-width: 28rem;
   font-family: "Work Sans", sans-serif;
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.food-reveal {
+  margin: 0 0 2rem;
+  max-width: 26rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.78);
 }
 
-.contact-lead strong {
+.food-reveal strong {
   color: #fff;
+  font-weight: 700;
 }
 
-.contact-pitch {
-  margin: 0 auto 2rem;
-  max-width: 24rem;
-  font-family: "Work Sans", sans-serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #fff;
+.food-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
 }
 
-.contact-btn {
+.food-btn-primary {
   display: inline-block;
-  padding: 1rem 2.25rem;
+  padding: 1rem 1.85rem;
   border-radius: 999px;
   background: #fff;
-  color: #1a00ff;
-  font-family: "Montserrat", sans-serif;
+  color: #dd0031;
   font-weight: 900;
-  font-size: clamp(1rem, 3vw, 1.35rem);
-  letter-spacing: -0.02em;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 0 #1a1a1a;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.contact-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+.food-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 11px 0 #1a1a1a;
 }
 
-.contact-btn-secondary {
-  display: inline-block;
-  margin-top: 1rem;
+.food-btn-secondary {
   font-family: "Work Sans", sans-serif;
   font-size: 0.95rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   padding-bottom: 2px;
-  transition: color 160ms ease, border-color 160ms ease;
 }
 
-.contact-btn-secondary:hover {
-  color: #ccff00;
-  border-color: #ccff00;
+.food-btn-secondary:hover {
+  border-color: #fff;
 }
 
-.contact-foot {
-  margin-top: 3rem;
+.food-foot {
+  margin-top: 2.5rem;
   font-family: "Work Sans", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: lowercase;
   color: rgba(255, 255, 255, 0.55);
 }
 
-.contact-foot span:nth-child(2) {
-  color: #ccff00;
+.food-foot span:nth-child(2) {
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* ── Responsive ── */
@@ -1085,6 +1151,28 @@ body[data-chapter="contact"] .ride-nav {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .food-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .food-inner {
+    text-align: center;
+  }
+
+  .food-lead,
+  .food-reveal {
+    margin-inline: auto;
+  }
+
+  .food-actions {
+    justify-content: center;
+  }
+
+  .cow-svg {
+    width: min(55vw, 220px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1105,7 +1193,9 @@ body[data-chapter="contact"] .ride-nav {
   .nature-btn:hover,
   .pbtn:hover,
   .clean-btn:hover,
-  .contact-btn:hover {
+  .food-btn-primary:hover,
+  .cow-svg {
     transform: none;
+    animation: none;
   }
 }

@@ -7,7 +7,7 @@
     "sidequest — Your Table. Your Rules.",
     "Northline — Strategy That Ships",
     "ATELIER — Form Follows Intent",
-    "Ash Perry — Let's Build Your Site",
+    "Chick-fil-A — Concept Redesign by Ash Perry",
   ];
 
   if (!sections.length || !dotsWrap) return;
