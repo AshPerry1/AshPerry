@@ -1254,6 +1254,76 @@ a {
   letter-spacing: 0.02em;
 }
 
+.deux-title-track {
+  display: inline-flex;
+  align-items: baseline;
+  perspective: 900px;
+}
+
+.deux-deu {
+  display: inline-flex;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.deux-x {
+  display: inline-block;
+  transform-origin: 50% 85%;
+  backface-visibility: hidden;
+}
+
+.deux-title.is-played .deux-deu {
+  animation: deux-deu-reveal 2.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.deux-title.is-played .deux-x {
+  animation: deux-x-roll 2.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes deux-deu-reveal {
+  0%,
+  14% {
+    max-width: 0;
+    opacity: 0;
+  }
+  38%,
+  100% {
+    max-width: 3.1em;
+    opacity: 1;
+  }
+}
+
+@keyframes deux-x-roll {
+  0%,
+  10% {
+    transform: translateX(0) rotateY(0deg) scale(1);
+  }
+  32% {
+    transform: translateX(1.15em) rotateY(210deg) scale(0.88);
+  }
+  42% {
+    transform: translateX(1.55em) rotateY(250deg) scale(0.82);
+    opacity: 0.55;
+  }
+  54%,
+  58% {
+    transform: translateX(1.55em) rotateY(250deg) scale(0.82);
+    opacity: 0.55;
+  }
+  72% {
+    transform: translateX(0.2em) rotateY(330deg) scale(1.06);
+    opacity: 1;
+  }
+  86% {
+    transform: translateX(-0.06em) rotateY(370deg) scale(1);
+  }
+  100% {
+    transform: translateX(0) rotateY(360deg) scale(1);
+  }
+}
+
 .deux-letter.is-red { color: var(--deux-red); }
 .deux-letter.is-blue { color: var(--deux-blue); }
 .deux-letter.is-green { color: var(--deux-green); }
@@ -1928,6 +1998,20 @@ a {
 
   .ride-bw {
     min-height: 100dvh;
+  }
+
+  .deux-deu {
+    max-width: 3.1em;
+    opacity: 1;
+  }
+
+  .deux-title.is-played .deux-deu,
+  .deux-title.is-played .deux-x {
+    animation: none;
+  }
+
+  .deux-x {
+    transform: none;
   }
 
   .ride-start .blob,
