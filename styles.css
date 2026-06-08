@@ -1038,10 +1038,6 @@ a {
 }
 
 @media (max-width: 640px) {
-  .ride-nav-meta {
-    gap: 0.5rem;
-  }
-
   .actions {
     flex-direction: column;
     align-items: flex-start;
