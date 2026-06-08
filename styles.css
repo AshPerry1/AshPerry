@@ -1125,6 +1125,18 @@ a {
   background: #000;
   color: #fff;
   font-family: "Work Sans", system-ui, sans-serif;
+  min-height: 400dvh;
+  overflow: visible;
+  display: block;
+}
+
+.bw-sticky {
+  position: sticky;
+  top: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .bw-pattern {
@@ -1154,11 +1166,25 @@ a {
   color: #fff;
 }
 
+.bw-title .bw-outline-wrap {
+  position: relative;
+  display: block;
+  margin-left: clamp(1rem, 8vw, 6rem);
+}
+
+.bw-title .bw-outline-fill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #ffe600;
+}
+
 .bw-title .bw-outline {
+  position: relative;
+  z-index: 1;
   color: transparent;
   -webkit-text-stroke: 2px #fff;
   text-stroke: 2px #fff;
-  margin-left: clamp(1rem, 8vw, 6rem);
 }
 
 .bw-title .bw-invert {
@@ -1428,7 +1454,7 @@ a {
     text-align: center;
   }
 
-  .ride-bw .bw-title .bw-outline {
+  .ride-bw .bw-title .bw-outline-wrap {
     margin-left: 0;
   }
 
@@ -1464,6 +1490,10 @@ a {
   html {
     scroll-behavior: auto;
     scroll-snap-type: none;
+  }
+
+  .ride-bw {
+    min-height: 100dvh;
   }
 
   .ride-start .blob,
