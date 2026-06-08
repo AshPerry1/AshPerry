@@ -53,19 +53,12 @@ a {
   position: relative;
   z-index: 10;
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.site-bar-row {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem clamp(1.25rem, 5vw, 4rem) 1.1rem;
+  padding: 1.1rem clamp(1.25rem, 5vw, 4rem);
+  padding-top: max(1.1rem, env(safe-area-inset-top));
+  flex-shrink: 0;
 }
 
 .site-logo {
@@ -662,8 +655,18 @@ a {
 }
 
 .site-bar .ash-brand {
-  padding: max(0.7rem, env(safe-area-inset-top)) clamp(1.25rem, 5vw, 4rem) 0.55rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+  min-width: 0;
+  flex: 1 1 auto;
+  max-width: min(100%, 28rem);
+}
+
+.site-bar .ash-name {
+  font-size: clamp(0.82rem, 1.6vw, 0.95rem);
+}
+
+.site-bar .ash-line {
+  font-size: clamp(0.58rem, 1.1vw, 0.65rem);
 }
 
 .ash-name {
@@ -692,30 +695,6 @@ a {
 
 .site-bar .ash-line {
   opacity: 0.72;
-}
-
-.site-bar-nature .ash-brand {
-  color: #faf6f0;
-}
-
-.site-bar-deux .ash-brand {
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-}
-
-.site-bar-clean .ash-brand {
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-}
-
-.site-bar-bw .ash-brand {
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-}
-
-.site-bar-food .ash-brand {
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.18);
 }
 
 .ride-start .scene {
