@@ -3,7 +3,7 @@
   const titles = [
     "Ash Perry | Custom Websites",
     "Isola — Arrive at Paradise",
-    "sidequest — Your Table. Your Rules.",
+    "DEUX — The Card Game. Rebooted.",
     "Northline — Strategy That Ships",
     "ATELIER — Form Follows Intent",
     "Chick-fil-A — Concept Redesign by Ash Perry",

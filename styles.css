@@ -127,22 +127,29 @@ a {
   font-size: 0.72rem;
 }
 
-.site-bar-playful {
-  background: #5c1a6e;
+.site-bar-deux {
+  background: #0a0a0a;
+  border-bottom: 3px solid #f9d900;
   color: #fff;
 }
 
-.site-bar-playful .site-logo {
-  font-family: "Nunito", sans-serif;
-  font-size: 1.2rem;
-  text-transform: lowercase;
+.site-bar-deux .site-logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: #f9d900;
 }
 
-.site-bar-playful .site-cta {
-  background: #e85d04;
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  text-transform: lowercase;
+.site-bar-deux .site-cta {
+  background: #e41b17;
+  padding: 0.42rem 1rem;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .site-bar-clean {
@@ -1057,98 +1064,214 @@ a {
 }
 
 /* ══════════════════════════════════════
-   03 · PLAYFUL
+   03 · DEUX (card game)
    ══════════════════════════════════════ */
-.ride-playful {
-  background: #ffd800;
-  color: #2d1045;
-  font-family: "Nunito", system-ui, sans-serif;
+.ride-deux {
+  background: #121212;
+  color: #fff;
+  font-family: "Work Sans", system-ui, sans-serif;
 }
 
-.playful-blobs {
+.deux-scene {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
-.pblob {
+.deux-felt {
   position: absolute;
-  border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 78% 58%, rgba(228, 27, 23, 0.08), transparent),
+    radial-gradient(ellipse 70% 55% at 72% 62%, rgba(0, 87, 184, 0.07), transparent),
+    radial-gradient(ellipse 60% 50% at 85% 48%, rgba(0, 166, 81, 0.06), transparent),
+    linear-gradient(160deg, #1a1a1a 0%, #121212 55%, #0a0a0a 100%);
 }
 
-.pblob-1 {
-  width: min(50vw, 380px);
-  height: min(50vw, 380px);
-  right: -8%;
-  top: 5%;
-  background: #5c1a6e;
-  opacity: 0.9;
+.deux-card {
+  --rot: 0deg;
+  --tx: 0px;
+  --ty: 0px;
+  position: absolute;
+  right: clamp(6%, 12vw, 14%);
+  bottom: clamp(14%, 18vh, 22%);
+  width: min(24vw, 148px);
+  height: min(36vw, 218px);
+  border-radius: 16px;
+  border: 4px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 4px 0 rgba(0, 0, 0, 0.2);
+  transform: rotate(var(--rot)) translate(var(--tx), var(--ty));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: deux-float 7s ease-in-out infinite;
 }
 
-.pblob-2 {
-  width: min(35vw, 260px);
-  height: min(35vw, 260px);
-  right: 12%;
-  bottom: 8%;
-  background: #e85d04;
-  border-radius: 45% 55% 50% 50% / 50% 50% 55% 45%;
+.deux-card.is-red {
+  color: #e41b17;
+  background: #e41b17;
+  z-index: 1;
 }
 
-.pblob-3 {
-  width: min(22vw, 160px);
-  height: min(22vw, 160px);
-  left: 5%;
-  top: 18%;
-  background: #9d174d;
-  opacity: 0.55;
+.deux-card.is-blue {
+  color: #0057b8;
+  background: #0057b8;
+  z-index: 2;
+  animation-delay: -1.2s;
 }
 
-.playful-title {
-  margin: 0 0 1rem;
-  font-size: clamp(3.5rem, 12vw, 7.5rem);
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  text-transform: lowercase;
+.deux-card.is-green {
+  color: #00a651;
+  background: #00a651;
+  z-index: 3;
+  animation-delay: -2.4s;
+}
+
+.deux-card.is-yellow {
+  color: #1a1a1a;
+  background: #f9d900;
+  z-index: 4;
+  animation-delay: -3.6s;
+}
+
+.deux-card.is-wild {
   color: #fff;
-  text-shadow: 3px 3px 0 #5c1a6e;
+  background: #1a1a1a;
+  z-index: 5;
+  animation-delay: -4.8s;
 }
 
-.playful-lead {
+.deux-card-n {
+  position: absolute;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  line-height: 1;
+  color: #fff;
+}
+
+.deux-card.is-yellow .deux-card-n {
+  color: #1a1a1a;
+}
+
+.deux-card-n.top {
+  top: 10px;
+  left: 12px;
+}
+
+.deux-card-n.bottom {
+  bottom: 10px;
+  right: 12px;
+  transform: rotate(180deg);
+}
+
+.deux-card-face {
+  width: 70%;
+  height: 46%;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+  line-height: 1;
+  color: currentColor;
+}
+
+.deux-card-face.wild {
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  letter-spacing: 0.06em;
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #fff;
+}
+
+@keyframes deux-float {
+  0%,
+  100% {
+    transform: rotate(var(--rot)) translate(var(--tx), var(--ty));
+  }
+  50% {
+    transform: rotate(calc(var(--rot) + 2deg)) translate(var(--tx), calc(var(--ty) - 8px));
+  }
+}
+
+.ride-deux .site-url {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.ride-deux .ride-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.deux-title {
+  margin: 0 0 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 16vw, 9.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+
+.deux-letter.is-red { color: #e41b17; }
+.deux-letter.is-blue { color: #0057b8; }
+.deux-letter.is-green { color: #00a651; }
+.deux-letter.is-yellow { color: #f9d900; }
+
+.deux-lead {
   margin: 0 0 2rem;
-  max-width: 24rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #3d1558;
+  max-width: 26rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.68);
 }
 
-.playful-btns {
+.deux-btns {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.pbtn {
-  padding: 0.85rem 1.75rem;
-  border-radius: 999px;
+.deux-btn {
+  padding: 0.85rem 1.85rem;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  font-size: 1rem;
-  text-transform: lowercase;
-  transition: transform 180ms ease;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.pbtn:hover {
+.deux-btn:hover {
   transform: translateY(-3px);
 }
 
-.pbtn-hot {
-  background: #e85d04;
-  color: #fff;
+.deux-btn.is-yellow {
+  background: #f9d900;
+  color: #1a1a1a;
+  box-shadow: 0 6px 0 #c9a800;
 }
 
-.pbtn-cool {
-  background: #5c1a6e;
+.deux-btn.is-yellow:hover {
+  box-shadow: 0 9px 0 #c9a800;
+}
+
+.deux-btn.is-outline {
+  background: transparent;
   color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.deux-btn.is-outline:hover {
+  border-color: #fff;
 }
 
 /* ══════════════════════════════════════
@@ -1598,9 +1721,16 @@ a {
     margin-left: 0;
   }
 
-  .playful-btns {
+  .deux-btns {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .deux-card {
+    right: 4%;
+    bottom: 10%;
+    width: min(28vw, 120px);
+    height: min(42vw, 176px);
   }
 
   .food-layout {
