@@ -1105,20 +1105,6 @@ a {
 .n-letter.n5 { color: #ff6b4a; }
 .n-letter.n6 { color: #52b788; }
 
-.nature-badge {
-  display: inline-block;
-  margin: 0 0 1rem;
-  padding: 0.35rem 0.75rem;
-  background: rgba(6, 42, 48, 0.55);
-  border: 1px solid rgba(250, 246, 240, 0.12);
-  color: rgba(250, 246, 240, 0.88);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
 .nature-lead {
   margin: 0 0 2rem;
   max-width: 26rem;
