@@ -640,12 +640,10 @@ a {
   position: relative;
   z-index: 12;
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  flex-wrap: wrap;
-  column-gap: 0.65rem;
-  row-gap: 0.1rem;
-  line-height: 1.1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  line-height: 1.05;
   flex-shrink: 0;
 }
 
@@ -657,16 +655,19 @@ a {
 .site-bar .ash-brand {
   padding: 0;
   min-width: 0;
-  flex: 1 1 auto;
-  max-width: min(100%, 28rem);
+  flex: 0 1 auto;
+  max-width: min(100%, 16rem);
 }
 
 .site-bar .ash-name {
-  font-size: clamp(0.82rem, 1.6vw, 0.95rem);
+  font-size: clamp(0.78rem, 1.5vw, 0.9rem);
+  letter-spacing: 0.12em;
 }
 
 .site-bar .ash-line {
-  font-size: clamp(0.58rem, 1.1vw, 0.65rem);
+  font-size: clamp(0.52rem, 1vw, 0.6rem);
+  letter-spacing: 0.14em;
+  opacity: 0.72;
 }
 
 .ash-name {
