@@ -284,6 +284,182 @@ a {
   transition: opacity 1.5s ease;
 }
 
+/* ── Lightning strike → power out ── */
+.lightning-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lightning-flash {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: #fff;
+}
+
+.lightning-bolt {
+  position: absolute;
+  top: -5%;
+  left: 18%;
+  width: min(22vw, 140px);
+  height: auto;
+  opacity: 0;
+  filter: drop-shadow(0 0 30px #38bdf8) drop-shadow(0 0 80px #2563eb);
+  transform: rotate(-6deg);
+}
+
+.power-vignette {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(ellipse at center, transparent 35%, #000 100%);
+}
+
+.ride-start.is-lightning .lightning-flash {
+  animation: lightning-burst 0.72s ease-out forwards;
+}
+
+.ride-start.is-lightning .lightning-bolt {
+  animation: bolt-strike 0.72s ease-out forwards;
+}
+
+.ride-start.is-lightning .power-vignette {
+  animation: vignette-in 0.72s ease-out forwards;
+}
+
+@keyframes lightning-burst {
+  0% {
+    opacity: 0;
+    background: #fff;
+  }
+  6% {
+    opacity: 1;
+    background: #fff;
+  }
+  14% {
+    opacity: 0.08;
+  }
+  22% {
+    opacity: 1;
+    background: linear-gradient(160deg, #e0f2fe 0%, #38bdf8 35%, #1d4ed8 70%, #0f172a 100%);
+  }
+  32% {
+    opacity: 0.12;
+  }
+  42% {
+    opacity: 0.95;
+    background: linear-gradient(135deg, #bae6fd, #3b82f6 50%, #1e3a8a);
+  }
+  52% {
+    opacity: 0.05;
+  }
+  62% {
+    opacity: 0.65;
+    background: #60a5fa;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bolt-strike {
+  0% {
+    opacity: 0;
+    transform: rotate(-6deg) scale(0.6) translateY(-20%);
+  }
+  18% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(1.15) translateY(0);
+  }
+  35% {
+    opacity: 0.15;
+  }
+  48% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(1.05) translateY(2%);
+  }
+  70% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-6deg) scale(1) translateY(5%);
+  }
+}
+
+@keyframes vignette-in {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
+.ride-start.is-power-out {
+  animation: power-flicker 1.1s ease-out forwards;
+}
+
+@keyframes power-flicker {
+  0% {
+    background: #1e40af;
+  }
+  12% {
+    background: #0c1929;
+  }
+  22% {
+    background: #1a1a1a;
+  }
+  35% {
+    background: #0a0a0a;
+  }
+  48% {
+    background: #222;
+  }
+  58% {
+    background: #050505;
+  }
+  72% {
+    background: #111;
+  }
+  100% {
+    background: #0a0a0a;
+  }
+}
+
+.ride-start.is-power-out .power-vignette {
+  opacity: 0.92;
+  transition: opacity 0.5s ease;
+}
+
+.ride-start.is-power-out .scene {
+  animation: scene-dim 0.9s ease-out forwards;
+}
+
+@keyframes scene-dim {
+  0% {
+    filter: brightness(1.8) saturate(0.3) hue-rotate(180deg);
+    opacity: 1;
+  }
+  40% {
+    filter: grayscale(0.6) brightness(0.4);
+    opacity: 0.7;
+  }
+  100% {
+    filter: grayscale(1) contrast(1.25);
+    opacity: 1;
+  }
+}
+
 /* ── Black & white mode ── */
 .ride-start.is-bw {
   background: #0a0a0a;
@@ -1279,7 +1455,10 @@ a {
 
   .ride-start .blob,
   .nature-art .leaf-1,
-  .nature-art .leaf-2 {
+  .nature-art .leaf-2,
+  .ride-start.is-lightning .lightning-flash,
+  .ride-start.is-lightning .lightning-bolt,
+  .ride-start.is-power-out {
     animation: none;
   }
 

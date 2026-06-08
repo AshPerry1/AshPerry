@@ -26,10 +26,14 @@
     btn.setAttribute("aria-busy", "true");
 
     (async function () {
-      hero.classList.add("is-bw");
-      await wait(2200);
+      hero.classList.add("is-lightning");
+      await wait(750);
 
-      hero.classList.remove("is-bw");
+      hero.classList.remove("is-lightning");
+      hero.classList.add("is-bw", "is-power-out");
+      await wait(2400);
+
+      hero.classList.remove("is-bw", "is-power-out");
       hero.classList.add("is-space");
       await wait(10000);
 
