@@ -2,7 +2,7 @@
   const sections = document.querySelectorAll(".ride");
   const titles = [
     "Ash Perry | Custom Websites",
-    "Verdant — Rooted in Ritual",
+    "Isola — Arrive. Exhale. Stay.",
     "sidequest — Your Table. Your Rules.",
     "Northline — Strategy That Ships",
     "ATELIER — Form Follows Intent",
