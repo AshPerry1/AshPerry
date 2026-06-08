@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Fredoka:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Montserrat:wght@700;800;900&family=Nunito:wght@600;700;800&family=Poppins:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Fredoka:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Montserrat:wght@700;800;900&family=Nunito:wght@600;700;800&family=Permanent+Marker&family=Poppins:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -136,36 +136,38 @@
     <!-- 03 · DEUX (card game product site) -->
     <section class="ride ride-deux site" id="deux" data-section="03" data-name="DEUX">
       <div class="deux-scene" aria-hidden="true">
-        <div class="deux-ambient"></div>
-        <div class="deux-hand">
-          <div class="deux-card is-red" style="--i: 0">
-            <span class="deux-card-n top">2</span>
-            <span class="deux-card-face">2</span>
-            <span class="deux-card-n bottom">2</span>
-          </div>
-          <div class="deux-card is-blue" style="--i: 1">
-            <span class="deux-card-n top">2</span>
-            <span class="deux-card-face">2</span>
-            <span class="deux-card-n bottom">2</span>
-          </div>
-          <div class="deux-card is-green" style="--i: 2">
-            <span class="deux-card-n top">2</span>
-            <span class="deux-card-face">2</span>
-            <span class="deux-card-n bottom">2</span>
-          </div>
-          <div class="deux-card is-yellow" style="--i: 3">
-            <span class="deux-card-n top">2</span>
-            <span class="deux-card-face">2</span>
-            <span class="deux-card-n bottom">2</span>
-          </div>
-          <div class="deux-card is-wild" style="--i: 4">
-            <div class="deux-wild-wheel"></div>
-            <span class="deux-wild-label">WILD</span>
-          </div>
+        <div class="deux-sky"></div>
+        <div class="deux-cloud deux-cloud-a"></div>
+        <div class="deux-cloud deux-cloud-b"></div>
+        <div class="deux-cloud deux-cloud-c"></div>
+        <div class="deux-cloud deux-cloud-d"></div>
+        <svg class="deux-sketch" viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M28 198 Q72 148 118 168 T208 142 Q252 118 292 88"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M44 218 Q98 182 152 196 T248 168"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity="0.45"
+          />
+        </svg>
+        <div class="deux-hero-deck">
+          <article class="deux-hero-card">
+            <span class="deux-hero-pip top">2</span>
+            <div class="deux-hero-wheel"></div>
+            <span class="deux-hero-pip bottom">2</span>
+            <span class="deux-hero-wild">wild</span>
+          </article>
         </div>
-        <div class="deux-stripes">
-          <span></span><span></span><span></span><span></span>
-        </div>
+        <span class="deux-watermark">deux</span>
       </div>
       <header class="site-bar site-bar-deux">
         <div class="ash-brand" aria-label="Ash Perry">
@@ -178,23 +180,26 @@
         <a class="site-cta" href="#contact">buy deck</a>
       </header>
       <div class="ride-inner">
-        <p class="deux-eyebrow">playdeux.co · card game no. 2</p>
+        <p class="deux-eyebrow">
+          <span class="deux-badge">no. 2</span>
+          playdeux.co
+        </p>
         <h2 class="deux-title" id="deux-title" aria-label="DEUX">
           <span class="deux-title-track">
             <span class="deux-deu">
-              <span class="deux-letter is-red">D</span><span class="deux-letter is-blue">E</span
-              ><span class="deux-letter is-green">U</span>
+              <span class="deux-letter is-red">d</span><span class="deux-letter is-blue">e</span
+              ><span class="deux-letter is-green">u</span>
             </span>
-            <span class="deux-letter is-yellow deux-x">X</span>
+            <span class="deux-letter is-yellow deux-x">x</span>
           </span>
         </h2>
         <p class="deux-lead">
-          Match colors. Play your last card. I build game brands with the same
-          clarity — bold when it counts, refined everywhere else.
+          Match colors. Dump your hand. The card game built for loud table
+          nights — <strong>play your last card and win the round.</strong>
         </p>
         <div class="deux-btns">
           <a class="deux-btn is-primary" href="#contact">get the deck</a>
-          <a class="deux-btn is-secondary" href="#contact">rules</a>
+          <a class="deux-btn is-secondary" href="#contact">how to play</a>
         </div>
       </div>
     </section>

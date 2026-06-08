@@ -140,9 +140,18 @@ a {
 }
 
 .site-bar-deux {
-  background: #111;
-  color: #fff;
-  border-bottom: none;
+  background: rgba(250, 244, 232, 0.88);
+  color: #2a2520;
+  border-bottom: 1px solid rgba(42, 37, 32, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.site-bar-deux .ash-name {
+  color: #2a2520;
+}
+
+.site-bar-deux .ash-line {
+  color: rgba(42, 37, 32, 0.52);
 }
 
 .site-bar-deux::after {
@@ -151,33 +160,35 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(
     90deg,
-    var(--deux-red, #c62828),
-    var(--deux-blue, #1565c0),
-    var(--deux-green, #2e7d32),
-    var(--deux-yellow, #f9a825)
+    var(--deux-red, #e6392f),
+    var(--deux-blue, #3d7dd6),
+    var(--deux-green, #3cb371),
+    var(--deux-yellow, #f5c518)
   );
+  opacity: 0.85;
 }
 
 .site-bar-deux .site-cta {
-  background: transparent;
-  color: #fff;
-  padding: 0.42rem 1rem;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  font-family: "Work Sans", sans-serif;
+  background: var(--deux-coral, #e85d3a);
+  color: #fffaf5;
+  padding: 0.42rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  font-family: "Fredoka", sans-serif;
   font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  box-shadow: 0 4px 16px rgba(232, 93, 58, 0.28);
 }
 
 .site-bar-deux .site-cta:hover {
   opacity: 1;
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.06);
+  background: #d94f2e;
+  box-shadow: 0 6px 22px rgba(232, 93, 58, 0.36);
 }
 
 .site-bar-clean {
@@ -1126,15 +1137,18 @@ a {
 }
 
 /* ══════════════════════════════════════
-   03 · DEUX (card game product site)
+   03 · DEUX (bubble sky card game site)
    ══════════════════════════════════════ */
 .ride-deux {
-  --deux-red: #c62828;
-  --deux-blue: #1565c0;
-  --deux-green: #2e7d32;
-  --deux-yellow: #f9a825;
-  background: #111;
-  color: #fff;
+  --deux-red: #e6392f;
+  --deux-blue: #3d7dd6;
+  --deux-green: #3cb371;
+  --deux-yellow: #f5c518;
+  --deux-coral: #e85d3a;
+  --deux-cream: #faf4e8;
+  --deux-ink: #2a2520;
+  background: var(--deux-cream);
+  color: var(--deux-ink);
   font-family: "Work Sans", system-ui, sans-serif;
 }
 
@@ -1145,92 +1159,125 @@ a {
   overflow: hidden;
 }
 
-.deux-ambient {
+.deux-sky {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 50% 40% at 78% 50%, rgba(21, 101, 192, 0.12), transparent),
-    radial-gradient(ellipse 35% 30% at 65% 35%, rgba(198, 40, 40, 0.08), transparent),
-    #111;
+    radial-gradient(ellipse 70% 55% at 82% 18%, rgba(125, 196, 255, 0.42), transparent 62%),
+    radial-gradient(ellipse 55% 45% at 12% 72%, rgba(168, 218, 255, 0.28), transparent 58%),
+    linear-gradient(168deg, #faf4e8 0%, #f3ecdf 42%, #ebe3d4 100%);
 }
 
-.deux-hand {
+.deux-cloud {
   position: absolute;
-  right: clamp(6%, 12vw, 14%);
+  border-radius: 50%;
+  filter: blur(56px);
+  opacity: 0.72;
+  animation: deux-cloud-drift 22s ease-in-out infinite;
+}
+
+.deux-cloud-a {
+  width: min(52vw, 420px);
+  height: min(36vw, 280px);
+  top: 6%;
+  right: -6%;
+  background: radial-gradient(ellipse, #a8daff 0%, rgba(168, 218, 255, 0.35) 55%, transparent 72%);
+}
+
+.deux-cloud-b {
+  width: min(44vw, 360px);
+  height: min(30vw, 240px);
+  top: 32%;
+  right: 18%;
+  background: radial-gradient(ellipse, #7dc4ff 0%, rgba(125, 196, 255, 0.3) 52%, transparent 70%);
+  animation-delay: -7s;
+}
+
+.deux-cloud-c {
+  width: min(38vw, 300px);
+  height: min(28vw, 220px);
+  bottom: 14%;
+  right: 8%;
+  background: radial-gradient(ellipse, #c5e6ff 0%, rgba(197, 230, 255, 0.28) 50%, transparent 72%);
+  animation-delay: -13s;
+}
+
+.deux-cloud-d {
+  width: min(30vw, 240px);
+  height: min(22vw, 180px);
+  top: 18%;
+  left: -4%;
+  background: radial-gradient(ellipse, rgba(255, 214, 160, 0.45) 0%, transparent 68%);
+  animation-delay: -4s;
+  opacity: 0.5;
+}
+
+@keyframes deux-cloud-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-14px, 8px) scale(1.05);
+  }
+}
+
+.deux-sketch {
+  position: absolute;
+  right: clamp(4%, 10vw, 12%);
+  top: 58%;
+  width: min(28vw, 200px);
+  height: auto;
+  color: var(--deux-blue);
+  opacity: 0.22;
+  transform: translateY(-50%) rotate(-6deg);
+}
+
+.deux-hero-deck {
+  position: absolute;
+  right: clamp(5%, 11vw, 13%);
   top: 50%;
-  width: min(30vw, 190px);
-  height: min(44vw, 280px);
-  transform: translateY(-46%);
+  width: min(28vw, 210px);
+  height: min(40vw, 300px);
+  transform: translateY(-48%) rotate(-8deg);
 }
 
-.deux-card {
-  --i: 0;
-  position: absolute;
-  inset: 0;
+.deux-hero-card {
+  position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 14px;
-  border: 2px solid rgba(255, 255, 255, 0.92);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  transform: rotate(calc(-14deg + var(--i) * 7deg))
-    translate(calc(var(--i) * 12px), calc(var(--i) * -5px));
+  border-radius: 22px;
+  background: #fffdf8;
+  border: 3px solid var(--deux-ink);
+  box-shadow:
+    0 22px 48px rgba(42, 37, 32, 0.14),
+    0 6px 0 rgba(42, 37, 32, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: calc(var(--i) + 1);
 }
 
-.deux-card.is-red { background: var(--deux-red); color: var(--deux-red); }
-.deux-card.is-blue { background: var(--deux-blue); color: var(--deux-blue); }
-.deux-card.is-green { background: var(--deux-green); color: var(--deux-green); }
-.deux-card.is-yellow { background: var(--deux-yellow); color: #1a1a1a; }
-.deux-card.is-wild {
-  background: #1a1a1a;
-  color: #fff;
-  border-color: #fff;
-}
-
-.deux-card-n {
+.deux-hero-pip {
   position: absolute;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: 1rem;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
   line-height: 1;
-  color: #fff;
+  color: var(--deux-red);
 }
 
-.deux-card.is-yellow .deux-card-n {
-  color: #1a1a1a;
+.deux-hero-pip.top {
+  top: 14px;
+  left: 16px;
 }
 
-.deux-card-n.top {
-  top: 10px;
-  left: 12px;
-}
-
-.deux-card-n.bottom {
-  bottom: 10px;
-  right: 12px;
+.deux-hero-pip.bottom {
+  bottom: 14px;
+  right: 16px;
   transform: rotate(180deg);
 }
 
-.deux-card-face {
-  width: 72%;
-  height: 48%;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid currentColor;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  line-height: 1;
-  color: currentColor;
-}
-
-.deux-wild-wheel {
+.deux-hero-wheel {
   width: 68%;
   height: 68%;
   border-radius: 50%;
@@ -1241,33 +1288,32 @@ a {
     var(--deux-green) 180deg 270deg,
     var(--deux-yellow) 270deg 360deg
   );
-  border: 3px solid #fff;
+  border: 3px solid var(--deux-ink);
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.08);
 }
 
-.deux-wild-label {
+.deux-hero-wild {
   position: absolute;
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(0.65rem, 1.4vw, 0.82rem);
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  color: #fff;
+  bottom: 18%;
+  font-family: "Permanent Marker", cursive;
+  font-size: clamp(0.72rem, 1.6vw, 0.92rem);
+  color: var(--deux-ink);
+  opacity: 0.72;
+  transform: rotate(-4deg);
 }
 
-.deux-stripes {
+.deux-watermark {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 6px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  z-index: 2;
+  right: clamp(-1rem, 2vw, 2rem);
+  top: 50%;
+  transform: translateY(-42%);
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(7rem, 30vw, 18rem);
+  font-weight: 700;
+  line-height: 0.82;
+  color: rgba(42, 37, 32, 0.035);
+  user-select: none;
 }
-
-.deux-stripes span:nth-child(1) { background: var(--deux-red); }
-.deux-stripes span:nth-child(2) { background: var(--deux-blue); }
-.deux-stripes span:nth-child(3) { background: var(--deux-green); }
-.deux-stripes span:nth-child(4) { background: var(--deux-yellow); }
 
 .ride-deux .ride-inner {
   position: relative;
@@ -1276,22 +1322,41 @@ a {
 }
 
 .deux-eyebrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
   margin: 0 0 1rem;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: rgba(42, 37, 32, 0.48);
+}
+
+.deux-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  border: 2px solid var(--deux-coral);
+  font-family: "Permanent Marker", cursive;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--deux-coral);
+  text-transform: lowercase;
 }
 
 .deux-title {
   margin: 0 0 1.25rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: clamp(3.5rem, 12vw, 7.5rem);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.75rem, 13vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
 }
 
 .deux-title-track {
@@ -1364,18 +1429,52 @@ a {
   }
 }
 
-.deux-letter.is-red { color: var(--deux-red); }
-.deux-letter.is-blue { color: var(--deux-blue); }
-.deux-letter.is-green { color: var(--deux-green); }
-.deux-letter.is-yellow { color: var(--deux-yellow); }
+.deux-letter {
+  -webkit-text-stroke: 2px rgba(42, 37, 32, 0.12);
+  text-stroke: 2px rgba(42, 37, 32, 0.12);
+  paint-order: stroke fill;
+}
+
+.deux-letter.is-red {
+  color: var(--deux-red);
+  text-shadow:
+    0 4px 0 rgba(180, 40, 32, 0.22),
+    0 10px 28px rgba(230, 57, 47, 0.18);
+}
+
+.deux-letter.is-blue {
+  color: var(--deux-blue);
+  text-shadow:
+    0 4px 0 rgba(45, 95, 170, 0.2),
+    0 10px 28px rgba(61, 125, 214, 0.16);
+}
+
+.deux-letter.is-green {
+  color: var(--deux-green);
+  text-shadow:
+    0 4px 0 rgba(40, 130, 80, 0.2),
+    0 10px 28px rgba(60, 179, 113, 0.16);
+}
+
+.deux-letter.is-yellow {
+  color: var(--deux-yellow);
+  text-shadow:
+    0 4px 0 rgba(180, 140, 10, 0.22),
+    0 10px 28px rgba(245, 197, 24, 0.2);
+}
 
 .deux-lead {
   margin: 0 0 2rem;
-  max-width: 22rem;
-  font-size: 1rem;
+  max-width: 24rem;
+  font-size: 1.02rem;
   font-weight: 400;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(42, 37, 32, 0.62);
+}
+
+.deux-lead strong {
+  color: var(--deux-ink);
+  font-weight: 700;
 }
 
 .deux-btns {
@@ -1390,33 +1489,38 @@ a {
   justify-content: center;
   min-height: 2.75rem;
   padding: 0.78rem 1.65rem;
-  border-radius: 4px;
-  font-family: "Work Sans", sans-serif;
+  border-radius: 999px;
+  font-family: "Fredoka", sans-serif;
   font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 160ms ease, border-color 160ms ease;
 }
 
 .deux-btn.is-primary {
-  background: #fff;
-  color: #111;
+  background: var(--deux-coral);
+  color: #fffaf5;
+  box-shadow: 0 6px 24px rgba(232, 93, 58, 0.32);
 }
 
 .deux-btn.is-primary:hover {
-  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  background: #d94f2e;
+  box-shadow: 0 10px 30px rgba(232, 93, 58, 0.38);
 }
 
 .deux-btn.is-secondary {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 253, 248, 0.65);
+  color: var(--deux-ink);
+  border: 2px solid rgba(42, 37, 32, 0.18);
+  box-shadow: 0 4px 14px rgba(42, 37, 32, 0.06);
 }
 
 .deux-btn.is-secondary:hover {
-  border-color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--deux-blue);
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(61, 125, 214, 0.14);
 }
 
 /* ══════════════════════════════════════
@@ -2178,10 +2282,10 @@ a {
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
-  .deux-hand {
-    right: 8%;
-    width: min(26vw, 170px);
-    height: min(38vw, 250px);
+  .deux-hero-deck {
+    right: 7%;
+    width: min(24vw, 180px);
+    height: min(36vw, 260px);
   }
 
   .nature-watermark {
@@ -2384,12 +2488,21 @@ a {
     justify-content: center;
   }
 
-  .deux-hand {
-    right: -4%;
+  .deux-hero-deck {
+    right: -2%;
     top: 58%;
-    width: min(32vw, 120px);
-    height: min(48vw, 180px);
-    opacity: 0.45;
+    width: min(30vw, 130px);
+    height: min(44vw, 195px);
+    opacity: 0.55;
+  }
+
+  .deux-sketch {
+    display: none;
+  }
+
+  .deux-watermark {
+    opacity: 0.5;
+    right: -14%;
   }
 
   .clean-title-big {
@@ -2586,6 +2699,7 @@ a {
     transform: none;
   }
 
+  .deux-cloud,
   .ride-start .blob,
   .nature-orb,
   .ride-start.is-lightning .lightning-flash,
