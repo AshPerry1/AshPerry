@@ -6,6 +6,7 @@
     "DEUX — Pick a Color. Flip the Table.",
     "Northline — Strategy That Ships",
     "ATELIER — Form Follows Intent",
+    "Ash Perry — Get In Touch",
   ];
 
   if (!sections.length) return;

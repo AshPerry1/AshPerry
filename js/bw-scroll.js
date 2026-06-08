@@ -1,5 +1,5 @@
 (function () {
-  const section = document.getElementById("contact");
+  const section = document.getElementById("bw");
   const fill = document.querySelector(".bw-outline-fill");
   if (!section || !fill) return;
 
