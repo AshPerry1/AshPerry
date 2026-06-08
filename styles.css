@@ -53,12 +53,19 @@ a {
   position: relative;
   z-index: 10;
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.site-bar-row {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.1rem clamp(1.25rem, 5vw, 4rem);
-  padding-top: max(1.1rem, env(safe-area-inset-top));
-  flex-shrink: 0;
+  padding: 1rem clamp(1.25rem, 5vw, 4rem) 1.1rem;
 }
 
 .site-logo {
