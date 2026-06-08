@@ -1,6 +1,5 @@
 (function () {
   const sections = document.querySelectorAll(".ride");
-  const dotsWrap = document.getElementById("scroll-dots");
   const titles = [
     "Ash Perry | Custom Websites",
     "Verdant — Rooted in Ritual",
@@ -10,27 +9,13 @@
     "Chick-fil-A — Concept Redesign by Ash Perry",
   ];
 
-  if (!sections.length || !dotsWrap) return;
-
-  sections.forEach(function (section, i) {
-    const dot = document.createElement("a");
-    dot.href = "#" + (section.id || "");
-    dot.className = "scroll-dot";
-    dot.setAttribute("aria-label", section.dataset.name || "Section " + (i + 1));
-    dotsWrap.appendChild(dot);
-  });
-
-  const dots = dotsWrap.querySelectorAll(".scroll-dot");
+  if (!sections.length) return;
 
   function setActive(index) {
     const section = sections[index];
     const id = section.id || "start";
 
     document.body.dataset.chapter = id;
-
-    dots.forEach(function (dot, i) {
-      dot.classList.toggle("is-active", i === index);
-    });
 
     if (titles[index]) {
       document.title = titles[index];
@@ -52,8 +37,6 @@
     sections.forEach(function (section) {
       observer.observe(section);
     });
-  } else {
-    setActive(0);
   }
 
   setActive(0);

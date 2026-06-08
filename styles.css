@@ -36,80 +36,11 @@ a {
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  padding: clamp(5rem, 12vh, 7rem) clamp(1.25rem, 5vw, 4rem) clamp(3rem, 8vh, 5rem);
+  padding: clamp(3rem, 8vh, 5rem) clamp(1.25rem, 5vw, 4rem) clamp(3rem, 8vh, 5rem);
 }
 
 .ride-inner-center {
   text-align: center;
-}
-
-/* ── Ride nav ── */
-.ride-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.9rem clamp(1.25rem, 4vw, 3rem);
-  padding-top: max(0.9rem, env(safe-area-inset-top));
-  background: rgba(8, 8, 8, 0.55);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: #fff;
-  font-family: "Work Sans", system-ui, sans-serif;
-  font-size: 0.82rem;
-  transition: opacity 320ms ease, transform 320ms ease;
-}
-
-.ride-nav-logo {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  text-transform: lowercase;
-  letter-spacing: -0.02em;
-  background: #ccff00;
-  color: #1200b8;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
-.ride-nav-meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.ride-nav-hint {
-  display: none;
-  opacity: 0.65;
-  text-transform: lowercase;
-}
-
-.ride-nav-cta {
-  font-weight: 600;
-  text-transform: lowercase;
-  opacity: 0.85;
-  transition: opacity 160ms ease, color 160ms ease;
-}
-
-.ride-nav-cta:hover {
-  opacity: 1;
-  color: #ccff00;
-}
-
-/* Hide Ash nav on faux-client sites — feels like a new website */
-body[data-chapter="nature"] .ride-nav,
-body[data-chapter="playful"] .ride-nav,
-body[data-chapter="clean"] .ride-nav,
-body[data-chapter="bw"] .ride-nav,
-body[data-chapter="contact"] .ride-nav {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-100%);
 }
 
 /* ── Faux site chrome (each scroll = new "website") ── */
@@ -278,24 +209,6 @@ body[data-chapter="contact"] .ride-nav {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-}
-
-.ride-dots {
-  display: flex;
-  gap: 0.4rem;
-}
-
-.scroll-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  transition: background 200ms ease, transform 200ms ease;
-}
-
-.scroll-dot.is-active {
-  background: #ccff00;
-  transform: scale(1.25);
 }
 
 /* ══════════════════════════════════════
@@ -1107,10 +1020,6 @@ body[data-chapter="contact"] .ride-nav {
 
 /* ── Responsive ── */
 @media (min-width: 720px) {
-  .ride-nav-hint {
-    display: inline;
-  }
-
   .site-links {
     display: flex;
   }
