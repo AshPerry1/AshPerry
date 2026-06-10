@@ -4,12 +4,6 @@
     business: "#business",
   };
 
-  const comingSoonFlair = {
-    personal: "✨",
-    portfolio: "🎨",
-    about: "👋",
-  };
-
   const buttons = document.querySelectorAll(".hero-category[data-scroll]");
   if (!buttons.length) return;
 
@@ -54,17 +48,14 @@
     clearComingSoon();
 
     const pop = document.createElement("div");
-    pop.className = "hero-coming-soon-pop";
+    pop.className = "hero-coming-soon-pop hero-coming-soon-pop--" + key;
     pop.setAttribute("role", "status");
     pop.setAttribute("aria-live", "polite");
-    pop.innerHTML =
-      '<span class="hero-coming-soon-icon" aria-hidden="true">' +
-      (comingSoonFlair[key] || "✦") +
-      '</span><span class="hero-coming-soon-text">coming soon</span>';
+    pop.innerHTML = '<span class="hero-coming-soon-text">coming soon</span>';
     document.body.appendChild(pop);
 
     const pellets = document.createElement("div");
-    pellets.className = "hero-coming-soon-pellets";
+    pellets.className = "hero-coming-soon-pellets hero-coming-soon-pellets--" + key;
     pellets.setAttribute("aria-hidden", "true");
     pellets.innerHTML = "<span></span><span></span><span></span>";
     document.body.appendChild(pellets);

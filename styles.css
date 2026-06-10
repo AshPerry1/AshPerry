@@ -1046,10 +1046,7 @@ body.view-business .hero-category[data-coming-soon]:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.1rem;
-  padding: 0.5rem 1.05rem 0.6rem;
-  background: #ffe033;
-  color: #1a1a1a;
+  padding: 0.55rem 1.1rem 0.6rem;
   border: 3px solid #1a1a1a;
   border-radius: 999px;
   font-family: "Fredoka", sans-serif;
@@ -1063,13 +1060,23 @@ body.view-business .hero-category[data-coming-soon]:hover {
   animation: hero-soon-pop-in 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.hero-coming-soon-pop.is-out {
-  animation: hero-soon-pop-out 280ms ease forwards;
+.hero-coming-soon-pop--personal {
+  background: #ff6b8a;
+  color: #1a1a1a;
 }
 
-.hero-coming-soon-icon {
-  font-size: 1.05rem;
-  line-height: 1;
+.hero-coming-soon-pop--portfolio {
+  background: #4ecdc4;
+  color: #1a1a1a;
+}
+
+.hero-coming-soon-pop--about {
+  background: #b388ff;
+  color: #fff;
+}
+
+.hero-coming-soon-pop.is-out {
+  animation: hero-soon-pop-out 280ms ease forwards;
 }
 
 .hero-coming-soon-text {
@@ -1077,8 +1084,6 @@ body.view-business .hero-category[data-coming-soon]:hover {
 }
 
 body.view-business .hero-coming-soon-pop {
-  background: var(--biz-accent);
-  color: #fff;
   border-color: var(--biz-ink);
   box-shadow: 3px 4px 0 rgba(26, 35, 40, 0.35);
   font-family: "Work Sans", sans-serif;
@@ -1097,9 +1102,20 @@ body.view-business .hero-coming-soon-pop {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #ffe033;
   border: 2px solid #1a1a1a;
   animation: hero-soon-pellet 620ms ease-out forwards;
+}
+
+.hero-coming-soon-pellets--personal span {
+  background: #ff6b8a;
+}
+
+.hero-coming-soon-pellets--portfolio span {
+  background: #4ecdc4;
+}
+
+.hero-coming-soon-pellets--about span {
+  background: #b388ff;
 }
 
 .hero-coming-soon-pellets span:nth-child(1) {
@@ -1121,7 +1137,6 @@ body.view-business .hero-coming-soon-pop {
 }
 
 body.view-business .hero-coming-soon-pellets span {
-  background: var(--biz-accent);
   border-color: var(--biz-ink);
 }
 
