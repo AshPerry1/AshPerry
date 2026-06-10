@@ -2838,6 +2838,228 @@ a {
   color: var(--cafe-muted);
 }
 
+/* ══════════════════════════════════════
+   04 · EMBER & CRUST (business · pizzeria)
+   ══════════════════════════════════════ */
+.ride-pizza {
+  --pizza-cream: #f8f4ef;
+  --pizza-cream-deep: #ebe4da;
+  --pizza-charcoal: #2c2622;
+  --pizza-ink: #1f1a17;
+  --pizza-tomato: #b84a38;
+  --pizza-tomato-deep: #943a2c;
+  --pizza-muted: rgba(44, 38, 34, 0.58);
+  --pizza-white: #fdfbf8;
+  background: var(--pizza-white);
+  color: var(--pizza-ink);
+  font-family: "Work Sans", system-ui, sans-serif;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.pizza-scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pizza-wash {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #fff 0%, var(--pizza-white) 100%);
+}
+
+.site-bar-pizza {
+  background: #fff;
+  color: var(--pizza-ink);
+  border-bottom: 1px solid var(--pizza-cream-deep);
+}
+
+.site-bar-pizza .ash-name,
+.site-bar-pizza .ash-line {
+  color: var(--pizza-ink);
+  font-family: "Work Sans", sans-serif;
+}
+
+.site-bar-pizza .ash-line {
+  opacity: 0.5;
+}
+
+.site-bar-pizza .site-links {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  opacity: 0.45;
+}
+
+.site-bar-pizza .site-cta {
+  background: var(--pizza-tomato);
+  color: #fff;
+  padding: 0.48rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.site-bar-pizza .site-cta:hover {
+  opacity: 0.88;
+}
+
+.pizza-layout {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vh, 2.5rem) clamp(1.25rem, 5vw, 4rem)
+    clamp(2rem, 5vh, 3rem);
+}
+
+.pizza-feature {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(52vh, 420px);
+  background: var(--pizza-charcoal);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pizza-photo {
+  position: absolute;
+  inset: 0;
+  background:
+    url("https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80")
+    center / cover no-repeat;
+  opacity: 0.9;
+}
+
+.pizza-feature-card {
+  position: relative;
+  z-index: 1;
+  align-self: flex-end;
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  padding: 1rem 1.15rem;
+  background: rgba(253, 251, 248, 0.96);
+  border-radius: 8px;
+}
+
+.pizza-feature-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pizza-tomato);
+}
+
+.pizza-feature-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--pizza-ink);
+}
+
+.pizza-feature-meta {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--pizza-muted);
+}
+
+.pizza-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.75rem, 4vw, 3rem);
+  background: var(--pizza-cream);
+  border-radius: 12px;
+}
+
+.pizza-pill {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 0 1.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pizza-tomato);
+}
+
+.pizza-brand {
+  margin: 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(2rem, 6.5vw, 3.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--pizza-charcoal);
+}
+
+.pizza-sub {
+  margin: 0.65rem 0 1.75rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pizza-muted);
+}
+
+.pizza-hook {
+  margin: 0 0 1rem;
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--pizza-ink);
+}
+
+.pizza-lead {
+  margin: 0 0 1.75rem;
+  max-width: 22rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--pizza-muted);
+}
+
+.pizza-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-height: 2.75rem;
+  padding: 0.78rem 1.65rem;
+  border-radius: 6px;
+  background: var(--pizza-tomato);
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 160ms ease;
+}
+
+.pizza-btn:hover {
+  background: var(--pizza-tomato-deep);
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px), (pointer: coarse) {
   html {
@@ -3264,6 +3486,27 @@ a {
     width: 100%;
     align-self: stretch;
   }
+
+  .pizza-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pizza-panel {
+    text-align: left;
+  }
+
+  .pizza-lead {
+    max-width: none;
+  }
+
+  .pizza-feature {
+    min-height: min(40vh, 320px);
+  }
+
+  .pizza-btn {
+    width: 100%;
+    align-self: stretch;
+  }
 }
 
 @media (max-width: 400px) {
@@ -3342,7 +3585,8 @@ a {
   .arcade-ghost,
   .arcade-btn:hover,
   .cafe-btn:hover,
-  .site-bar-cafe .site-cta:hover {
+  .site-bar-cafe .site-cta:hover,
+  .pizza-btn:hover {
     transform: none;
     animation: none;
   }
