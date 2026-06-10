@@ -7,6 +7,7 @@
     "Northline — Strategy That Ships",
     "ATELIER — Form Follows Intent",
     "Ash Perry — Get In Touch",
+    "Meridian Voyages — Luxury Travel",
   ];
 
   if (!sections.length) return;
