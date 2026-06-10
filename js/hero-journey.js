@@ -12,12 +12,46 @@
     });
   }
 
-  function scrollNext() {
-    next.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+  function scrollTo(selector) {
+    const section = document.querySelector(selector);
+    if (!section) return;
+    section.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+  }
+
+  function scrollCreative() {
+    scrollTo("#nature");
+  }
+
+  async function runBusinessStair() {
+    if (hero.classList.contains("is-biz-stair")) return;
+
+    hero.classList.add("is-biz-stair");
+    btn.setAttribute("aria-busy", "true");
+
+    await wait(800);
+    await wait(3000);
+
+    hero.classList.remove("is-biz-stair");
+    hero.classList.add("is-biz-stair-reset");
+    await wait(650);
+
+    hero.classList.remove("is-biz-stair-reset");
+    btn.removeAttribute("aria-busy");
+    scrollTo("#business");
   }
 
   btn.addEventListener("click", function (e) {
-    if (document.body.classList.contains("view-business")) return;
+    if (document.body.classList.contains("view-business")) {
+      if (reduceMotion) {
+        scrollTo("#business");
+        return;
+      }
+
+      e.preventDefault();
+      runBusinessStair();
+      return;
+    }
+
     if (reduceMotion) return;
 
     e.preventDefault();
@@ -43,7 +77,7 @@
 
       hero.classList.remove("is-journey");
       btn.removeAttribute("aria-busy");
-      scrollNext();
+      scrollCreative();
     })();
   });
 })();
