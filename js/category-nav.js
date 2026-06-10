@@ -12,11 +12,21 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  function setView(key) {
+    if (key === "business") {
+      document.body.classList.add("view-business");
+    } else {
+      document.body.classList.remove("view-business");
+    }
+  }
+
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
       const key = button.getAttribute("data-scroll");
       const selector = targets[key];
       if (!selector) return;
+
+      setView(key);
 
       const section = document.querySelector(selector);
       if (!section) return;

@@ -14,6 +14,15 @@ body {
   line-height: 1.5;
 }
 
+/* Category views: business mockups only appear when Business is selected */
+body:not(.view-business) .ride[data-category="business"] {
+  display: none;
+}
+
+body.view-business .ride[data-category="creative"] {
+  display: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;

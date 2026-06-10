@@ -1,26 +1,25 @@
 (function () {
   const sections = document.querySelectorAll(".ride");
-  const titles = [
-    "Ash Perry | Custom Websites",
-    "Meridian Voyages — Luxury Travel",
-    "Lowtide — Bakery & Espresso",
-    "Isola — Luxury Hospitality by Ash Perry",
-    "DEUX — Play Your Last Card",
-    "Northline — Strategy That Ships",
-    "ATELIER — Form Follows Intent",
-    "Ash Perry — Get In Touch",
-  ];
+  const titles = {
+    start: "Ash Perry | Custom Websites",
+    business: "Meridian Voyages — Luxury Travel",
+    cafe: "Lowtide — Bakery & Espresso",
+    nature: "Isola — Luxury Hospitality by Ash Perry",
+    deux: "DEUX — Play Your Last Card",
+    clean: "Northline — Strategy That Ships",
+    bw: "ATELIER — Form Follows Intent",
+    contact: "Ash Perry — Get In Touch",
+  };
 
   if (!sections.length) return;
 
-  function setActive(index) {
-    const section = sections[index];
+  function setActive(section) {
     const id = section.id || "start";
 
     document.body.dataset.chapter = id;
 
-    if (titles[index]) {
-      document.title = titles[index];
+    if (titles[id]) {
+      document.title = titles[id];
     }
   }
 
@@ -29,8 +28,7 @@
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-            const idx = Array.from(sections).indexOf(entry.target);
-            if (idx >= 0) setActive(idx);
+            setActive(entry.target);
           }
         });
       },
@@ -41,5 +39,5 @@
     });
   }
 
-  setActive(0);
+  setActive(sections[0]);
 })();
