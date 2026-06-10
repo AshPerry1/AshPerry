@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fredoka:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@700;800;900&family=Nunito:wght@600;700;800&family=Permanent+Marker&family=Pinyon+Script&family=Poppins:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fredoka:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lilita+One&family=Montserrat:wght@700;800;900&family=Nunito:wght@600;700;800&family=Permanent+Marker&family=Pinyon+Script&family=Poppins:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -219,6 +219,8 @@
     >
       <div class="pizza-scene" aria-hidden="true">
         <div class="pizza-wash"></div>
+        <div class="pizza-checker pizza-checker--left"></div>
+        <div class="pizza-checker pizza-checker--right"></div>
       </div>
       <header class="site-bar site-bar-pizza">
         <div class="ash-brand" aria-label="Ash Perry">
@@ -232,7 +234,11 @@
       </header>
       <div class="pizza-layout">
         <div class="pizza-feature" aria-hidden="true">
-          <div class="pizza-photo"></div>
+          <div class="pizza-frame">
+            <div class="pizza-photo"></div>
+            <span class="pizza-frame-corner pizza-frame-corner--tl"></span>
+            <span class="pizza-frame-corner pizza-frame-corner--br"></span>
+          </div>
           <div class="pizza-feature-card">
             <p class="pizza-feature-label">tonight's pie</p>
             <p class="pizza-feature-title">margherita D.O.P. · bufala</p>
@@ -240,8 +246,13 @@
           </div>
         </div>
         <div class="pizza-panel">
+          <div class="pizza-panel-wave" aria-hidden="true"></div>
           <p class="pizza-pill">wood-fired</p>
-          <h2 class="pizza-brand" aria-label="Ember and Crust">ember &amp; crust</h2>
+          <h2 class="pizza-brand" aria-label="Ember and Crust">
+            <span class="pizza-brand-line">ember</span>
+            <span class="pizza-brand-line pizza-brand-amp">&amp;</span>
+            <span class="pizza-brand-line">crust</span>
+          </h2>
           <p class="pizza-sub">neapolitan pizzeria &amp; natural wine</p>
           <p class="pizza-hook">Fire, flour, and fifteen minutes.</p>
           <p class="pizza-lead">

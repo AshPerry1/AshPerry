@@ -4,7 +4,7 @@
     start: "Ash Perry | Custom Websites",
     business: "Meridian Voyages — Luxury Travel",
     cafe: "Lowtide — Bakery & Espresso",
-    pizza: "Ember & Crust — Neapolitan Pizzeria",
+    pizza: "Ember & Crust — Wood-Fired Pizza",
     nature: "Isola — Luxury Hospitality by Ash Perry",
     deux: "DEUX — Play Your Last Card",
     clean: "Northline — Strategy That Ships",
