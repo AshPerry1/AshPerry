@@ -3,6 +3,7 @@
   const titles = [
     "Ash Perry | Custom Websites",
     "Meridian Voyages — Luxury Travel",
+    "Lowtide — Bakery & Espresso",
     "Isola — Luxury Hospitality by Ash Perry",
     "DEUX — Play Your Last Card",
     "Northline — Strategy That Ships",
