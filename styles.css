@@ -3409,7 +3409,7 @@ body.view-business .hero-coming-soon-pellets span {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 0;
   width: 100%;
   padding: 0 clamp(1.5rem, 5vw, 4.5rem);
@@ -3418,18 +3418,18 @@ body.view-business .hero-coming-soon-pellets span {
 .pizza-brand-block {
   flex-shrink: 0;
   text-align: center;
-  padding: clamp(2.25rem, 7vh, 4rem) 0 clamp(0.85rem, 2.5vh, 1.35rem);
+  padding: clamp(3.5rem, 11vh, 5.75rem) 0 clamp(0.85rem, 2.5vh, 1.35rem);
 }
 
 .pizza-body {
   flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-items: center;
-  gap: clamp(0.5rem, 1.5vw, 1.25rem);
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2rem);
   width: 100%;
-  max-width: 52rem;
+  max-width: 46rem;
   margin: 0 auto;
   min-height: 0;
 }
@@ -3437,21 +3437,35 @@ body.view-business .hero-coming-soon-pellets span {
 .pizza-split-left {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  justify-self: end;
+  flex: 1 1 15rem;
   width: 100%;
-  max-width: 24rem;
-  padding: 0.15rem clamp(1rem, 3vw, 2rem) 0.15rem 0;
-  text-align: left;
+  max-width: 22rem;
+  padding: 0;
+  text-align: center;
 }
 
 .pizza-split-right {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  justify-self: start;
+  flex: 1 1 14rem;
+  width: 100%;
+  max-width: 20rem;
   min-height: clamp(220px, 34vh, 340px);
-  padding: 0.15rem 0;
+  padding: 0;
+}
+
+.pizza-stickers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem 0.85rem;
+  width: 100%;
+  margin-bottom: 0.4rem;
 }
 
 .pizza-visual {
@@ -3464,10 +3478,11 @@ body.view-business .hero-coming-soon-pellets span {
 }
 
 .pizza-sticker {
-  position: absolute;
+  position: relative;
   z-index: 4;
+  display: inline-block;
   font-family: "Lilita One", sans-serif;
-  font-size: clamp(1.55rem, 3.6vw, 2.75rem);
+  font-size: clamp(1.15rem, 2.6vw, 2rem);
   line-height: 1;
   letter-spacing: 0.02em;
   text-transform: lowercase;
@@ -3476,36 +3491,28 @@ body.view-business .hero-coming-soon-pellets span {
 }
 
 .pizza-sticker--a {
-  top: 22%;
-  right: 10%;
-  transform: rotate(12deg);
+  transform: rotate(8deg);
   color: var(--pizza-green);
   -webkit-text-stroke: 2.5px var(--pizza-white);
   text-stroke: 2.5px var(--pizza-white);
 }
 
 .pizza-sticker--b {
-  top: 52%;
-  right: 6%;
-  transform: rotate(-6deg);
+  transform: rotate(-5deg);
   color: var(--pizza-white);
   -webkit-text-stroke: 2.5px var(--pizza-yellow);
   text-stroke: 2.5px var(--pizza-yellow);
 }
 
 .pizza-sticker--c {
-  bottom: 28%;
-  left: 10%;
-  transform: rotate(7deg);
+  transform: rotate(6deg);
   color: var(--pizza-yellow);
   -webkit-text-stroke: 2.5px var(--pizza-green);
   text-stroke: 2.5px var(--pizza-green);
 }
 
 .pizza-sticker--d {
-  top: 36%;
-  left: 6%;
-  transform: rotate(-11deg);
+  transform: rotate(-9deg);
   color: var(--pizza-green);
   -webkit-text-stroke: 2.5px var(--pizza-white);
   text-stroke: 2.5px var(--pizza-white);
@@ -3649,6 +3656,7 @@ body.view-business .hero-coming-soon-pellets span {
 .pizza-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   margin-bottom: 0.45rem;
 }
@@ -3788,11 +3796,12 @@ body.view-business .hero-coming-soon-pellets span {
   }
 
   .pizza-brand-block {
-    padding-top: 1.5rem;
+    padding-top: 2.25rem;
   }
 
   .pizza-body {
     max-width: 100%;
+    gap: 0.75rem;
   }
 
   .pizza-hook {
@@ -3808,7 +3817,7 @@ body.view-business .hero-coming-soon-pellets span {
   }
 
   .pizza-brand-block {
-    padding-top: 1.25rem;
+    padding-top: 1.75rem;
   }
 
   .pizza-menu {
@@ -4452,25 +4461,22 @@ body.view-business .hero-coming-soon-pellets span {
   }
 
   .pizza-body {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    flex-direction: column;
+    align-items: center;
     row-gap: 0.65rem;
   }
 
   .pizza-split-left {
-    justify-self: stretch;
     max-width: none;
     padding: 0;
+    text-align: center;
+    align-items: center;
   }
 
   .pizza-split-right {
     min-height: 210px;
     padding: 0;
-  }
-
-  .pizza-split-left,
-  .pizza-split-right {
-    justify-self: stretch;
+    max-width: none;
   }
 
   .pizza-visual {
@@ -4486,20 +4492,16 @@ body.view-business .hero-coming-soon-pellets span {
   }
 
   .pizza-sticker {
-    font-size: clamp(1.1rem, 5.5vw, 1.6rem);
+    font-size: clamp(1rem, 4.8vw, 1.45rem);
   }
 
-  .pizza-sticker--b {
-    right: -2%;
-  }
-
-  .pizza-sticker--c {
-    bottom: 22%;
-    left: 6%;
+  .pizza-stickers {
+    gap: 0.15rem 0.55rem;
+    margin-bottom: 0.3rem;
   }
 
   .pizza-brand-block {
-    padding-top: clamp(1rem, 3vh, 1.5rem);
+    padding-top: clamp(1.75rem, 5vh, 2.5rem);
     padding-bottom: 0.5rem;
   }
 
