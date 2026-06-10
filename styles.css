@@ -23,6 +23,285 @@ body.view-business .ride[data-category="creative"] {
   display: none;
 }
 
+/* ── Business view: entrepreneur hero & contact ── */
+body.view-business {
+  --biz-ink: #14181f;
+  --biz-muted: rgba(20, 24, 31, 0.62);
+  --biz-cream: #f6f4ef;
+  --biz-cream-deep: #e8e4dc;
+  --biz-accent: #0f4c5c;
+  --biz-accent-deep: #0a3642;
+}
+
+body.view-business .ride-start {
+  background: var(--biz-cream);
+  color: var(--biz-ink);
+}
+
+body.view-business .ride-start.is-journey,
+body.view-business .ride-start.is-lightning,
+body.view-business .ride-start.is-power-out,
+body.view-business .ride-start.is-bw,
+body.view-business .ride-start.is-space {
+  background: var(--biz-cream);
+  animation: none;
+  color: var(--biz-ink);
+}
+
+body.view-business .ride-start .scene,
+body.view-business .ride-start .space-field,
+body.view-business .ride-start .lightning-layer {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.view-business .ride-start::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  background-image:
+    linear-gradient(var(--biz-cream-deep) 1px, transparent 1px),
+    linear-gradient(90deg, var(--biz-cream-deep) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+body.view-business .ride-start .ash-name {
+  color: var(--biz-ink);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+body.view-business .ride-start .ash-line {
+  color: var(--biz-muted);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+body.view-business .hero-category {
+  color: var(--biz-muted);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: clamp(0.58rem, 1.1vw, 0.68rem);
+}
+
+body.view-business .hero-category.is-active,
+body.view-business .hero-category:hover {
+  color: var(--biz-accent);
+}
+
+body.view-business .hero-category.is-active {
+  text-decoration: underline;
+  text-decoration-color: var(--biz-accent);
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+body.view-business .ride-start .hero-amp {
+  display: none;
+}
+
+body.view-business .ride-start .letter,
+body.view-business .ride-start .letter.c1,
+body.view-business .ride-start .letter.c2,
+body.view-business .ride-start .letter.c3,
+body.view-business .ride-start .letter.c4,
+body.view-business .ride-start .letter.c5,
+body.view-business .ride-start .letter.c6,
+body.view-business .ride-start .letter.c7,
+body.view-business .ride-start .letter.c8 {
+  color: var(--biz-ink);
+}
+
+body.view-business .ride-start .title-row-outline .letter {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--biz-accent);
+  text-stroke: 2px var(--biz-accent);
+}
+
+body.view-business .ride-start .title {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+body.view-business .ride-start .title-row-mix {
+  margin-left: clamp(0.25rem, 2vw, 1.5rem);
+}
+
+body.view-business .ride-start .lead {
+  color: var(--biz-muted);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 28rem;
+}
+
+body.view-business .ride-start .btn {
+  border-radius: 6px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: clamp(0.72rem, 1.3vw, 0.82rem);
+  box-shadow: none;
+  transform: none;
+}
+
+body.view-business .ride-start .btn:hover {
+  transform: none;
+  opacity: 0.9;
+}
+
+body.view-business .ride-start .btn-hot {
+  background: var(--biz-accent);
+  color: #fff;
+}
+
+body.view-business .ride-start .btn-cool {
+  background: transparent;
+  color: var(--biz-ink);
+  border: 2px solid rgba(20, 24, 31, 0.28);
+}
+
+body.view-business .ride-arcade {
+  background: var(--biz-ink);
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+}
+
+body.view-business .ride-arcade .arcade-pellets,
+body.view-business .ride-arcade .arcade-scene {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.view-business .site-bar-arcade {
+  background: transparent;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.view-business .site-bar-arcade .ash-name,
+body.view-business .site-bar-arcade .ash-line {
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+}
+
+body.view-business .site-bar-arcade .ash-line {
+  opacity: 0.55;
+}
+
+body.view-business .site-bar-arcade .site-links {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  opacity: 0.45;
+}
+
+body.view-business .site-bar-arcade .site-cta {
+  background: #fff;
+  color: var(--biz-ink);
+  border: none;
+  border-radius: 999px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+body.view-business .arcade-title-main {
+  font-family: "Work Sans", sans-serif;
+  font-size: clamp(2.5rem, 10vw, 5.5rem);
+  font-weight: 700;
+  color: #fff;
+  -webkit-text-stroke: 0;
+  text-stroke: 0;
+  text-shadow: none;
+  letter-spacing: -0.03em;
+}
+
+body.view-business .arcade-title-sub {
+  font-family: "Work Sans", sans-serif;
+  font-size: clamp(1.35rem, 5vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.view-business .arcade-letter,
+body.view-business .arcade-letter.l1,
+body.view-business .arcade-letter.l2,
+body.view-business .arcade-letter.l4,
+body.view-business .arcade-letter.l5,
+body.view-business .arcade-letter.l6,
+body.view-business .arcade-letter.l7,
+body.view-business .arcade-letter.l8 {
+  color: rgba(255, 255, 255, 0.88);
+  -webkit-text-stroke: 0;
+  text-stroke: 0;
+}
+
+body.view-business .arcade-lead {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 400;
+}
+
+body.view-business .arcade-lead strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+body.view-business .arcade-btn {
+  border-radius: 6px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  box-shadow: none;
+}
+
+body.view-business .arcade-btn.is-primary {
+  background: #fff;
+  color: var(--biz-ink);
+  border: none;
+}
+
+body.view-business .arcade-btn:not(.is-primary):not(.is-ghost) {
+  background: var(--biz-accent);
+  color: #fff;
+  border: none;
+}
+
+body.view-business .arcade-btn.is-ghost {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+body.view-business .arcade-btn:hover {
+  transform: none;
+  box-shadow: none;
+  opacity: 0.9;
+}
+
+body.view-business .arcade-email {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.view-business .arcade-pac {
+  display: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;

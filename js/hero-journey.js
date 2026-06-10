@@ -17,6 +17,7 @@
   }
 
   btn.addEventListener("click", function (e) {
+    if (document.body.classList.contains("view-business")) return;
     if (reduceMotion) return;
 
     e.preventDefault();
