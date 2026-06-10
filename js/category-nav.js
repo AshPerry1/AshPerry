@@ -40,6 +40,8 @@
 
       setView(key);
 
+      if (key === "business") return;
+
       const section = document.querySelector(selector);
       if (!section) return;
 
