@@ -2,12 +2,12 @@
   const sections = document.querySelectorAll(".ride");
   const titles = [
     "Ash Perry | Custom Websites",
+    "Meridian Voyages — Luxury Travel",
     "Isola — Luxury Hospitality by Ash Perry",
     "DEUX — Play Your Last Card",
     "Northline — Strategy That Ships",
     "ATELIER — Form Follows Intent",
     "Ash Perry — Get In Touch",
-    "Meridian Voyages — Luxury Travel",
   ];
 
   if (!sections.length) return;
