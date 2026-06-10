@@ -3257,6 +3257,7 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 0;
   width: 100%;
   padding: 0 clamp(1.5rem, 5vw, 4.5rem);
@@ -3265,7 +3266,7 @@ a {
 .pizza-brand-block {
   flex-shrink: 0;
   text-align: center;
-  padding: clamp(1rem, 2.8vh, 1.65rem) 0 clamp(0.5rem, 1.5vh, 0.85rem);
+  padding: clamp(2.25rem, 7vh, 4rem) 0 clamp(0.85rem, 2.5vh, 1.35rem);
 }
 
 .pizza-body {
@@ -3273,8 +3274,11 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: clamp(1.25rem, 4vw, 3rem);
+  justify-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1.25rem);
   width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
   min-height: 0;
 }
 
@@ -3282,9 +3286,10 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  justify-self: end;
   width: 100%;
-  max-width: 28rem;
-  padding: 0.15rem clamp(0.5rem, 2vw, 1.5rem) 0.15rem 0;
+  max-width: 24rem;
+  padding: 0.15rem clamp(1rem, 3vw, 2rem) 0.15rem 0;
   text-align: left;
 }
 
@@ -3292,7 +3297,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(200px, 30vh, 300px);
+  justify-self: start;
+  min-height: clamp(220px, 34vh, 340px);
   padding: 0.15rem 0;
 }
 
@@ -3301,7 +3307,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min(100%, 340px);
+  width: min(100%, 420px);
   margin: 0 auto;
 }
 
@@ -3309,7 +3315,7 @@ a {
   position: absolute;
   z-index: 4;
   font-family: "Lilita One", sans-serif;
-  font-size: clamp(1.35rem, 3.2vw, 2.35rem);
+  font-size: clamp(1.55rem, 3.6vw, 2.75rem);
   line-height: 1;
   letter-spacing: 0.02em;
   text-transform: lowercase;
@@ -3318,8 +3324,8 @@ a {
 }
 
 .pizza-sticker--a {
-  top: 20%;
-  right: 0;
+  top: 22%;
+  right: 10%;
   transform: rotate(12deg);
   color: var(--pizza-green);
   -webkit-text-stroke: 2.5px var(--pizza-white);
@@ -3327,8 +3333,8 @@ a {
 }
 
 .pizza-sticker--b {
-  top: 50%;
-  right: -8%;
+  top: 52%;
+  right: 6%;
   transform: rotate(-6deg);
   color: var(--pizza-white);
   -webkit-text-stroke: 2.5px var(--pizza-yellow);
@@ -3336,8 +3342,8 @@ a {
 }
 
 .pizza-sticker--c {
-  bottom: 26%;
-  left: 2%;
+  bottom: 28%;
+  left: 10%;
   transform: rotate(7deg);
   color: var(--pizza-yellow);
   -webkit-text-stroke: 2.5px var(--pizza-green);
@@ -3345,8 +3351,8 @@ a {
 }
 
 .pizza-sticker--d {
-  top: 34%;
-  left: -4%;
+  top: 36%;
+  left: 6%;
   transform: rotate(-11deg);
   color: var(--pizza-green);
   -webkit-text-stroke: 2.5px var(--pizza-white);
@@ -3358,7 +3364,7 @@ a {
   z-index: 3;
   margin: 0 0 0.65rem;
   font-family: "Lilita One", sans-serif;
-  font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+  font-size: clamp(1.45rem, 3.2vw, 2.15rem);
   line-height: 1;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -3368,14 +3374,14 @@ a {
 .pizza-orbit {
   position: relative;
   z-index: 2;
-  width: clamp(168px, 22vw, 272px);
+  width: clamp(200px, 26vw, 320px);
   aspect-ratio: 1;
 }
 
 .pizza-orbit-ring {
   position: absolute;
-  inset: -8px;
-  border: 2px dashed var(--pizza-yellow);
+  inset: -10px;
+  border: 3px dashed var(--pizza-yellow);
   border-radius: 50%;
   opacity: 0.85;
 }
@@ -3471,19 +3477,19 @@ a {
 }
 
 .pizza-hook {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.75rem;
   max-width: none;
-  font-size: clamp(1.2rem, 2.6vw, 1.95rem);
+  font-size: clamp(1.45rem, 3.2vw, 2.35rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--pizza-white);
 }
 
 .pizza-lead {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.95rem;
   max-width: none;
-  font-size: clamp(0.95rem, 1.85vw, 1.12rem);
-  line-height: 1.5;
+  font-size: clamp(1.05rem, 2.1vw, 1.28rem);
+  line-height: 1.48;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.78);
 }
@@ -3499,11 +3505,11 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.55rem;
-  padding: 0.72rem 1.5rem;
+  min-height: 2.75rem;
+  padding: 0.8rem 1.65rem;
   border-radius: 6px;
   font-family: "Work Sans", sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3528,7 +3534,7 @@ a {
 
 .pizza-hours {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   color: var(--pizza-yellow);
@@ -3630,7 +3636,11 @@ a {
   }
 
   .pizza-brand-block {
-    padding-top: 0.85rem;
+    padding-top: 1.5rem;
+  }
+
+  .pizza-body {
+    max-width: 100%;
   }
 
   .pizza-hook {
@@ -3638,7 +3648,15 @@ a {
   }
 
   .pizza-orbit {
-    width: clamp(120px, 15vw, 190px);
+    width: clamp(160px, 20vw, 240px);
+  }
+
+  .pizza-visual {
+    width: min(100%, 300px);
+  }
+
+  .pizza-brand-block {
+    padding-top: 1.25rem;
   }
 
   .pizza-menu {
@@ -4103,12 +4121,17 @@ a {
     padding: 0;
   }
 
+  .pizza-split-left,
+  .pizza-split-right {
+    justify-self: stretch;
+  }
+
   .pizza-visual {
-    width: min(100%, 300px);
+    width: min(100%, 340px);
   }
 
   .pizza-orbit {
-    width: min(52vw, 200px);
+    width: min(58vw, 230px);
   }
 
   .pizza-display {
